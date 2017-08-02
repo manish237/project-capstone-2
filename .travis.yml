@@ -1,0 +1,11 @@
+language: node_js
+node_js: node
+services:
+- mongodb
+deploy:
+  provider: heroku
+  api_key:
+    secure: lMVwCMicBWmDVi2LgpoEccEcAZtJv34B/grnK4gCLBKKVEqWeY7MDGOodJR5qfaNvTBCraQkrX+l+B3d8KDOS2nruUGiMxnbmdaTz/fdvvHcrA5b3dzqgHCsdO2TywFM84A7bVJeJbjRfCPoZzbkeFdsUrerKSVoQ40CR2UZmiSapjxOZKA3+P+odd0yZgSXAFpHzjoea1rwg4vLkgOZwM6BtF1LE7r1bvSOxDQS02v+emrKJm88u9GCI9vXJH1f/2hmjnweSjwoyKT9kbimU5cJDEpMMUI0AmPewt9Ixn1bT2wGseF8n3lPtT+pHe5P++JF5fNL5Bo+gs5rfXY8CYBl4BHM1Zs2sGS2zAOUlFOHA/BP9SW/xbpRwVnRf61sLE4Jv6ME1oq735DhpyZJd+oSItqDGovEZoTtkEh/a+6QeR3SR2sH91XkQZV1d7woIRW2QOQU2Ajy6yjhZE4STBpOR5KWY0/86XCV8nWnUipwGOWNoTtdvX/MzfuAEBlyzaHxq95fH9omUiAdKHwKSUEkxuq4wIA9aQ9VOc81kO4Sy33p6uI1d9kJXwaoUKYDmKCEyJ4KVvFFTfQodpib8qJRawkTFr0SvVGbodRF0aPdgq+pIfYnevEAIzKGs47G6+AbZwp0DBEdEEmVi+2WsyNEVntniCzqYojeQG7zSUE=
+  app: limitless-anchorage-61678
+  on:
+    repo: manish237/node-blog-list

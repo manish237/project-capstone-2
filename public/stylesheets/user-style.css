@@ -1,0 +1,59 @@
+
+
+#user-map-section{
+    margin-left: 0.2em;
+    width: auto;
+    height: 50em;
+}
+
+#rest-head-text, #vac-head-text, #crime-head-text{
+    display: inline;
+}
+
+.at_address{
+    font-size: .75em;
+}
+
+/*body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+
+#filter-section{
+  padding-top: 1em;
+  padding-right: 1em;
+  margin-left:-2em;
+}
+
+#filter-head
+{
+  text-align: center;
+}
+
+#filter-rest-head{
+  padding-left:2em;
+}
+
+
+
+.glyphicon.glyphicon-menu-hamburger {
+  font-size: 25px;
+}
+
+#user_map_section{
+  width: auto;
+  height: 50em;
+}
+
+#main-section{
+  margin-left:2em;
+  padding-top: 1em;
+  padding-left: 4em;
+  padding-right: 5em;
+}*/
+

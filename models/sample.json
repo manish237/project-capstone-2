@@ -1,0 +1,57 @@
+//Register Schema
+{
+  "username": "manish23@gmail.com",
+  "password": "11111111",
+  "firstName": "Manish",
+  "lastName": "Jaiswal",
+  "address": {
+    "address1": "15830",
+    "address2": "Grand Avenue",
+    "city": "Omaha",
+    "state": "NE",
+    "zip": "68116",
+    "country": "USA",
+    "longitude": -96.16071299999999,
+    "latitude": 41.304756
+  },
+  "vehicle": {
+    "year": 2017,
+    "make": "Ford",
+    "model": "Explorer",
+    "mpg": 17
+  }
+},
+
+//Preference Schema
+
+{
+  "username": "manish23@gmail.com",
+  "restPref": {
+    "restSearch": true,
+    "restSearchBy": "Distance"
+  },
+  "crimePref": {
+    "crimeSearch": true,
+    "crimeSearchRadius": 10
+  },
+  "hotelSearch": true,
+  "vacRentSearch": true
+},
+
+//Address History Schema
+
+{
+  "username": "manish23@gmail.com",
+  "address": {
+    "address1": "15830",
+    "address2": "Grand Avenue",
+    "city": "Omaha",
+    "state": "NE",
+    "zip": "68116",
+    "country": "USA",
+    "longitude": -96.16071299999999,
+    "latitude": 41.304756
+  }
+}
+
+

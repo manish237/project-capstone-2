@@ -1,0 +1,27 @@
+
+
+.left-space
+{
+    margin-left: 2px;
+}
+
+.forgot-link-font
+{
+    color: #ffffff;
+    text-transform: capitalize;
+    font-weight: normal;
+    background-color: rgba(255, 255, 255, 0);
+    font-size: 15px;
+    display: block;
+    padding-left: 280px;
+}
+
+
+#home_map_section{
+    width: auto;
+    height: 50em;
+}
+
+#home_crime_head{
+    display: inline;
+}
