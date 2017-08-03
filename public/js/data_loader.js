@@ -50,7 +50,8 @@ function renderRestData(dataUI,forPage="") {
         $('#home_rest_section').show()
     }
     else if(forPage=="user"){
-        console.log("----"+ localStorage.getItem("curr_addr"))
+        //console.log("----"+ localStorage.getItem("curr_addr"))
+        //console.log("----"+ localStorage.getItem("curr_addr"))
         let elem = "<h3 id='rest-head-text'>Restaurants</h3>" +
             "<strong><span class='at_address'> (Near:" + localStorage.getItem("curr_addr") + ")</span></strong>"
         $('#user-rest-sec').append(elem);
@@ -127,7 +128,7 @@ function renderVacData(dataUI,forPage="") {
     }
     else if(forPage==="user")
     {
-        console.log("----"+ localStorage.getItem("curr_addr"))
+        //console.log("----"+ localStorage.getItem("curr_addr"))
         let elem = "<h3 id='rest-head-text'>Vacation Rentals</h3>" +
             "<strong><span class='at_address'> (Near:" + localStorage.getItem("curr_addr") + ")</span></strong>"
         $('#user-vac-sec').append(elem);
@@ -480,7 +481,7 @@ function loadCrimes(data,mapData,forPage="") {
 /*
     loading user specific data
  */
-function initUserMap(lon,lat,loadRest=true,loadVac=true,loadCrime=true){
+function initUserMap(lon,lat,data_rest,data_vac,data_crm,loadRest=true,loadVac=true,loadCrime=true){
 
     console.log("initUserMap")
 
@@ -488,80 +489,21 @@ function initUserMap(lon,lat,loadRest=true,loadVac=true,loadCrime=true){
     mapData = undefined;
     mapData = initFirstMap($('#user-map-section'),lon,lat,mapData)
 
+    console.log(loadRest)
+    console.log(loadVac)
+    console.log(loadCrime)
 
     let data;
     if(loadRest==="true") {
         console.log("loading rest ...")
-
-        //Filters
-/*
-        //we already have lon and lat
-        //read sort_by dropdown
-        let sort_by = $("#filter-rest-sort-by-option").val()
-        console.log(sort_by)
-        //read open_now or open_at
-        let open_at_time;
-        let open_now;
-        if($("#filter-rest-sort-by-open-at").is(':checked'))
-        {
-            //read value from open at date time
-            open_at_time = rest_open_at_unix
-            console.log(open_at_time)
-        }
-        else if(($("#filter-rest-sort-by-open-now").is(':checked')))
-        {
-            open_now = true;
-            console.log(open_now)
-        }
-*/
-
-        data = {
-            longitude : lon,
-            latitude : lat,
-            sort_by:"best_match",
-            open_at:undefined,
-            open_now:true,
-            radius:3220 //meters
-        }
-        restCoord = loadRestaurants(data,mapData,"user");
+        restCoord = loadRestaurants(data_rest,mapData,"user");
     }
     if(loadVac==="true") {
         console.log("loading vac ...")
-
-/*
-         //Filters
-        //read sort_by dropdown
-        let sort_by = $("#filter-vac-sort-by-option").val()
-        console.log(sort_by)
-
-        //read date range
-        //TBD set default range;
-        let startDate = vac_start_date;
-        let endDate = vac_end_date;
-*/
-
-        data = {
-            centerPointLongitude: lon,
-            centerPointLatitude: lat,
-            distanceInKm:16.1,
-            sort:"averageRating:desc",
-            availabilityStart:undefined,
-            availabilityEnd:undefined,
-            minNightlyPrice:0,
-            maxNightlyPrice:1000
-        }
-        vacCoord = loadRentals(data,mapData,"user");
+        vacCoord = loadRentals(data_vac,mapData,"user");
     }
     if(loadCrime==="true") {
         console.log("loading crime ...")
-
-        //Filters
-
-        data = {
-            lon:lon,
-            lat:lat,
-            radius:100
-        }
         crimeCoord = loadCrimes(data,mapData,"user");
     }
 

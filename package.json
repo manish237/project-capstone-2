@@ -1,7 +1,7 @@
 {
-  "name": "node-blog-list",
+  "name": "project-capstone-2",
   "version": "1.0.0",
-  "description": "",
+  "description": "second capstone project",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -9,6 +9,10 @@
   },
   "author": "",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/manish237/project-capstone-2.git"
+  },
   "dependencies": {
     "bcryptjs": "^2.4.0",
     "body-parser": "^1.17.1",

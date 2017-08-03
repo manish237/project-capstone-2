@@ -1,427 +1,346 @@
 let host = window.location.hostname;
-// let mapUser
-// let restSearchRequestURL = "http://" + host + ':8080/extdata/yelp';
-// let vacSearchRequestURL = "http://" + host + ':8080/extdata/vr';
-// let crimeSearchRequestURL = "http://" + host + ':8080/extdata/crime';
-// let rest_open_at_unix=0;
-// let vac_start_date;
-// let vac_end_date;
-// let vac_min_price;
-// let vac_max_price;
-// let crime_dist;
 
-// console.log($('#filter-rest-sort-by-option'));
-// console.log($('#filter-rest-sort-by-open-now'));
-// console.log($('#filter-rest-sort-by-open-at'));
-// console.log($('#filter-rest-sort-by-open-at-date-time'));
-// console.log($('#filter-vac-sort-by-option'));
-// console.log($('#filter-vac-date-range'));
-// console.log($('#filter-vac-price-range'));
-// console.log($('#filter-vac-dist-range'));
+let rest_sort_by;
+let rest_open_now;
+let rest_open_at;
+let rest_open_at_datetime;
+let vac_sort_by;
+let vac_price_start;
+let vac_price_end;
+let vac_date_start;
+let vac_date_end;
+let crm_dist;
 
-/*function renderRestData(dataUI) {
-
-    //console.log(dataUI.length)
-    let elem = "<h3 id='rest-head-text'>Restaurants</h3>" +
-               "<strong><span class='at_address'> (Near:" + localStorage.getItem("curr_addr") + ")</span></strong>"
-    $('#user-rest-sec').append(elem);
-    for(let i =0;i<dataUI.length;i++)
-    {
-        if(i>2)
-            break;
-        else{
-                elem =
-                "<div class='row rest-row-item'>" +
-                "<div class='col-md-2 rest-row-item-img-sec'>" +
-                "<img src='" +  dataUI[i].image_url + "' width='100' height='100' class='rest-row-item-img'/>" +
-                "</div>" +
-                "<div class='col-md-4 rest-row-item-name-sec'>" +
-                "<h5 class='rest-row-item-name-lb'>Restaurant Name</h5>" +
-                "<small class='rest-row-item-name-text'>" + dataUI[i].name + "</small>" +
-                "<h5 class='rest-row-item-address-lb'>Address</h5>" +
-                "<small class='rest-row-item-address-text'>" + dataUI[i].address +"</small>" +
-                "<small class='rest-row-item-phone-lb'><b>Phone: </b></small>" +
-                "<small class='rest-row-item-phone-text'>" + dataUI[i].phone + "</small>" +
-                "</div>" +
-                "<div class='col-md-4' class='rest-row-item-review-sec'>" +
-                "<small><b>Type: </b></small>" +
-                "<small class='rest-row-item-review-cat'>" + dataUI[i].categories + "</small>" +
-                "<br>" +
-                "<small><b>Ratings: </b></small>" +
-                "<small class='rest-row-item-review-rate'>" + dataUI[i].rating + "</small>" +
-                "(" +
-                "<small class='rest-row-item-review-cnt'>" + dataUI[i].review_count + "</small>)" +
-                "<br>" +
-                "<a class='btn btn-default rest-row-item-detail-btn' target='_blank' href='" +  dataUI[i].url + "' role='button'>View details</a>" +
-                "</div>" +
-                "</div>"
-            //console.log(elem)
-            $('#user-rest-sec').append(elem)
-            $('#user-rest-sec').append("<HR>")
-        }
-    }
-    $('#user-rest-sec').show()
-}*/
-
-/*function renderVacData(dataUI) {
-
-    //console.log(dataUI.length)
-    let elem = "<h3 id='rest-head-text'>Vacation Rentals</h3>" +
-        "<strong><span class='at_address'> (Near:" + localStorage.getItem("curr_addr") + ")</span></strong>"
-    $('#user-vac-sec').append(elem);
-    for(let i =0;i<dataUI.length;i++)
-    {
-        if(i>2)
-            break;
-        else{
-            elem =
-                "<div class='row vac-row-item'>" +
-                "<div class='col-md-2 vac-row-item-img-sec'>" +
-                    "<img src='" + dataUI[i].image_url + "' width='100' height='100' class='vac-row-item-img' />" +
-                "</div>" +
-                "<div class='col-md-4 vac-row-item-head-sec'>" +
-                    "<h5 class='vac-row-item-head-lb'>" + dataUI[i].headline + "</h5>" +
-                "</div>" +
-                "<div class='col-md-4 vac-row-item-detail-sec'>" +
-                    "<small><b>Avg Nightly Price: </b></small>" +
-                    "<small class='vac-row-item-detail-price'>" + dataUI[i].price + "</small>" +
-                    "(" +
-                    "<small class='vac-row-item-detail-curr'>" + dataUI[i].priceCurr + "</small>)" +
-                    "<br>" +
-                    "<small><b>Ratings: </b></small>" +
-                    "<small class='vac-row-item-detail-rate'>" + dataUI[i].reviewAverage + "</small>" +
-                    "(" +
-                    "<small class='vac-row-item-detail-cnt'>" + dataUI[i].reviewCount + "</small>)" +
-                    "<br>" +
-                    "<a class='btn btn-default' target='_blank' class='vac-row-item-detail-btn' href='" + dataUI[i].url + "' role='button'>View details</a>" +
-                "</div>" +
-            "</div>"
-            //console.log(elem)
-            $('#user-vac-sec').append(elem)
-            $('#user-vac-sec').append("<HR>")
-
-        }
-    }
-//    $('.at_address')[1].innerHTML =`(Near: ${localStorage.getItem("curr_addr")})`;
-    $('#user-vac-sec').show()
-}*/
-
-/*function renderCrimeData(dataUI) {
-    let elem = "<h3 id='rest-head-text'>Crime Report at Area</h3>" +
-        "<strong><span class='at_address'> (Near:" + localStorage.getItem("curr_addr") + ")</span></strong>";
-    $('#user-crime-sec').append(elem);
-    elem =
-        "<div class='row crime-rows'>" +
-            "<div class='col-md-10'>" +
-                "<div class='row'>" +
-                    "<div class='col-md-12'>" +
-                        "<div class='row'>" +
-                            "<div class='col-md-12 crime-cnt-sec'>" +
-                                "<big class='crime-cnt-lb'>Total reports:</big>" +
-                                "<big class='crime-cnt'>" + dataUI.totCount + "</big>" +
-                            "</div>" +
-                        "</div>" +
-                        "<div class='row'>" +
-                            "<div class='col-md-12'>" +
-                                "<table class='table crime-tab'>" +
-                                    "<thead>" +
-                                        "<th>Type</th>" +
-                                        "<th>#</th>" +
-                                        "<th>Type</th>" +
-                                        "<th>#</th>" +
-                                    "</thead>" +
-                                    "<tbody>" +
-                                        "<tr>" +
-                                            "<th class='crime-tab-arr'>Arrest</th>" +
-                                            "<td class='crime-tab-arr-cnt'>" + dataUI.arrCount + "</td>" +
-                                            "<th class='crime-tab-ars'>Arson</th>" +
-                                            "<td class='crime-tab-ars-cnt'>" + dataUI.arsCount + "</td>" +
-                                        "</tr>" +
-                                        "<tr>" +
-                                            "<th class='crime-tab-ast'>Assault</th>" +
-                                            "<td class='crime-tab-ast-cnt'>" + dataUI.assCount + "</td>" +
-                                            "<th class='crime-tab-bur'>Burglary</th>" +
-                                            "<td class='crime-tab-bur-cnt'>" + dataUI.burCount + "</td>" +
-                                        "</tr>" +
-                                        "<tr>" +
-                                            "<th class='crime-tab-rob'>Robbery</th>" +
-                                            "<td class='crime-tab-rob-cnt'>" + dataUI.robCount + "</td>" +
-                                            "<th class='crime-tab-shot'>Shooting</th>" +
-                                            "<td class='crime-tab-shot-cnt'>" + dataUI.shoCount + "</td>" +
-                                        "</tr>" +
-                                        "<tr>" +
-                                            "<th class='crime-tab-thft'>Theft</th>" +
-                                            "<td class='crime-tab-thft-cnt'>" + dataUI.theCount + "</td>" +
-                                            "<th class='crime-tab-van'>Vandalism</th>" +
-                                            "<td class='crime-tab-van-cnt'>" + dataUI.vanCount + "</td>" +
-                                        "</tr>" +
-                                        "<tr>" +
-                                            "<th class='crime-tab-thft'>Other</th>" +
-                                            "<td class='crime-tab-thft-cnt'>" + dataUI.othCount + "</td>" +
-                                            "<th class='crime-tab-van'></th>" +
-                                            "<td class='crime-tab-van-cnt'></td>" +
-                                        "</tr>" +
-                                    "</tbody>" +
-                                "</table>" +
-                            "</div>" +
-                        "</div>" +
-                    "</div>" +
-                "</div>" +
-            "</div>" +
-        "</div>"
-
-    $('#user-crime-sec').append(elem);
-    $('#user-crime-sec').append("<HR>")
-    $('#user-crime-sec').show();
-}*/
-
-/*function processRestData(data,mapHome) {
-    let coordArr = data.businesses.map(function (item) {
-        return {
-            coords : item.coordinates,
-            name:item.name,
-            address:item.location.display_address.join(", "),
-            url:item.url
-        };
-    })
-
-    let dataArr = data.businesses.map(function (item) {
-        return {
-            categories:item.categories.map(function (elem) {
-                return elem.title;
-            }).join(","),
-            address:item.location.display_address.join(", "),
-            name:item.name,
-            image_url:item.image_url,
-            url:item.url,
-            phone:item.phone,
-            rating:item.rating,
-            review_count:item.review_count
-        };
-    })
-
-    renderRestData(dataArr)
-    mapHome = addMarkersToMap(coordArr,mapHome,"rest")
-}*/
-
-/*function processVacData(data,mapHome) {
-    //console.log(data.entries)
-    let coordArr = data.entries.map(function (item) {
-        return {
-            coords: {
-                latitude: item.location.lat,
-                longitude: item.location.lng
-            },
-            name: item.headline,
-            url:item.listingUrl
-        };
-    })
-    //console.log(coordArr)
-
-    let dataArr = data.entries.map(function (item) {
-        return {
-            headline: item.headline,
-            reviewAverage: item.reviewAverage,
-            reviewCount:item.reviewCount,
-            price: item.priceQuote !== undefined ? item.priceQuote.averageNightly : "",
-            priceCurr: item.priceQuote !== undefined ? item.priceQuote.currencyUnits : "Not Available",
-            image_url:item.thumbnail.secureUri,
-            url:item.listingUrl
-        };
-    })
-
-    renderVacData(dataArr)
-    mapHome = addMarkersToMap(coordArr,mapHome,"vac")
-}*/
-
-/*function processCrimeData(data,mapHome) {
-    //console.log(data)
-    let coordArr = data.map(function (item) {
-        return {
-            coords: {
-                latitude: item.lat,
-                longitude: item.lon
-            },
-            name:item.type,
-            address:item.address
-        };
-    })
-
-    let arrCount=0,arsCount=0,assCount=0,burCount=0,othCount=0,robCount=0,shoCount=0,theCount=0,vanCount=0;
-    let crimeStat = {};
-    for(let i=0;i<data.length;i++)
-    {
-        if(data[i].type==="Arrest")
-            arrCount++;
-        else if(data[i].type==="Arson")
-            arsCount++;
-        else if(data[i].type==="Assault")
-            assCount++;
-        else if(data[i].type==="Burglary")
-            burCount++;
-        else if(data[i].type==="Other")
-            othCount++;
-        else if(data[i].type==="Robbery")
-            robCount++;
-        else if(data[i].type==="Shooting")
-            shoCount++;
-        else if(data[i].type==="Theft")
-            theCount++;
-        else if(data[i].type==="Vandalism")
-            vanCount++;
-    }
-    crimeStat.totCount=arrCount+arsCount+assCount+burCount+othCount+robCount+shoCount+theCount+vanCount;
-    crimeStat.arrCount=arrCount;
-    crimeStat.arsCount=arsCount;
-    crimeStat.assCount=assCount;
-    crimeStat.burCount=burCount;
-    crimeStat.othCount=othCount;
-    crimeStat.robCount=robCount;
-    crimeStat.shoCount=shoCount;
-    crimeStat.theCount=theCount;
-    crimeStat.vanCount=vanCount;
-
-    renderCrimeData(crimeStat)
-    mapHome = addMarkersToMap(coordArr,mapHome,"crime")
-
-}*/
-
-/*function loadRestaurants(longitude, latitude,mapHome) {
-    console.log("loading restaurants")
-
-    //we already have lon and lat
-    //read sort_by dropdown
-    let sort_by = $("#filter-rest-sort-by-option").val()
-    console.log(sort_by)
-    //read open_now or open_at
-    let open_at_time;
-    let open_now;
-    if($("#filter-rest-sort-by-open-at").is(':checked'))
-    {
-        //read value from open at date time
-        open_at_time = rest_open_at_unix
-        console.log(open_at_time)
-    }
-    else if(($("#filter-rest-sort-by-open-now").is(':checked')))
-    {
-        open_now = true;
-        console.log(open_now)
-    }
-
-    $.getJSON(restSearchRequestURL,
-    {
-        latitude:latitude,
-        longitude:longitude,
-        sort_by:sort_by.length!==0?sort_by:"best_match",
-        open_at:open_at_time!==undefined?open_at_time:undefined,
-        open_now:open_now!==undefined?open_now:true,
-        radius:3220 //meters
-    },
-    function(apiData){
-        //console.log(apiData)
-        restCoord = processRestData(apiData,mapHome)
-        //console.log(restCoord)
-    });
-}*/
-/*function loadRentals(longitude, latitude,mapHome) {
-    console.log("loading rentals")
-
-    //we already have lon lat
-
-    //read sort_by dropdown
-    let sort_by = $("#filter-vac-sort-by-option").val()
-    console.log(sort_by)
-
-    //read date range
-    //TBD set default range;
-    let startDate = vac_start_date;
-    let endDate = vac_end_date;
-
-    //price range
-    //filter-vac-price-range
-
-
-
-    $.getJSON(vacSearchRequestURL,
-        {
-            centerPointLatitude:latitude,
-            centerPointLongitude:longitude,
-            sort:sort_by.length!==0?sort_by:"averageRating:desc",
-            startDate: vac_start_date!==undefined?vac_start_date:undefined,
-            endDate: vac_end_date!==undefined?vac_end_date:undefined,
-            minPrice: vac_min_price!==undefined?vac_min_price:0,
-            maxPrice: vac_max_price!==undefined?vac_max_price:1000,
-            distanceInKm:16.1 //kilometers
-        },
-        function(apiData){
-            vacCoord = processVacData(apiData,mapHome)
-            //console.log(vacCoord)
-        });
-}*/
-
-/*function loadCrimes(longitude, latitude,mapHome) {
-    console.log("loading crimes")
-
-    //we already have lon lat
-    //distance range
-
-
-    $.getJSON(crimeSearchRequestURL,
-        {
-            latitude:latitude,
-            longitude:longitude,
-            radius:crime_dist!==undefined?crime_dist:100
-        },
-        function(apiData){
-            crimeCoord = processCrimeData(apiData,mapHome)
-            //console.log(crimeCoord)
-        });
-}*/
-
-
-/*function initLocationMap(lon,lat,loadRest=true,loadVac=true,loadCrime=true){
-
-    console.log("initLocationMap")
-    console.log(loadRest)
-    console.log(loadVac)
-    console.log(loadCrime)
-    console.log(lon)
-    console.log(lat)
-
-    //console.log("initCurrLocationMap")
-
-    //load top 10 restaurants in 1 mile radius
-    //we will use 3 of them to display on home page
-//    mapHome = null;
-    mapUser = undefined;
-    mapUser = initFirstMap($('#user-map-section'),lon,lat,mapUser)
-    console.log(mapUser)
-    //
-    if(loadRest==="true") {
-        console.log("loading rest ...")
-        restCoord = loadRestaurants(lon, lat, mapUser);
-    }
-    if(loadVac==="true") {
-        console.log("loading vac ...")
-        vacCoord = loadRentals(lon, lat, mapUser);
-    }
-    if(loadCrime==="true") {
-        console.log("loading crime ...")
-        crimeCoord = loadCrimes(lon, lat, mapUser);
-    }
-
-    $('#user-map-section').show();
-}*/
 
 
 /*
-    Search button presed
-    1. update the localstorage for location data we got when we loaded the address data
-    2. get the cbs
-    3. hide the sections to be loaded again
-    4. load the data
+    Data load function
+    1. read the lon/lat from localstorage
+    2. read the cbs from localstorage -- default is true if undefined
+    3. read other data from localstorage especially curr_addr
  */
+function refresh() {
+    console.log("refresh")
 
+    let lon = localStorage.getItem("longitude")!==undefined?localStorage.getItem("longitude"):-122.392;
+    let lat = localStorage.getItem("latitude")!==undefined?localStorage.getItem("latitude"):37.6148;
+
+    /*
+   * Reading Filter info from localstorage and setting the UI elements
+   * */
+
+    //hide everything for load
+    $('#user-rest-sec').hide()
+    $('#user-rest-sec').empty()
+    $('#user-vac-sec').hide()
+    $('#user-vac-sec').empty()
+    $('#user-crime-sec').hide();
+    $('#user-crime-sec').empty();
+    $('#user-map-section').hide();
+
+    //Filters for Restaurants
+
+    let data_rest;
+    if(localStorage.getItem("rest_open_now")==="true") {
+        data_rest = {
+            longitude: lon,
+            latitude: lat,
+            sort_by: localStorage.getItem("rest_sort_by"),
+            open_now: localStorage.getItem("rest_open_now")==="true"?true:false,
+            radius: 3220 //meters
+        }
+    }
+    else if(localStorage.getItem("rest_open_at")==="true")
+    {
+        data_rest = {
+            longitude: lon,
+            latitude: lat,
+            sort_by: localStorage.getItem("rest_sort_by"),
+            open_at: parseInt(localStorage.getItem("rest_open_at_datetime")),
+            radius: 3220 //meters - default
+        }
+    }
+
+    //Filters for vacation rental
+
+
+    let data_vac = {
+        centerPointLongitude: lon,
+        centerPointLatitude: lat,
+        distanceInKm:16.1,//default
+        sort: localStorage.getItem("vac_sort_by"),
+        availabilityStart:localStorage.getItem("vac_date_start")!==""?localStorage.getItem("vac_date_start"):undefined,
+        availabilityEnd:localStorage.getItem("vac_date_end")!==""?localStorage.getItem("vac_date_end"):undefined,
+        minNightlyPrice:localStorage.getItem("vac_price_start"),
+        maxNightlyPrice:localStorage.getItem("vac_price_end"),
+    };
+
+    //read distant
+
+    let data_crm = {
+        lon:lon,
+        lat:lat,
+        radius:localStorage.getItem("crm_dist")
+    };
+
+    console.log(data_rest)
+    console.log(data_vac)
+    console.log(data_crm)
+
+    //load data
+    initUserMap(lon,lat,data_rest,data_vac,data_crm,
+        localStorage.getItem("cb-rest")!==null?localStorage.getItem("cb-rest"):true,
+        localStorage.getItem("cb-vac")!==null?localStorage.getItem("cb-vac"):true,
+        localStorage.getItem("cb-crime")!==null?localStorage.getItem("cb-crime"):true)
+}
+
+
+function initLocalStorage() {
+    //Checkboxes
+    if(localStorage.getItem("cb-rest")===null || localStorage.getItem("cb-rest")===undefined)
+        localStorage.setItem("cb-rest","true")
+    if(localStorage.getItem("cb-vac")===null || localStorage.getItem("cb-vac")===undefined)
+        localStorage.setItem("cb-vac","true")
+    if(localStorage.getItem("cb-crime")===null || localStorage.getItem("cb-crime")===undefined)
+        localStorage.setItem("cb-crime","true")
+
+    if(localStorage.getItem("rest_sort_by")===null || localStorage.getItem("rest_sort_by")===undefined)
+        localStorage.setItem("rest_sort_by","best_match")
+    if(localStorage.getItem("rest_open_now")===null || localStorage.getItem("rest_open_now")===undefined)
+        localStorage.setItem("rest_open_now","true")
+    if(localStorage.getItem("rest_open_at")===null || localStorage.getItem("rest_open_at")===undefined)
+        localStorage.setItem("rest_open_at","false")
+    if(localStorage.getItem("rest_open_at_datetime")===null || localStorage.getItem("rest_open_at_datetime")===undefined)
+        localStorage.setItem("rest_open_at_datetime",moment().unix())
+    if(localStorage.getItem("vac_sort_by")===null || localStorage.getItem("vac_sort_by")===undefined)
+        localStorage.setItem("vac_sort_by","averageRating:desc")
+    if(localStorage.getItem("vac_date_start")===null || localStorage.getItem("vac_date_start")===undefined)
+        localStorage.setItem("vac_date_start","")
+    if(localStorage.getItem("vac_date_end")===null || localStorage.getItem("vac_date_end")===undefined)
+        localStorage.setItem("vac_date_end","")
+    if(localStorage.getItem("vac_price_start")===null || localStorage.getItem("vac_price_start")===undefined)
+        localStorage.setItem("vac_price_start",0)
+    if(localStorage.getItem("vac_price_end")===null || localStorage.getItem("vac_price_end")===undefined)
+        localStorage.setItem("vac_price_end",1000)
+    if(localStorage.getItem("crm_dist")===null || localStorage.getItem("crm_dist")===undefined)
+        localStorage.setItem("crm_dist",100)
+}
+
+
+function initUI() {
+
+    //Search Check boxes
+    // console.log(localStorage.getItem("cb-rest"))
+    if(localStorage.getItem("cb-rest") === "true")
+        document.getElementById("cb-rest").checked = true;
+    else  if(localStorage.getItem("cb-rest") === "false")
+        document.getElementById("cb-rest").checked = false;
+
+    // console.log(localStorage.getItem("cb-vac"))
+    if(localStorage.getItem("cb-vac") === "true")
+        document.getElementById("cb-vac").checked = true;
+    else  if(localStorage.getItem("cb-vac") === "false")
+        document.getElementById("cb-vac").checked = false;
+
+    // console.log(localStorage.getItem("cb-crime"))
+    if(localStorage.getItem("cb-crime") === "true")
+        document.getElementById("cb-crime").checked = true;
+    else  if(localStorage.getItem("cb-crime") === "false")
+        document.getElementById("cb-crime").checked = false;
+
+
+
+    //Restaurant Sort By
+    // console.log(localStorage.getItem("rest_sort_by"))
+    if(localStorage.getItem("rest_sort_by")==="")
+    {
+        $("#filter-rest-sort-by").val("best_match");
+    }
+    else
+    {
+        $("#filter-rest-sort-by").val(localStorage.getItem("rest_sort_by"));
+    }
+
+    //Restaurant Open Now
+    // console.log(localStorage.getItem("rest_open_now"))
+    if(localStorage.getItem("rest_open_now")==="")
+    {
+        $("#filter-rest-open-now").attr('checked',true)
+        $("#filter-rest-open-at").attr('checked',false)
+        $('#filter-rest-open-at-date-time').hide()
+    }
+    else
+    {
+        if(localStorage.getItem("rest_open_now")==="true" || localStorage.getItem("rest_open_now")===true)
+        {
+            $("#filter-rest-open-now").attr('checked',true)
+            $("#filter-rest-open-at").attr('checked',false)
+            $('#filter-rest-open-at-date-time').hide()
+        }
+    }
+
+    //Restaurant Open At
+    // console.log(localStorage.getItem("rest_open_at"))
+    if(localStorage.getItem("rest_open_at")==="")
+    {
+        $("#filter-rest-open-now").attr('checked',true)
+        $("#filter-rest-open-at").attr('checked',false)
+        $('#filter-rest-open-at-date-time').hide()
+    }
+    else
+    {
+        if(localStorage.getItem("rest_open_at")==="true")
+        {
+            $("#filter-rest-open-now").attr('checked',false)
+            $("#filter-rest-open-at").attr('checked',true)
+            $('#filter-rest-open-at-date-time').show()
+        }
+    }
+
+
+    //Restaurant Open At Date Time
+    // console.log(localStorage.getItem("rest_open_at_datetime"))
+
+    // console.log(moment.unix(parseInt(localStorage.getItem("rest_open_at_datetime"))).format("MM/DD/YYYY h:mm A"))
+    if(localStorage.getItem("rest_open_at_datetime")==="")
+    {
+        $('#filter-rest-open-at-date-time').datetimepicker({
+            defaultDate: moment.unix().format("MM/DD/YYYY h:mm a")
+        });
+    }
+    else
+    {
+        let str = moment.unix(parseInt(localStorage.getItem("rest_open_at_datetime"))).format("MM/DD/YYYY h:mm A")
+        // console.log(typeof str)
+        $('#filter-rest-open-at-date-time').datetimepicker({
+            defaultDate: str
+        })
+    }
+
+
+    //Vacation Rental Sort By
+    // console.log(localStorage.getItem("vac_sort_by"))
+    if(localStorage.getItem("vac_sort_by")==="")
+    {
+        $('#filter-vac-sort-by').val("averageRating:desc");
+    }
+    else
+    {
+        $('#filter-vac-sort-by').val(localStorage.getItem("vac_sort_by"));
+    }
+
+    // Vacation Rental - Date Picker
+    let start_date="", end_date=""
+    // console.log(localStorage.getItem("vac_date_start"))
+    if(localStorage.getItem("vac_date_start")==="") {
+        start_date = moment().format('MM-DD-YYYY');
+    }
+    else {
+        start_date = localStorage.getItem("vac_date_start");
+    }
+
+    // console.log(localStorage.getItem("vac_date_end"))
+    if(localStorage.getItem("vac_date_end")==="") {
+        end_date = moment().format('MM-DD-YYYY');
+    }
+    else {
+        end_date = localStorage.getItem("vac_date_end");
+    }
+
+    if(start_date.length !==0 && end_date.length!=0) {
+        $('#filter-vac-date-range').daterangepicker({
+            autoUpdateInput: false,
+            locale: {
+                cancelLabel: 'Clear'
+            }
+        });
+        $('#filter-vac-date-range').val(start_date + ' - ' + end_date);
+    }
+    else {
+        $('#filter-vac-date-range').daterangepicker({
+            autoUpdateInput: false,
+            locale: {
+                cancelLabel: 'Clear'
+            }
+        });
+    }
+
+    //Vacation Rental - Display Price Range picker
+
+    let val = [];
+    // console.log(localStorage.getItem("vac_price_start"))
+    // console.log(localStorage.getItem("vac_price_end"))
+    val.push(parseInt(localStorage.getItem("vac_price_start")))
+    val.push(parseInt(localStorage.getItem("vac_price_end")))
+    $("#filter-vac-price-range").slider({
+        value : val
+    });
+
+    /**
+     * Crime Report - Distance Range Picker
+     */
+
+    // console.log(localStorage.getItem("crm_dist"))
+    $('#filter-crm-dist-range').slider({
+        value: parseInt(localStorage.getItem("crm_dist")),
+        formatter: function(value) {
+            return 'Current value: ' + value;
+        }
+    });
+
+
+
+}
+
+
+
+/*
+    Document Load
+
+ */
+$(document).ready(function() {
+
+    //intialize localStorage
+    initLocalStorage();
+
+    //initialize UI elements
+    initUI();
+
+    refresh()
+});
+
+/*
+    Handle filter apply button
+
+ */
+$('#form-filter').submit(function (e) {
+    e.preventDefault()
+
+
+    //add/update the filter data in localstorage
+    console.log("Apply filter")
+
+    localStorage.setItem("rest_sort_by",rest_sort_by!==undefined?rest_sort_by:"best_match")
+    localStorage.setItem("rest_open_now",rest_open_now!==undefined?rest_open_now:"true")
+    localStorage.setItem("rest_open_at",rest_open_at!==undefined?rest_open_at:"false")
+    localStorage.setItem("rest_open_at_datetime",rest_open_at_datetime!==undefined?rest_open_at_datetime:moment().unix())
+    localStorage.setItem("vac_sort_by",vac_sort_by!==undefined?vac_sort_by:"averageRating:desc")
+    localStorage.setItem("vac_date_start",vac_date_start!==undefined?vac_date_start:"")
+    localStorage.setItem("vac_date_end",vac_date_end!==undefined?vac_date_end:"")
+    localStorage.setItem("vac_price_start",vac_price_start!==undefined?vac_price_start:0)
+    localStorage.setItem("vac_price_end",vac_price_end!==undefined?vac_price_end:1000)
+    localStorage.setItem("crm_dist",crm_dist!==undefined?crm_dist:100)
+
+    refresh()
+})
+
+
+
+
+
+/*
+    Handle search button click
+*/
 $('#form-user-addr-search').submit(function (e) {
 
     console.log("search button clicked")
@@ -440,84 +359,27 @@ $('#form-user-addr-search').submit(function (e) {
     localStorage.setItem("cb-vac", $("#cb-vac").is(':checked'))
     localStorage.setItem("cb-crime", $("#cb-crime").is(':checked'))
 
-    //re-hide everything to refresh the data
-    $('#user-rest-sec').hide()
-    $('#user-rest-sec').empty()
-    $('#user-vac-sec').hide()
-    $('#user-vac-sec').empty()
-    $('#user-crime-sec').hide();
-    $('#user-crime-sec').empty();
-    $('#user-map-section').hide();
-
-    initUserMap(lon,lat,
-        localStorage.getItem("cb-rest")!==null?localStorage.getItem("cb-rest"):true,
-        localStorage.getItem("cb-vac")!==null?localStorage.getItem("cb-vac"):true,
-        localStorage.getItem("cb-crime")!==null?localStorage.getItem("cb-crime"):true);
-
+    refresh()
 })
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
-    Data load function
-    1. read the lon/lat from localstorage
-    2. read the cbs from localstorage -- default is true if undefined
-    3. read other data from localstorage especially curr_addr
+    Handle Edit Profile link
+
  */
-function refresh() {
-    let lon = localStorage.getItem("longitude")!==undefined?localStorage.getItem("longitude"):-122.392;
-    let lat = localStorage.getItem("latitude")!==undefined?localStorage.getItem("latitude"):37.6148;
-
-    //read cbs
-    if(localStorage.getItem("cb-rest")!==null)
-    {
-        if(localStorage.getItem("cb-rest") === "true")
-            document.getElementById("cb-rest").checked = true;
-        else  if(localStorage.getItem("cb-rest") === "false")
-            document.getElementById("cb-rest").checked = false;
-    }
-    else
-        document.getElementById("cb-rest").checked = true;
-
-    if(localStorage.getItem("cb-vac")!==null)
-    {
-        if(localStorage.getItem("cb-vac") === "true")
-            document.getElementById("cb-vac").checked = true;
-        else  if(localStorage.getItem("cb-vac") === "false")
-            document.getElementById("cb-vac").checked = false;
-    }
-    else
-        document.getElementById("cb-vac").checked = true;
-
-    if(localStorage.getItem("cb-crime")!==null)
-    {
-        if(localStorage.getItem("cb-crime") === "true")
-            document.getElementById("cb-crime").checked = true;
-        else  if(localStorage.getItem("cb-crime") === "false")
-            document.getElementById("cb-crime").checked = false;
-    }
-    else
-        document.getElementById("cb-crime").checked = true;
-
-    //hide everything for load
-    $('#user-rest-sec').hide()
-    $('#user-vac-sec').hide()
-    $('#user-crime-sec').hide();
-    $('#user-map-section').hide();
-
-
-    //load data
-    initUserMap(lon,lat,
-        localStorage.getItem("cb-rest")!==null?localStorage.getItem("cb-rest"):true,
-        localStorage.getItem("cb-vac")!==null?localStorage.getItem("cb-vac"):true,
-        localStorage.getItem("cb-crime")!==null?localStorage.getItem("cb-crime"):true)
-}
-
-
-$(document).ready(function() {
-
-    //read location
-    refresh()
-});
-
 $("#ln-edit-details").click(function (e) {
     e.preventDefault()
     console.log("editing details")
@@ -525,6 +387,10 @@ $("#ln-edit-details").click(function (e) {
 
 })
 
+/*
+    Handle logout link
+
+ */
 $("#ln-log-out").click(function (e) {
     e.preventDefault()
     localStorage.clear();
@@ -534,82 +400,111 @@ $("#ln-log-out").click(function (e) {
 })
 
 
-$("#main-search-btn").click(function (e) {
+
+/********************************************************************
+    Below functions handle the filter changes
+ ********************************************************************/
+
+/**
+ * Handle Restaurant Sort By Filter dropdown change
+ */
+$("#filter-rest-sort-by").change(function (e) {
     e.preventDefault()
-
-
+//    console.log($('#filter-rest-sort-by-option').val())
+    rest_sort_by = $('#filter-rest-sort-by').val();
 })
 
-$("#filter-rest-sort-by-option").click(function (e) {
-    e.preventDefault()
-    console.log($('#filter-rest-sort-by-option').val())
-})
+/**
+ * Handle Restaurant Open Now radio button click
+ * disable the date-time element
+ */
 
-$("#rest_open_now").click(function (e) {
+$("#filter-rest-open-now").click(function (e) {
     //e.preventDefault()
-    console.log($('#filter-rest-sort-by-open-now').val())
+    console.log("open now clicked")
+    rest_open_now = true;
+    rest_open_at = false;
+    $("#filter-rest-open-at-date-time").hide()
 })
-$("#filter-rest-sort-by-open-at").click(function (e) {
+
+/**
+ * Handle Restaurant Open At radio button click
+ * Enable the date-time element
+ */
+
+$("#filter-rest-open-at").click(function (e) {
     //e.preventDefault()
-    console.log($('#filter-rest-sort-by-open-at').val())
+//    console.log($('#filter-rest-sort-by-open-at').val())
+    rest_open_at = true;
+    rest_open_now = false;
+    $("#filter-rest-open-at-date-time").show()
 })
-$("#filter-rest-sort-by-open-at-date-time").on("dp.change",function (e) {
+
+/**
+ * Handle Restaurant Open At date-time field change
+ */
+$("#filter-rest-open-at-date-time").on("dp.change",function (e) {
 //    e.preventDefault()
     let str = e.date._d;
     //Sun Jun 18 2017 17:38:00 GMT-0500
-    rest_open_at_unix = moment(str,"ddd MMM DD YYYY HH:MM zZ").unix()
-    // console.log(x)
-})
-$("#filter-vac-sort-by-option").click(function (e) {
-    e.preventDefault()
-    console.log($('#filter-vac-sort-by-option').val())
+    rest_open_at_datetime = moment(str,"ddd MMM DD YYYY HH:MM zZ").unix()
 })
 
+/**
+ * Handle Vacation Rental Sort By Dropdown change
+ */
+$("#filter-vac-sort-by").change(function (e) {
+    e.preventDefault()
+//    console.log($('#filter-vac-sort-by-option').val())
+    vac_sort_by = $('#filter-vac-sort-by').val();
+})
+
+/**
+ * Handle Vacation Rental Date range picker change
+ */
 $("#filter-vac-date-range").on("apply.daterangepicker",function (e, picker) {
 //    e.preventDefault()
     //yyyy-MM-dd
-
-    console.log(picker.startDate.format('YYYY-MM-DD'));
-    console.log(picker.endDate.format('YYYY-MM-DD'));
-    vac_start_date = picker.startDate.format('YYYY-MM-DD');
-    vac_end_date = picker.endDate.format('YYYY-MM-DD');
-
+    vac_date_start = picker.startDate.format('YYYY-MM-DD');
+    vac_date_end = picker.endDate.format('YYYY-MM-DD');
+    $(this).val(picker.startDate.format('MM-DD-YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
 })
 
-$("#filter-vac-dist-range").on("change",function (e) {
-//    e.preventDefault()
-    //yyyy-MM-dd
-    console.log("slider")
-    console.log(e)
-    console.log(e.value.newValue)
-    crime_dist = e.value.newValue;
+$("#filter-vac-date-range").on('cancel.daterangepicker', function(ev, picker) {
+    vac_date_start = undefined
 
-})
+    vac_date_end = undefined
+    $(this).val('');
+});
+
+
+/**
+ * Handle Vacation Rental Price Range  change
+ */
 
 $("#filter-vac-price-range").on("change",function (e) {
 //    e.preventDefault()
     //yyyy-MM-dd
-    console.log("slider")
-    console.log(e)
-    console.log(e.value.newValue[0])
-    vac_min_price = e.value.newValue[0];
-    console.log(e.value.newValue[1])
-    vac_max_price = e.value.newValue[1];
+    // console.log("slider")
+    // console.log(e)
+    // console.log(e.value.newValue[0])
+    vac_price_start = e.value.newValue[0];
+    // console.log(e.value.newValue[1])
+    vac_price_end = e.value.newValue[1];
 })
 
-$('#filter-rest-sort-by-open-at-date-time').datetimepicker({
-        defaultDate: moment()
-    }
-);
+/**
+ * Handle Crime Report Distance range change
+ * call refresh
+ */
 
-var start = moment().subtract(7, 'days');
+$("#filter-crm-dist-range").on("change",function (e) {
+//    e.preventDefault()
+    //yyyy-MM-dd
+    // console.log("slider")
+    // console.log(e)
+    // console.log(e.value.newValue)
+    crm_dist = e.value.newValue;
+    refresh()
 
-$('#filter-vac-date-range').daterangepicker({
-    startDate: start
-});
-$('#filter-vac-dist-range').slider({
-    formatter: function(value) {
-        return 'Current value: ' + value;
-    }
-});
-$("#filter-vac-price-range").slider({});
+})
