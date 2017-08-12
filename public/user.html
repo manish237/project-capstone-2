@@ -22,120 +22,143 @@
     </head>
     <body>
         <nav class="navbar-inverse navbar-fixed-top" role="navigation">
-            <div class="container-fluid"> 
-                <div class="navbar-header"> 
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> 
-                        <span class="sr-only">Toggle navigation</span> 
-                        <span class="icon-bar"></span> 
-                        <span class="icon-bar"></span> 
-                        <span class="icon-bar"></span> 
-                    </button>                     
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
                     <a class="navbar-brand" href="index.html">Destinalysis</a>
-                </div>                 
+                </div>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <span class="glyphicon glyphicon-menu-hamburger pull-right"></span></a>
-                        <ul class="dropdown-menu"> 
+                        <ul class="dropdown-menu">
                             <li>
                                 <a href="#">Home</a>
-                            </li>                             
+                            </li>
                             <li>
                                 <a id="ln-edit-details" href="edit.html">Edit Personal Info</a>
                             </li>
                             <li class="divider"></li>
                             <li>
                                 <a id="ln-log-out" href="index.html">Logout</a>
-                            </li>                             
+                            </li>
                         </ul>
-                    </li>                     
-                </ul>                 
+                    </li>
+                </ul>
             </div>
         </nav>
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-md-2 sidenav" id="filter-section">
-                    <div id="filter-head" class="col-sm-12">
-                        <h3>Filters</h3>
-                    </div>
+                    <h3 id="filter-head-text">Filters</h3>
                     <form class="form-inline" id="form-filter">
-                        <div class="col-sm-12" id="filter-rest">
-                            <h5 id="filter-rest-head-text">Restaurant Filters</h5>
-                            <label class="control-label" id="filter-rest-sort-by-text">Sort By:</label>
-                            <select class="form-control" id="filter-rest-sort-by">
-                                <option value="">--</option>
-                                <option value="best_match">Best Match</option>
-                                <option value="rating">Ratings</option>
-                                <option value="review_count">Reviews</option>
-                                <option value="distance">Distance</option>
-                            </select>
-                            <input class="form-control" type="radio" name="rest_open" id="filter-rest-open-now" value="open_now"> Open Now
-                            <input class="form-control" type="radio" name="rest_open" id="filter-rest-open-at" value="open_at"> Open At
-                            <div class="input-group date" id="filter-rest-open-at-date-time">
-                                <input type="text" class="form-control" id="filter-rest-open-at-date-time-inp" />
-                                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-                            </div>
+                        <span id="filter-rest-head-text">Restaurant Filters</span>
+                        <label class="control-label" for="filter-rest-sort-by" id="filter-rest-sort-by-text">Sort By:</label>
+                        <select class="form-control" id="filter-rest-sort-by">
+                            <option value="">--</option>
+                            <option value="best_match">Best Match</option>
+                            <option value="rating">Ratings</option>
+                            <option value="review_count">Reviews</option>
+                            <option value="distance">Distance</option>
+                        </select>
+                        <input class="form-control" type="radio" name="rest_open" id="filter-rest-open-now" value="open_now">
+                        <label for="filter-rest-open-now">Open Now</label>
+                        <input class="form-control" type="radio" name="rest_open" id="filter-rest-open-at" value="open_at">
+                        <label for="filter-rest-open-now">Open At</label>
+                        <div class="input-group date" id="filter-rest-open-at-date-time">
+                            <input type="text" class="form-control" id="filter-rest-open-at-date-time-inp" />
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
                         </div>
                         <hr>
-                        <div class="col-sm-12" id="filter-vac-head">
-                            <h5 id="filter-vac-head-text">Vacation Rental Filters</h5>
-                            <label class="control-label col-sm-12" id="filter-vac-sort-by-text">Sort By:</label>
-                            <select class="form-control" id="filter-vac-sort-by">
-                                <option value="">--</option>
-                                <option value="averageRating:desc">Ratings-High to Low</option>
-                                <option value="prices:desc">Price-High to Low</option>
-                                <option value="prices:asc">Price-Low to High</option>
-                            </select>
-                            <label class="control-label col-sm-12" id="filter-vac-date-range-text">Date Range:</label>
-                            <input type='text' class="form-control" id='filter-vac-date-range' />
-                            <label class="control-label col-sm-12" id="filter-vac-price-range-text">Price Range:</label>
-                            <b>$10</b>
-                            <input id="filter-vac-price-range" type="text" class="span2" value="" data-slider-min="0" data-slider-max="1000" data-slider-step="10" data-slider-value="[0,500]" />
-                            <b>$1000</b>
-                        </div>
+                        <span id="filter-vac-head-text">Vacation Rental Filters</span>
+                        <label class="control-label col-sm-12" id="filter-vac-sort-by-text">Sort By:</label>
+                        <select class="form-control" id="filter-vac-sort-by">
+                            <option value="">--</option>
+                            <option value="averageRating:desc">Ratings-High to Low</option>
+                            <option value="prices:desc">Price-High to Low</option>
+                            <option value="prices:asc">Price-Low to High</option>
+                        </select>
+                        <label class="control-label col-sm-12" id="filter-vac-date-range-text">Date Range:</label>
+                        <input type='text' class="form-control" id='filter-vac-date-range' />
+                        <label class="control-label col-sm-12" id="filter-vac-price-range-text">Price Range:</label>
+                        <!--<div id="filter-vac-price-range-sec">-->
+                        <select class="form-control" id="filter-vac-price-range">
+                            <option value="">--</option>
+                            <option value="0-1000">$0-$1000</option>
+                            <option value="50-100">$50-$100</option>
+                            <option value="100-200">$100-$200</option>
+                            <option value="200-300">$200-$300</option>
+                            <option value="300-400">$300-$400</option>
+                            <option value="400-500">$400-$500</option>
+                            <option value="500-600">$500-$600</option>
+                            <option value="600-700">$600-$700</option>
+                            <option value="700-800">$700-$800</option>
+                            <option value="800-900">$800-$900</option>
+                            <option value="900-1000">$900-$1000</option>
+                        </select>
+                        <!--<span>$10</span>-->
+                        <!--<input id="filter-vac-price-range" type="text" class="span2" value="" data-slider-min="0" data-slider-max="1000" data-slider-step="10" data-slider-value="[0,500]" />-->
+                        <!--<span>$1000</span>-->
+                        <!--</div>-->
                         <hr>
-                        <div class="col-sm-12" id="filter-crime-head">
-                            <h5 id="filter-crime-head-text">Crime Data Filters</h5>
-                            <div class="form-group" id="filter-crm-dist-range-sec">
-                                <label class="control-label col-sm-12" id="filter-crm-dist-range-text">Distance Range(mi):</label>
-                                <div class="col-sm-12">
-                                    <input id="filter-crm-dist-range" data-slider-id="ex1Slider" type="text" data-slider-min="0" data-slider-max="150" data-slider-step="5" data-slider-value="10" />
-                                </div>
-                            </div>
+                        <span id="filter-crime-head-text">Crime Data Filters</span>
+                        <div class="form-group" id="filter-crm-dist-range-sec">
+                            <label class="control-label col-sm-12" id="filter-crm-dist-range-text">Distance Range(mi):</label>
+                            <!--<div class="col-sm-12">
+                                <input id="filter-crm-dist-range" data-slider-id="ex1Slider" type="text" data-slider-min="0" data-slider-max="150" data-slider-step="5" data-slider-value="10" />
+                            </div>-->
+                            <select class="form-control" id="filter-crm-dist-range">
+                                <option value="">--</option>
+                                <option value="10">Within 10 mi</option>
+                                <option value="20">Within 20 mi</option>
+                                <option value="30">Within 30 mi</option>
+                                <option value="40">Within 40 mi</option>
+                                <option value="50">Within 50 mi</option>
+                                <option value="60">Within 60 mi</option>
+                                <option value="70">Within 70 mi</option>
+                                <option value="80">Within 80 mi</option>
+                                <option value="90">Within 90 mi</option>
+                                <option value="100">Within 100 mi</option>
+                            </select>
                         </div>
                         <button type="submit" class="btn btn-default" id="btn-filter">Apply</button>
                     </form>
                 </div>
-
                 <div class="col-md-10 text-left" id="main-section">
                     <div class="row" id="main-section-search-sec">
                         <div class="row">
                             <div class="col-sm-12" id="main-search-head">
                                 <h2 id="main-search-head-text">Search your destination</h2>
                                 <form class="form-inline" id="form-user-addr-search">
-                                    <div class="form-group col-sm-10" id="main-search-inp-sec">
                                         <input type="text" class="form-control" id="autocomplete" placeholder="Start Typing your address" size="80" required>
                                         <button type="submit" class="btn btn-default" id="btn-main-search">Submit</button>
+                                        <div  id="checkbox-line">
                                         <label class="checkbox-inline">
-                                            <input class="form-control" type="checkbox" value="restaurants" id= "cb-rest"checked>Restaurants
+                                            <input class="form-control" type="checkbox" value="restaurants" id="cb-rest" checked><span id="srch-cb-rest-text">Restaurants</span>
+
                                         </label>
                                         <label class="checkbox-inline">
-                                            <input class="form-control" type="checkbox" value="vacrent" id= "cb-vac" checked>Vacation Rentals
+                                            <input class="form-control" type="checkbox" value="vacrent" id="cb-vac" checked><span id="srch-cb-vac-text">Vacation Rentals</span>
                                         </label>
                                         <label class="checkbox-inline">
-                                            <input class="form-control" type="checkbox" value="crime" id= "cb-crime" checked>Crime Reports
+                                            <input class="form-control" type="checkbox" value="crime" id="cb-crime" checked><span id="srch-cb-crm-text">Crime Reports</span>
                                         </label>
-                                    </div>
+                                        </div>
                                 </form>
                             </div>
                         </div>
                     </div>
                     <hr>
                     <div class="row" id="user-rest-sec">
-                    </div>
+</div>
                     <div class="row" id="user-vac-sec">
-                    </div>
+</div>
                     <div class="row" id="user-crime-sec">
-                    </div>
+</div>
                     <div class="row" id="user-map-section">
 </div>
                 </div>

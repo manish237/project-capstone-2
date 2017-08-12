@@ -25,3 +25,7 @@
 #home_crime_head{
     display: inline;
 }
+
+.section_head{
+    padding-left: .5em;
+}

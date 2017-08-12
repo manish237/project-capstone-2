@@ -17,6 +17,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
         <link href="stylesheets/custom.css" rel="stylesheet" type="text/css">
+        <link href="stylesheets/register-style.css" rel="stylesheet" type="text/css">
     </head>
     <body>
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -29,14 +30,13 @@
         <div class="container">
             <!-- Example row of columns -->
             <div class="row">
-                <div class="col-md-12 text-center">
+                <div class="col-md-12 text-center" id="reg-head-sec">
                     <h2>New User Registration</h2>
                 </div>
             </div>
-            <div class="row">
+            <div class="row container">
                 <form class="form-horizontal" id="form-register">
                     <div class="col-md-12 text-center">
-                        <h4>Personal Information</h4>
                         <div class="form-group">
                             <label class="control-label col-sm-2" for="email">Email:</label>
                             <div class="col-sm-10">
@@ -73,47 +73,49 @@
                                 <input type="text" class="form-control" id="autocomplete" placeholder="Start Typing your address" required>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-2" for="street_number">Street Address:</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="street_number" placeholder="">
-                                <input type="text" class="form-control" id="route" placeholder="">
+                        <div id="reg-addr-sec-hidden">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="street_number">Street Address:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="street_number" placeholder="">
+                                    <input type="text" class="form-control" id="route" placeholder="">
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-2" for="locality">City:</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="locality" placeholder="">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="locality">City:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="locality" placeholder="">
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-2" for="administrative_area_level_1">State:</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="administrative_area_level_1" placeholder="">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="administrative_area_level_1">State:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="administrative_area_level_1" placeholder="">
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-2" for="postal_code">Zip code:</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="postal_code" placeholder="">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="postal_code">Zip code:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="postal_code" placeholder="">
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-2" for="country">Country:</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="country" placeholder="">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="country">Country:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="country" placeholder="">
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-2" for="longitude">Longitude:</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="longitude" placeholder="">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="longitude">Longitude:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="longitude" placeholder="">
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-2" for="latitude">Latitude:</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="latitude" placeholder="">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="latitude">Latitude:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="latitude" placeholder="">
+                                </div>
                             </div>
                         </div>
                         <div class="form-group">

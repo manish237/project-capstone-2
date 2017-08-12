@@ -94,3 +94,5 @@ $('#btn-cancel').click(function (e) {
     console.log("cancel button clicked")
     window.location.href = '/index.html'
 });
+
+$("#reg-addr-sec-hidden").hide()

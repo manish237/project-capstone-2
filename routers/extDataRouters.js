@@ -116,9 +116,12 @@ router.get('/crime', (req, res) => {
     const radius = req.query.radius !== undefined ? req.query.radius : 1;
 
     sc.getCrimes(loc, radius, function(err, crimes){
-        if(err)
+        if(err){
+            console.log("errior")
             res.status(500).json({message: "Internal server error"})
+        }
         else {
+            console.log(crimes)
             res.json(crimes)
         }
     });

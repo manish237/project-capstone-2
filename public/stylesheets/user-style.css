@@ -1,43 +1,5 @@
 
 
-#user-map-section{
-    margin-left: 0.2em;
-    width: auto;
-    height: 50em;
-}
-
-#rest-head-text, #vac-head-text, #crime-head-text{
-    display: inline;
-}
-
-.at_address{
-    font-size: .75em;
-}
-
-/*body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
-a {
-  color: #00B7FF;
-}
-
-
-#filter-section{
-  padding-top: 1em;
-  padding-right: 1em;
-  margin-left:-2em;
-}
-
-#filter-head
-{
-  text-align: center;
-}
-
-#filter-rest-head{
-  padding-left:2em;
-}
 
 
 
@@ -45,15 +7,212 @@ a {
   font-size: 25px;
 }
 
-#user_map_section{
-  width: auto;
-  height: 50em;
+
+#filter-section {
+  top: 4em;
+    margin-top: 1em;
+    /*margin-left: .1em;*/
+}
+#filter-head-text {
+  text-align: center;
+}
+#filter-rest-head-text{
+margin-top: 5em;
+font-size: 1.2em;
+
 }
 
-#main-section{
-  margin-left:2em;
-  padding-top: 1em;
-  padding-left: 4em;
-  padding-right: 5em;
-}*/
+#filter-rest-sort-by-text{
+  margin-top: 1em;
 
+display: block;
+}
+
+#filter-rest-sort-by{
+  margin-top: 1em;
+    display: block;
+    margin-bottom: 1em;
+
+width: 15em;
+
+}
+
+#filter-rest-open-now{
+  margin-top: .3em;
+
+}
+#filter-rest-open-now-text{
+    margin-top: 4em;
+
+}
+#filter-rest-open-at{
+    margin-top: .3em;
+
+}
+#filter-rest-open-at-text{
+    margin-top: 4em;
+}
+
+#filter-rest-open-at-date-time{
+    margin-top: 1em;
+}
+
+#filter-rest-open-at-date-time-inp{
+
+    display: block;
+}
+
+
+#filter-vac-head-text{
+    margin-top: 5em;
+    font-size: 1.2em;
+
+}
+
+#filter-vac-sort-by-text{
+    margin-top: 1em;
+
+    display: block;
+
+margin-left: -1em;
+    margin-bottom: 1em;
+
+}
+
+#filter-vac-sort-by{
+    margin-top: 1em;
+    display: block;
+
+width: 15em;
+
+}
+
+#filter-vac-date-range-text{
+    margin-top: 1em;
+
+    display: block;
+
+    margin-left: -1em;
+    margin-bottom: 1em;
+
+}
+
+#filter-vac-date-range{
+    margin-top: 1em;
+    display: block;
+
+width: 15em;
+}
+
+#filter-vac-price-range-text{
+    margin-top: 1em;
+    display: block;
+
+    margin-left: -1em;
+    margin-bottom: 1em;
+
+
+}
+
+
+#filter-vac-price-range{
+    margin-top: 1em;
+    display: block;
+
+
+width: 15em;
+}
+
+
+#filter-crime-head-text{
+    margin-top: 5em;
+    font-size: 1.2em;
+
+}
+
+#filter-crm-dist-range-text{
+    margin-top: 1em;
+    display: block;
+
+    margin-left: -1em;
+    margin-bottom: 1em;
+
+
+}
+
+
+#filter-crm-dist-range{
+    margin-top: 1em;
+    display: block;
+
+
+    width: 15em;
+}
+
+#btn-filter{
+    margin-top: 1em;
+    display: block;
+}
+#main-section {
+    top: 4em;
+    margin-top: 1em;
+    left:1em;
+    right:18em;
+    width:75%;
+
+}
+
+#main-section-search-sec{
+    padding-left: 1em;
+}
+
+#checkbox-line{
+    margin-top: 1em;
+    display: block;
+}
+
+#cb-rest{
+    margin-top: -.4em;
+    display: inline;
+}
+#cb-vac{
+    margin-top: -.4em;
+    display: inline;
+}
+#cb-crime{
+    margin-top: -.4em;
+    display: inline;
+}
+#autocomplete{
+
+}
+#user-rest-sec{
+    padding-left: 1em;
+}
+
+#user-vac-sec{
+    padding-left: 1em;
+}
+
+#user-crime-sec{
+    padding-left: 1em;
+}
+
+
+
+#user-map-section{
+    margin-left: 0.2em;
+    width: 100%;
+    height: 50em;
+}
+
+#rest-head-text{
+    /*color: #0da0e1;*/
+}
+
+
+.at_address{
+    display: block;
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+}

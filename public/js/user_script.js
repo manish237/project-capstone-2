@@ -123,7 +123,7 @@ function initLocalStorage() {
     if(localStorage.getItem("vac_price_end")===null || localStorage.getItem("vac_price_end")===undefined)
         localStorage.setItem("vac_price_end",1000)
     if(localStorage.getItem("crm_dist")===null || localStorage.getItem("crm_dist")===undefined)
-        localStorage.setItem("crm_dist",100)
+        localStorage.setItem("crm_dist",10)
 }
 
 
@@ -270,24 +270,43 @@ function initUI() {
     let val = [];
     // console.log(localStorage.getItem("vac_price_start"))
     // console.log(localStorage.getItem("vac_price_end"))
-    val.push(parseInt(localStorage.getItem("vac_price_start")))
-    val.push(parseInt(localStorage.getItem("vac_price_end")))
-    $("#filter-vac-price-range").slider({
-        value : val
-    });
+    // val.push(parseInt(localStorage.getItem("vac_price_start")))
+    // val.push(parseInt(localStorage.getItem("vac_price_end")))
+    // $("#filter-vac-price-range").slider({
+    //     value : val
+    // });
+    if(localStorage.getItem("vac_price_start")==="" || localStorage.getItem("vac_price_end")==="")
+    {
+        $('#filter-vac-price-range').val("--");
+    }
+    else
+    {
+        $('#filter-vac-price-range').val(localStorage.getItem("vac_price_start")+"-"+localStorage.getItem("vac_price_end"));
+    }
 
     /**
      * Crime Report - Distance Range Picker
      */
 
     // console.log(localStorage.getItem("crm_dist"))
-    $('#filter-crm-dist-range').slider({
+/*    $('#filter-crm-dist-range').slider({
         value: parseInt(localStorage.getItem("crm_dist")),
         formatter: function(value) {
             return 'Current value: ' + value;
         }
-    });
+    });*/
 
+console.log("initui")
+    console.log(localStorage.getItem("crm_dist"))
+    if(localStorage.getItem("crm_dist")==="")
+    {
+        console.log("initui-1")
+        $('#filter-crm-dist-range').val(10);
+    }
+    else
+    {
+        $('#filter-crm-dist-range').val(localStorage.getItem("crm_dist"));
+    }
 
 
 }
@@ -329,7 +348,7 @@ $('#form-filter').submit(function (e) {
     localStorage.setItem("vac_date_end",vac_date_end!==undefined?vac_date_end:"")
     localStorage.setItem("vac_price_start",vac_price_start!==undefined?vac_price_start:0)
     localStorage.setItem("vac_price_end",vac_price_end!==undefined?vac_price_end:1000)
-    localStorage.setItem("crm_dist",crm_dist!==undefined?crm_dist:100)
+    localStorage.setItem("crm_dist",crm_dist!==undefined?crm_dist:10)
 
     refresh()
 })
@@ -412,6 +431,9 @@ $("#filter-rest-sort-by").change(function (e) {
     e.preventDefault()
 //    console.log($('#filter-rest-sort-by-option').val())
     rest_sort_by = $('#filter-rest-sort-by').val();
+    if(rest_sort_by==="--"){
+        rest_sort_by="best_match";
+    }
 })
 
 /**
@@ -457,6 +479,9 @@ $("#filter-vac-sort-by").change(function (e) {
     e.preventDefault()
 //    console.log($('#filter-vac-sort-by-option').val())
     vac_sort_by = $('#filter-vac-sort-by').val();
+    if(vac_sort_by==="--"){
+        vac_sort_by="averageRating:desc";
+    }
 })
 
 /**
@@ -482,15 +507,26 @@ $("#filter-vac-date-range").on('cancel.daterangepicker', function(ev, picker) {
  * Handle Vacation Rental Price Range  change
  */
 
-$("#filter-vac-price-range").on("change",function (e) {
+$("#filter-vac-price-range").change(function (e) {
 //    e.preventDefault()
     //yyyy-MM-dd
     // console.log("slider")
     // console.log(e)
     // console.log(e.value.newValue[0])
-    vac_price_start = e.value.newValue[0];
-    // console.log(e.value.newValue[1])
-    vac_price_end = e.value.newValue[1];
+    option_val = $('#filter-vac-price-range').val();
+    console.log(option_val)
+    if(option_val==="--"){
+        vac_price_start=0;
+        vac_price_end=1000;
+    }
+    else {
+        vac_price_start = option_val.split("-")[0]
+        vac_price_end = option_val.split("-")[1]
+    }
+    //
+    // vac_price_start = e.value.newValue[0];
+    // // console.log(e.value.newValue[1])
+    // vac_price_end = e.value.newValue[1];
 })
 
 /**
@@ -504,7 +540,12 @@ $("#filter-crm-dist-range").on("change",function (e) {
     // console.log("slider")
     // console.log(e)
     // console.log(e.value.newValue)
-    crm_dist = e.value.newValue;
-    refresh()
+    crm_dist = $('#filter-crm-dist-range').val();
+
+    if(crm_dist==="--"){
+        crm_dist=10;
+    }
+
+    // refresh()
 
 })
