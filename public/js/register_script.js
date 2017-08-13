@@ -9,7 +9,7 @@ function registerUser(data) {
     console.log(data)
     $.ajax({
         type: "POST",
-        url: "https://" + host + ':8080/auth/register',
+        url: "/auth/register",
         data: data,
         success: function(data, textStatus, xhr) {
             console.log("registration success")

@@ -1,7 +1,7 @@
 host = window.location.hostname;
-let restSearchRequestURL = "https://" + host + ':8080/extdata/yelp';
-let vacSearchRequestURL = "https://" + host + ':8080/extdata/vr';
-let crimeSearchRequestURL = "https://" + host + ':8080/extdata/crime';
+let restSearchRequestURL = "/extdata/yelp";
+let vacSearchRequestURL = "/extdata/vr";
+let crimeSearchRequestURL = "/extdata/crime";
 let mapData;
 
 let coords = {

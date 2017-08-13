@@ -1,5 +1,5 @@
 let host = window.location.hostname;
-let loginURL = "https://" + host + ':8080/auth/login';
+let loginURL = "/auth/login";
 //let mapHome;
 let HOME_PAGE_DATA_LIMIT = 5;
 
@@ -37,7 +37,7 @@ function checkLogin(username, password) {
             //load pref data
             $.ajax({
                 type: "GET",
-                url: "https://" + host + ':8080/user/prefData/' + username,
+                url: "/user/prefData/" + username,
                 success: function (data, textStatus, xhr) {
                     // console.log(xhr)
                     // console.log(xhr.status);
