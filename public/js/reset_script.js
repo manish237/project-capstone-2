@@ -9,7 +9,7 @@ function resetPass(data) {
 
     $.ajax({
         type: "PUT",
-        url: "http://" + host + ':8080/auth/reset/'+data.username,
+        url: "https://" + host + ':8080/auth/reset/'+data.username,
         data: data,
         success: function(data, textStatus, xhr) {
             console.log("reset success")

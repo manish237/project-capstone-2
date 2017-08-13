@@ -10,7 +10,7 @@ function editUser(data) {
 
     $.ajax({
         type: "PUT",
-        url: "http://" + host + ':8080/user/data/'+data.username,
+        url: "https://" + host + ':8080/user/data/'+data.username,
         data: JSON.stringify(data),
         headers: {
             //'x-auth-token': localStorage.accessToken,
