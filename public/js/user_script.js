@@ -88,10 +88,10 @@ function refresh() {
     console.log(data_crm)
 
     //load data
-    initUserMap(lon,lat,data_rest,data_vac,data_crm,
+    initCustomMap($('#user-map-section'),lon,lat,data_rest,data_vac,data_crm,
         localStorage.getItem("cb-rest")!==null?localStorage.getItem("cb-rest"):true,
         localStorage.getItem("cb-vac")!==null?localStorage.getItem("cb-vac"):true,
-        localStorage.getItem("cb-crime")!==null?localStorage.getItem("cb-crime"):true)
+        /*localStorage.getItem("cb-crime")!==null?localStorage.getItem("cb-crime"):true*/"false","user")
 }
 
 
@@ -324,6 +324,8 @@ $(document).ready(function() {
 
     //initialize UI elements
     initUI();
+
+    $('#user-map-section').hide();
 
     refresh()
 });

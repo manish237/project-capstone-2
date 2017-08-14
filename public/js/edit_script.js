@@ -107,6 +107,8 @@ $(document).ready(function() {
     document.getElementById("longitude").value = userData.address.longitude;
 
     let prefData = JSON.parse(localStorage.getItem("preferences"));
+
+    $("#edit-addr-sec-hidden").hide()
     //console.log(prefData)
 });
 

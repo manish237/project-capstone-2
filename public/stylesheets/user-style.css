@@ -1,17 +1,27 @@
 
+body{
+    background-color: darkslategray;
+    color: white;
 
+}
 
-
+/*
+Navigation Bar
+ */
 
 .glyphicon.glyphicon-menu-hamburger {
   font-size: 25px;
 }
 
-
+/*
+Filter section
+ */
 #filter-section {
   top: 4em;
     margin-top: 1em;
     /*margin-left: .1em;*/
+    height:100%;
+
 }
 #filter-head-text {
   text-align: center;
@@ -153,6 +163,10 @@ width: 15em;
     margin-top: 1em;
     display: block;
 }
+
+/*
+Main Section
+ */
 #main-section {
     top: 4em;
     margin-top: 1em;
@@ -162,6 +176,9 @@ width: 15em;
 
 }
 
+/*
+Search bar
+ */
 #main-section-search-sec{
     padding-left: 1em;
 }
@@ -186,12 +203,30 @@ width: 15em;
 #autocomplete{
 
 }
+
+/*
+Data section
+ */
 #user-rest-sec{
     padding-left: 1em;
+    background: linear-gradient(rgba(200,200,200,.3),rgba(200,200,200,.8)), url('../images/food-01.jpg');
+    /*background-image: url("../images/map-img-01.jpg") ;*/
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position:center;
+    background-size:100%;
+    color: black;
 }
 
 #user-vac-sec{
     padding-left: 1em;
+    background: linear-gradient(rgba(200,200,200,.3),rgba(200,200,200,.8)), url('../images/vac-01.jpg');
+    /*background-image: url("../images/map-img-01.jpg") ;*/
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position:center;
+    background-size:100%;
+    margin-top: 1em;
 }
 
 #user-crime-sec{
@@ -202,8 +237,11 @@ width: 15em;
 
 #user-map-section{
     margin-left: 0.2em;
-    width: 100%;
+    width: 102%;
     height: 50em;
+    margin-top: 1em;
+    margin-left: -1em;
+    /*margin-right: -2em;*/
 }
 
 #rest-head-text{

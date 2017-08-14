@@ -7,17 +7,17 @@ body{
     /*background-size:100%;*/
 }
 
-#reg-head-sec{
+#edit-head-sec{
     margin-bottom: 1em;
 }
 
-#reg-sec{
+#edit-sec{
     margin-top: 10em;
     text-align: center;
 
-margin-right: 10em;
+    margin-right: 10em;
 
-margin-left: 10em;
+    margin-left: 10em;
 }
 
 .row{

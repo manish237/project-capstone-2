@@ -13,41 +13,124 @@ let coords = {
 Render Restaurant Data
  */
 function renderRestData(dataUI,forPage="") {
-    if(forPage==="home") {
+    if(forPage==="home-curr") {
+        let elem = "<h2 class='rest-curr-head-text'>Trending Restaurants Near You</h2>"
+        $('#home_rest_sec_curr').append(elem);
         for(let i =0;i<dataUI.length;i++)
         {
             if(i>2)
                 break;
             else{
                 let elem =
-                    "<div class='col-md-4'>" +
-                    "<h4>" + dataUI[i].name + "</h4>" +
-                    "<img src='" + dataUI[i].image_url + "' width='300' height='200'/>" +
+                    "<div class='col-md-4 '>" +
+                    "<h4 class='rest-curr-item-name'>" + dataUI[i].name + "</h4>" +
+                    "<img class='rest-curr-item-img' src='" + dataUI[i].image_url + "' width='200' height='150'/>" +
                     "<div>" +
-                    "<small><b>Type: </b></small>" +
-                    "<small>" + dataUI[i].categories + "</small>" +
+                    "<small class='rest-curr-item-type-head'><b>Type: </b></small>" +
+                    "<small class='rest-curr-item-type'>" + dataUI[i].categories + "</small>" +
+                    "</div>" +
+                    /*"<div>" +
+                    "<small class='rest-curr-item-addr-head'><b>Address: </b></small>" +
+                    "<small class='rest-curr-item-addr'>" + dataUI[i].address + "</small>" +
                     "</div>" +
                     "<div>" +
-                    "<small><b>Address: </b></small>" +
-                    "<small>" + dataUI[i].address + "</small>" +
-                    "</div>" +
+                    "<small class='rest-curr-item-ph-head'><b>Phone: </b></small>" +
+                    "<small class='rest-curr-item-ph'>" + dataUI[i].phone + "</small>" +
+                    "</div>" +*/
                     "<div>" +
-                    "<small><b>Phone: </b></small>" +
-                    "<small>" + dataUI[i].phone + "</small>" +
-                    "</div>" +
-                    "<div>" +
-                    "<small><b>Ratings: </b></small>" +
-                    "<small>" + dataUI[i].rating + "</small>" +
+                    "<small class='rest-curr-item-rate-head'><b>Ratings: </b></small>" +
+                    "<small class='rest-curr-item-rate' >" + dataUI[i].rating + "</small>" +
                     "(" +
-                    "<small>" + dataUI[i].review_count + "Reviews</small>)" +
+                    "<small class='rest-curr-item-rev'>" + dataUI[i].review_count + "Reviews</small>)" +
                     "</div>" +
-                    "<p><a class='btn btn-default' target='_blank' href='" + dataUI[i].url + "' role='button'>View details</a></p>" +
+                    "<p><a class='btn btn-default rest-curr-item-detail-btn' target='_blank' href='" + dataUI[i].url + "' role='button'>View details</a></p>" +
                     "</div>"
                 //console.log(elem)
-                $('#home_rest_section').append(elem)
+                $('#home_rest_sec_curr').append(elem)
             }
         }
-        $('#home_rest_section').show()
+        $('#home_rest_sec_curr').show();
+        $('#home_sec_curr').show();
+    }
+    else if(forPage==="home-la") {
+        let elem = "<h2 class='rest-curr-head-text'>Trending Restaurants in Los Angeles, CA</h2>"
+        $('#home_rest_sec_la').append(elem);
+        for(let i =0;i<dataUI.length;i++)
+        {
+            if(i>2)
+                break;
+            else{
+                let elem =
+                    "<div class='col-md-4 '>" +
+                    "<h4 class='rest-curr-item-name'>" + dataUI[i].name + "</h4>" +
+                    "<img class='rest-curr-item-img' src='" + dataUI[i].image_url + "' width='200' height='150'/>" +
+                    "<div>" +
+                    "<small class='rest-curr-item-type-head'><b>Type: </b></small>" +
+                    "<small class='rest-curr-item-type'>" + dataUI[i].categories + "</small>" +
+                    "</div>" +
+/*                    "<div>" +
+                    "<small class='rest-curr-item-addr-head'><b>Address: </b></small>" +
+                    "<small class='rest-curr-item-addr'>" + dataUI[i].address + "</small>" +
+                    "</div>" +
+                    "<div>" +
+                    "<small class='rest-curr-item-ph-head'><b>Phone: </b></small>" +
+                    "<small class='rest-curr-item-ph'>" + dataUI[i].phone + "</small>" +
+                    "</div>" +*/
+                    "<div>" +
+                    "<small class='rest-curr-item-rate-head'><b>Ratings: </b></small>" +
+                    "<small class='rest-curr-item-rate' >" + dataUI[i].rating + "</small>" +
+                    "(" +
+                    "<small class='rest-curr-item-rev'>" + dataUI[i].review_count + "Reviews</small>)" +
+                    "</div>" +
+                    "<p><a class='btn btn-default rest-curr-item-detail-btn' target='_blank' href='" + dataUI[i].url + "' role='button'>View details</a></p>" +
+                    "</div>"
+                //console.log(elem)
+                $('#home_rest_sec_la').append(elem)
+            }
+        }
+        $('#home_rest_sec_la').show()
+        $('#home_sec_la').show();
+
+    }
+    else if(forPage==="home-ny") {
+        let elem = "<h2 class='rest-curr-head-text'>Trending Restaurants in New York City, NY</h2>"
+        $('#home_rest_sec_ny').append(elem);
+        for(let i =0;i<dataUI.length;i++)
+        {
+            if(i>2)
+                break;
+            else{
+                let elem =
+                    "<div class='col-md-4 '>" +
+                    "<h4 class='rest-curr-item-name'>" + dataUI[i].name + "</h4>" +
+                    "<img class='rest-curr-item-img' src='" + dataUI[i].image_url + "' width='200' height='150'/>" +
+                    "<div>" +
+                    "<small class='rest-curr-item-type-head'><b>Type: </b></small>" +
+                    "<small class='rest-curr-item-type'>" + dataUI[i].categories + "</small>" +
+                    "</div>" +
+                    /*"<div>" +
+                    "<small class='rest-curr-item-addr-head'><b>Address: </b></small>" +
+                    "<small class='rest-curr-item-addr'>" + dataUI[i].address + "</small>" +
+                    "</div>" +
+                    "<div>" +
+                    "<small class='rest-curr-item-ph-head'><b>Phone: </b></small>" +
+                    "<small class='rest-curr-item-ph'>" + dataUI[i].phone + "</small>" +
+                    "</div>" +*/
+                    "<div>" +
+                    "<small class='rest-curr-item-rate-head'><b>Ratings: </b></small>" +
+                    "<small class='rest-curr-item-rate' >" + dataUI[i].rating + "</small>" +
+                    "(" +
+                    "<small class='rest-curr-item-rev'>" + dataUI[i].review_count + "Reviews</small>)" +
+                    "</div>" +
+                    "<p><a class='btn btn-default rest-curr-item-detail-btn' target='_blank' href='" + dataUI[i].url + "' role='button'>View details</a></p>" +
+                    "</div>"
+                //console.log(elem)
+                $('#home_rest_sec_ny').append(elem)
+            }
+        }
+        $('#home_rest_sec_ny').show()
+        $('#home_sec_ny').show();
+
     }
     else if(forPage=="user"){
         //console.log("----"+ localStorage.getItem("curr_addr"))
@@ -90,6 +173,7 @@ function renderRestData(dataUI,forPage="") {
             }
         }
         $('#user-rest-sec').show()
+
     }
 }
 /*
@@ -98,33 +182,101 @@ Render Vacation Rental Data
 function renderVacData(dataUI,forPage="") {
 
 
-    if(forPage === "home") {
+    if(forPage === "home-curr") {
+        let elem = "<h2 class='vac-curr-head-text'>Trending Vacation Rentals Near You</h2>"
+        $('#home_vac_sec_curr').append(elem);
         for(let i =0;i<dataUI.length;i++) {
             if (i > 2)
                 break;
             else {
                 let elem =
                     "<div class='col-md-4'>" +
-                    "<h4>" + dataUI[i].headline + "</h4>" +
-                    "<img src='" + dataUI[i].image_url + "' width='300' height='200'/>" +
+                    "<h4 class='vac-curr-item-head'>" + dataUI[i].headline + "</h4>" +
+                    "<img class='vac-curr-item-img' src='" + dataUI[i].image_url + "' width='200' height='150'/>" +
                     "<div>" +
-                    "<small><b>Avg Nightly Price: </b></small>" +
-                    "<small>" + dataUI[i].price + "</small>" +
-                    "(<small>" + dataUI[i].priceCurr + "</small>)" +
+                    "<small class='vac-curr-item-price-head'><b>Avg Nightly Price: </b></small>" +
+                    "<small class='vac-curr-item-price'>" + dataUI[i].price + "</small>" +
+                    "(<small class='vac-curr-item-price-curr'>" + dataUI[i].priceCurr + "</small>)" +
                     "</div>" +
                     "<div>" +
-                    "<small><b>Ratings: </b></small>" +
-                    "<small'>" + dataUI[i].reviewAverage + "</small>" +
-                    "(<small>" + dataUI[i].reviewCount + "</small>)" +
+                    "<small class='vac-curr-item-rate-head'><b>Ratings: </b></small>" +
+                    "<small class='vac-curr-item-rate''>" + dataUI[i].reviewAverage + "</small>" +
+                    "(<small class='vac-curr-item-cnt'>" + dataUI[i].reviewCount + "</small>)" +
                     "</div>" +
-                    "<p><a class='btn btn-default' target='_blank' href='" + dataUI[i].url + "' role='button'>View details</a></p>" +
+                    "<p><a class='btn btn-default vac-curr-item-detail-btn' target='_blank' href='" + dataUI[i].url + "' role='button'>View details</a></p>" +
                     "</div>"
                 //console.log(elem)
-                $('#home_vac_section').append(elem)
+                $('#home_vac_sec_curr').append(elem)
 
             }
         }
-        $('#home_vac_section').show()
+        $('#home_vac_sec_curr').show()
+        $('#home_sec_curr').show();
+
+    }
+    else if(forPage === "home-la") {
+        let elem = "<h2 class='vac-curr-head-text'>Trending Vacation Rentals in Los Angeles, CA</h2>"
+        $('#home_vac_sec_la').append(elem);
+        for(let i =0;i<dataUI.length;i++) {
+            if (i > 2)
+                break;
+            else {
+                let elem =
+                    "<div class='col-md-4'>" +
+                    "<h4 class='vac-curr-item-head'>" + dataUI[i].headline + "</h4>" +
+                    "<img class='vac-curr-item-img' src='" + dataUI[i].image_url + "' width='200' height='150'/>" +
+                    "<div>" +
+                    "<small class='vac-curr-item-price-head'><b>Avg Nightly Price: </b></small>" +
+                    "<small class='vac-curr-item-price'>" + dataUI[i].price + "</small>" +
+                    "(<small class='vac-curr-item-price-curr'>" + dataUI[i].priceCurr + "</small>)" +
+                    "</div>" +
+                    "<div>" +
+                    "<small class='vac-curr-item-rate-head'><b>Ratings: </b></small>" +
+                    "<small class='vac-curr-item-rate''>" + dataUI[i].reviewAverage + "</small>" +
+                    "(<small class='vac-curr-item-cnt'>" + dataUI[i].reviewCount + "</small>)" +
+                    "</div>" +
+                    "<p><a class='btn btn-default vac-curr-item-detail-btn' target='_blank' href='" + dataUI[i].url + "' role='button'>View details</a></p>" +
+                    "</div>"
+                //console.log(elem)
+                $('#home_vac_sec_la').append(elem)
+
+            }
+        }
+        $('#home_vac_sec_la').show()
+        $('#home_sec_la').show();
+
+    }
+    else if(forPage === "home-ny") {
+        let elem = "<h2 class='vac-curr-head-text'>Trending Vacation Rentals in New York City, NY</h2>"
+        $('#home_vac_sec_ny').append(elem);
+        for(let i =0;i<dataUI.length;i++) {
+            if (i > 2)
+                break;
+            else {
+                let elem =
+                    "<div class='col-md-4'>" +
+                    "<h4 class='vac-curr-item-head'>" + dataUI[i].headline + "</h4>" +
+                    "<img class='vac-curr-item-img' src='" + dataUI[i].image_url + "' width='200' height='150'/>" +
+                    "<div>" +
+                    "<small class='vac-curr-item-price-head'><b>Avg Nightly Price: </b></small>" +
+                    "<small class='vac-curr-item-price'>" + dataUI[i].price + "</small>" +
+                    "(<small class='vac-curr-item-price-curr'>" + dataUI[i].priceCurr + "</small>)" +
+                    "</div>" +
+                    "<div>" +
+                    "<small class='vac-curr-item-rate-head'><b>Ratings: </b></small>" +
+                    "<small class='vac-curr-item-rate''>" + dataUI[i].reviewAverage + "</small>" +
+                    "(<small class='vac-curr-item-cnt'>" + dataUI[i].reviewCount + "</small>)" +
+                    "</div>" +
+                    "<p><a class='btn btn-default vac-curr-item-detail-btn' target='_blank' href='" + dataUI[i].url + "' role='button'>View details</a></p>" +
+                    "</div>"
+                //console.log(elem)
+                $('#home_vac_sec_ny').append(elem)
+
+            }
+        }
+        $('#home_vac_sec_ny').show()
+        $('#home_sec_ny').show();
+
     }
     else if(forPage==="user")
     {
@@ -169,8 +321,14 @@ function renderVacData(dataUI,forPage="") {
 }
 
 function renderCrimeData(dataUI,forPage="") {
-    if(forPage==="home") {
-        let elem =
+
+    if(forPage==="home-curr") {
+        let elem = "<h2 id='crime-curr-head-text'>Trending Vacation Rentals Near You</h2>"
+        $('#home_crime_sec_curr').append(elem);
+        elem = "<strong>(<span id='home_tot_count_val'>" + dataUI.totCount + "</span> in total reported)</strong>"
+        $('#home_crime_sec_curr').append(elem);
+
+        elem =
             "<div class='row'>" +
             "<div class='col-md-12'>" +
             "<table class='table'>" +
@@ -215,9 +373,64 @@ function renderCrimeData(dataUI,forPage="") {
             "</table>" +
             "</div>" +
             "</div>"
-        $('#home_tot_count_val')[0].innerHTML = (dataUI.totCount);
-        $('#home_crime_section').append(elem);
-        $('#home_crime_section').show();
+        // $('#home_tot_count_val')[0].innerHTML = (dataUI.totCount);
+        $('#home_crime_sec_curr').append(elem);
+        $('#home_crime_sec_curr').show();
+    }
+    else if(forPage==="home-la") {
+        let elem = "<h2 id='crime-curr-head-text'>Trending Vacation Rentals Near You</h2>"
+        $('#home_crime_sec_la').append(elem);
+        elem = "<strong>(<span id='home_tot_count_val'>" + dataUI.totCount + "</span> in total reported)</strong>"
+        $('#home_crime_sec_la').append(elem);
+
+        elem =
+            "<div class='row'>" +
+            "<div class='col-md-12'>" +
+            "<table class='table'>" +
+            "<thead>" +
+            "<th>Type</th>" +
+            "<th>#</th>" +
+            "<th>Type</th>" +
+            "<th>#</th>" +
+            "</thead>" +
+            "<tbody>" +
+            "<tr>" +
+            "<th>Arrest</th>" +
+            "<td>" + dataUI.arrCount + "</td>" +
+            "<th>Arson</th>" +
+            "<td>" + dataUI.arsCount + "</td>" +
+            "</tr>" +
+            "<tr>" +
+            "<th>Assault</th>" +
+            "<td>" + dataUI.assCount + "</td>" +
+            "<th>Burglary</th>" +
+            "<td>" + dataUI.burCount + "</td>" +
+            "</tr>" +
+            "<tr>" +
+            "<th>Other</th>" +
+            "<td>" + dataUI.othCount + "</td>" +
+            "<th>Robbery</th>" +
+            "<td>" + dataUI.robCount + "</td>" +
+            "</tr>" +
+            "<tr>" +
+            "<th>Shooting</th>" +
+            "<td>" + dataUI.shoCount + "</td>" +
+            "<th>Theft</th>" +
+            "<td>" + dataUI.theCount + "</td>" +
+            "</tr>" +
+            "<tr>" +
+            "<th>Vandalism</th>" +
+            "<td>" + dataUI.vanCount + "</td>" +
+            "<th></th>" +
+            "<td></td>" +
+            "</tr>" +
+            "</tbody>" +
+            "</table>" +
+            "</div>" +
+            "</div>"
+        // $('#home_tot_count_val')[0].innerHTML = (dataUI.totCount);
+        $('#home_crime_sec_la').append(elem);
+        $('#home_crime_sec_la').show();
     }
     else if(forPage==="user") {
         console.log("----"+ localStorage.getItem("curr_addr"))
@@ -481,85 +694,41 @@ function loadCrimes(data,mapData,forPage="") {
 /*
     loading user specific data
  */
-function initUserMap(lon,lat,data_rest,data_vac,data_crm,loadRest=true,loadVac=true,loadCrime=true){
+function initCustomMap(elem,lon,lat,data_rest,data_vac,data_crm,loadRest=true,loadVac=true,loadCrime=true,forPage=""){
 
     console.log("initUserMap")
 
     //reset mapUser for reloads
     mapData = undefined;
-    mapData = initFirstMap($('#user-map-section'),lon,lat,mapData)
+
+    if(forPage==="user") {
+        mapData = initFirstMap(elem, lon, lat, mapData)
+    }
+    else if(forPage==="home"){
+        mapData = initFirstMap(elem, lon, lat, mapData)
+
+    }
 
     console.log(loadRest)
     console.log(loadVac)
     console.log(loadCrime)
+    console.log(forPage)
+    console.log(elem)
 
     let data;
     if(loadRest==="true") {
         console.log("loading rest ...")
-        restCoord = loadRestaurants(data_rest,mapData,"user");
+        restCoord = loadRestaurants(data_rest,mapData,forPage);
     }
     if(loadVac==="true") {
         console.log("loading vac ...")
-        vacCoord = loadRentals(data_vac,mapData,"user");
+        vacCoord = loadRentals(data_vac,mapData,forPage);
     }
     if(loadCrime==="true") {
         console.log("loading crime ...")
-        crimeCoord = loadCrimes(data,mapData,"user");
+        crimeCoord = loadCrimes(data,mapData,forPage);
     }
 
-    $('#user-map-section').show();
+    elem.show();
 }
 
-/*
-* Render map and markers
-* */
-function initCurrLocationMap(position){
-    //console.log("initCurrLocationMap")
-
-    //call map_script::initFirstMap
-    mapData = initFirstMap($('#home_map_section'),position.coords.longitude,position.coords.latitude, mapData)
-
-    //make the default data object for loading restaurants
-    let data = {
-        longitude : position.coords.longitude,
-        latitude : position.coords.latitude,
-        sort_by:"best_match",
-        open_at:undefined,
-        open_now:true,
-        radius:3220 //meters
-    }
-
-    restCoord = loadRestaurants(data,mapData,"home");
-
-    data = {
-        centerPointLatitude: position.coords.latitude,
-        centerPointLongitude: position.coords.longitude,
-        distanceInKm:16.1,
-        sort:"averageRating:desc",
-        availabilityStart:undefined,
-        availabilityEnd:undefined,
-        minNightlyPrice:0,
-        maxNightlyPrice:1000
-    }
-
-    vacCoord = loadRentals(data,mapData,"home");
-
-    data = {
-        lat:position.coords.latitude,
-        lon:position.coords.longitude,
-        radius:100
-    }
-    crimeCoord = loadCrimes(data,mapData,"home");
-
-    $('#home_map_section').show();
-}
-
-
-/*
-* Initialize default map
-* */
-function initDefaultMap()
-{
-    //calling map_script::initMap
-    initMap($('#home_map_section'),-122.392,37.6148)
-}
