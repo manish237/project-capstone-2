@@ -74,8 +74,8 @@ function initFirstMap(elem,longitude,latitude, mapLocal) {
 
 function addMarkersToMap(coords,mapLocal,cType) {
 
-    let rest_marker_image = './images/rest-map-pin.png';
-    let vac_marker_image = './images/vac-map-pin.png';
+    let rest_marker_image = "../images/map-pin-rest.png";
+    let vac_marker_image = '../images/map-pin-vac.png';
     let crime_marker_image = './images/crime-map-pin.png';
     let currImage="";
     if(cType === "rest")
@@ -86,7 +86,8 @@ function addMarkersToMap(coords,mapLocal,cType) {
         currImage = crime_marker_image;
 
     for (let i = 0; i < coords.length; i++) {
-
+        if(i===10)
+            break;
        latLng = new google.maps.LatLng(coords[i].coords.latitude, coords[i].coords.longitude);
 
         // Creating a marker and putting it on the map
