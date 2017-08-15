@@ -13,7 +13,7 @@ const {PORT, DATABASE_URL} = require('./config');
 
 // log the http layer
 app.use(express.static('public'));
-app.use(morgan(':date[iso] :method :url :response-time'));
+app.use(morgan('common'));
 
 
 app.get("/", (request, response) => {
@@ -35,7 +35,7 @@ let server;
 
 function runServer(databaseUrl=DATABASE_URL, port=PORT) {
     return new Promise((resolve, reject) => {
-        mongoose.createConnection(databaseUrl, err => {
+        mongoose.connect(databaseUrl, err => {
             if(err) {
                 console.log("unable to connect to the DB")
                 return reject(err);
