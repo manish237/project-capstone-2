@@ -23,9 +23,11 @@ function renderRestData(dataUI,forPage="") {
             else{
                 let elem =
                     "<div class='col-md-4 '>" +
+                    "<div class='rest-curr-item-img-sec'>" +
                     "<h4 class='rest-curr-item-name'>" + dataUI[i].name + "</h4>" +
                     "<img class='rest-curr-item-img' src='" + dataUI[i].image_url + "' width='200' height='150'/>" +
-                    "<div>" +
+                    "</div>" +
+                    "<div class='rest-curr-item-type-sec'>" +
                     "<small class='rest-curr-item-type-head'><b>Type: </b></small>" +
                     "<small class='rest-curr-item-type'>" + dataUI[i].categories + "</small>" +
                     "</div>" +
@@ -37,7 +39,7 @@ function renderRestData(dataUI,forPage="") {
                     "<small class='rest-curr-item-ph-head'><b>Phone: </b></small>" +
                     "<small class='rest-curr-item-ph'>" + dataUI[i].phone + "</small>" +
                     "</div>" +*/
-                    "<div>" +
+                    "<div class='rest-curr-item-prc-sec'>" +
                     "<small class='rest-curr-item-rate-head'><b>Ratings: </b></small>" +
                     "<small class='rest-curr-item-rate' >" + dataUI[i].rating + "</small>" +
                     "(" +
@@ -62,9 +64,11 @@ function renderRestData(dataUI,forPage="") {
             else{
                 let elem =
                     "<div class='col-md-4 '>" +
+                    "<div class='rest-curr-item-img-sec'>" +
                     "<h4 class='rest-curr-item-name'>" + dataUI[i].name + "</h4>" +
                     "<img class='rest-curr-item-img' src='" + dataUI[i].image_url + "' width='200' height='150'/>" +
-                    "<div>" +
+                    "</div>" +
+                    "<div class='rest-curr-item-type-sec'>" +
                     "<small class='rest-curr-item-type-head'><b>Type: </b></small>" +
                     "<small class='rest-curr-item-type'>" + dataUI[i].categories + "</small>" +
                     "</div>" +
@@ -76,7 +80,7 @@ function renderRestData(dataUI,forPage="") {
                     "<small class='rest-curr-item-ph-head'><b>Phone: </b></small>" +
                     "<small class='rest-curr-item-ph'>" + dataUI[i].phone + "</small>" +
                     "</div>" +*/
-                    "<div>" +
+                    "<div class='rest-curr-item-prc-sec'>" +
                     "<small class='rest-curr-item-rate-head'><b>Ratings: </b></small>" +
                     "<small class='rest-curr-item-rate' >" + dataUI[i].rating + "</small>" +
                     "(" +
@@ -102,9 +106,11 @@ function renderRestData(dataUI,forPage="") {
             else{
                 let elem =
                     "<div class='col-md-4 '>" +
+                    "<div class='rest-curr-item-img-sec'>" +
                     "<h4 class='rest-curr-item-name'>" + dataUI[i].name + "</h4>" +
                     "<img class='rest-curr-item-img' src='" + dataUI[i].image_url + "' width='200' height='150'/>" +
-                    "<div>" +
+                    "</div>" +
+                    "<div class='rest-curr-item-type-sec'>" +
                     "<small class='rest-curr-item-type-head'><b>Type: </b></small>" +
                     "<small class='rest-curr-item-type'>" + dataUI[i].categories + "</small>" +
                     "</div>" +
@@ -116,7 +122,7 @@ function renderRestData(dataUI,forPage="") {
                     "<small class='rest-curr-item-ph-head'><b>Phone: </b></small>" +
                     "<small class='rest-curr-item-ph'>" + dataUI[i].phone + "</small>" +
                     "</div>" +*/
-                    "<div>" +
+                    "<div class='rest-curr-item-prc-sec'>" +
                     "<small class='rest-curr-item-rate-head'><b>Ratings: </b></small>" +
                     "<small class='rest-curr-item-rate' >" + dataUI[i].rating + "</small>" +
                     "(" +
@@ -191,14 +197,16 @@ function renderVacData(dataUI,forPage="") {
             else {
                 let elem =
                     "<div class='col-md-4'>" +
+                    "<div class='vac-curr-item-img-sec'>" +
                     "<h4 class='vac-curr-item-head'>" + dataUI[i].headline + "</h4>" +
                     "<img class='vac-curr-item-img' src='" + dataUI[i].image_url + "' width='200' height='150'/>" +
-                    "<div>" +
+                    "</div>" +
+                    "<div class='vac-curr-item-prc-sec'>" +
                     "<small class='vac-curr-item-price-head'><b>Avg Nightly Price: </b></small>" +
                     "<small class='vac-curr-item-price'>" + dataUI[i].price + "</small>" +
                     "(<small class='vac-curr-item-price-curr'>" + dataUI[i].priceCurr + "</small>)" +
                     "</div>" +
-                    "<div>" +
+                    "<div class='vac-curr-item-rev-sec'>" +
                     "<small class='vac-curr-item-rate-head'><b>Ratings: </b></small>" +
                     "<small class='vac-curr-item-rate''>" + dataUI[i].reviewAverage + "</small>" +
                     "(<small class='vac-curr-item-cnt'>" + dataUI[i].reviewCount + "</small>)" +
@@ -223,14 +231,16 @@ function renderVacData(dataUI,forPage="") {
             else {
                 let elem =
                     "<div class='col-md-4'>" +
+                    "<div class='vac-curr-item-img-sec'>" +
                     "<h4 class='vac-curr-item-head'>" + dataUI[i].headline + "</h4>" +
                     "<img class='vac-curr-item-img' src='" + dataUI[i].image_url + "' width='200' height='150'/>" +
-                    "<div>" +
+                    "</div>" +
+                    "<div class='vac-curr-item-prc-sec'>" +
                     "<small class='vac-curr-item-price-head'><b>Avg Nightly Price: </b></small>" +
                     "<small class='vac-curr-item-price'>" + dataUI[i].price + "</small>" +
                     "(<small class='vac-curr-item-price-curr'>" + dataUI[i].priceCurr + "</small>)" +
                     "</div>" +
-                    "<div>" +
+                    "<div class='vac-curr-item-rev-sec'>" +
                     "<small class='vac-curr-item-rate-head'><b>Ratings: </b></small>" +
                     "<small class='vac-curr-item-rate''>" + dataUI[i].reviewAverage + "</small>" +
                     "(<small class='vac-curr-item-cnt'>" + dataUI[i].reviewCount + "</small>)" +
@@ -255,14 +265,16 @@ function renderVacData(dataUI,forPage="") {
             else {
                 let elem =
                     "<div class='col-md-4'>" +
+                    "<div class='vac-curr-item-img-sec'>" +
                     "<h4 class='vac-curr-item-head'>" + dataUI[i].headline + "</h4>" +
                     "<img class='vac-curr-item-img' src='" + dataUI[i].image_url + "' width='200' height='150'/>" +
-                    "<div>" +
+                    "</div>" +
+                    "<div class='vac-curr-item-prc-sec'>" +
                     "<small class='vac-curr-item-price-head'><b>Avg Nightly Price: </b></small>" +
                     "<small class='vac-curr-item-price'>" + dataUI[i].price + "</small>" +
                     "(<small class='vac-curr-item-price-curr'>" + dataUI[i].priceCurr + "</small>)" +
                     "</div>" +
-                    "<div>" +
+                    "<div class='vac-curr-item-rev-sec'>" +
                     "<small class='vac-curr-item-rate-head'><b>Ratings: </b></small>" +
                     "<small class='vac-curr-item-rate''>" + dataUI[i].reviewAverage + "</small>" +
                     "(<small class='vac-curr-item-cnt'>" + dataUI[i].reviewCount + "</small>)" +

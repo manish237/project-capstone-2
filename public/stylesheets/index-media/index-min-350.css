@@ -1,0 +1,260 @@
+
+
+/*
+Head background
+ */
+body{
+    background-color: darkslategray;
+}
+
+.jumbotron{
+    background: linear-gradient(rgba(200,200,200,.3),rgba(100,100,100,.8)), url('../../images/hawaii2.jpg');
+    /*background-image: url("../images/map-img-01.jpg") ;*/
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position:center;
+    background-size:auto 100%;
+    height: 40em;
+    color: white;
+}
+
+/*
+Title/Description
+ */
+
+
+#home_page_title{
+
+
+    font-size: 5em;
+
+    font-family: 'Lobster', cursive;
+
+}
+
+#home_page_description{
+    font-family: 'Lobster', cursive;
+
+    font-size: 2em;
+}
+/*
+    Form
+ */
+#signin-password{
+    width: 15em;
+
+    height: 3em;
+    margin: auto;
+    margin-top: 4px;
+
+}
+
+#signin-username{
+    height: 3em;
+    margin: auto;
+
+    width: 15em;
+
+
+}
+
+#btn-sign-in{
+    height: 3em;
+
+    width: 7em;
+
+    margin-top: 8px;
+
+}
+
+#btn-sign-up{
+    width: 7em;
+
+    height: 3em;
+
+    margin-top: 9px;
+
+}
+
+#signin-text{
+    font-family: 'Lobster', cursive;
+
+    padding-right: 14px;
+
+    line-height: 44px;
+
+    font-size: 2em;
+}
+.forgot-link-font
+{
+    color: #ffffff;
+    text-transform: capitalize;
+    font-weight: normal;
+    background-color: rgba(255, 255, 255, 0);
+    display: block;
+    padding-left: 7em;
+
+    padding-top: 5px;
+    font-family: 'Lobster', cursive;
+}
+#home_page_form{
+
+    top: 2em;
+
+    position: relative;
+
+}
+
+/*
+Data
+ */
+
+
+.rest-curr-item-img-sec .rest-curr-item-img{
+    width: 200px;
+    height: 150px;
+}
+
+.vac-curr-item-img-sec .vac-curr-item-img{
+    width: 200px;
+    height: 150px;
+}
+
+.vac_col{
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+#home_sec_curr{
+    background: linear-gradient(rgba(200,200,200,.3),rgba(200,200,200,.8)), url('../../images/hide-obara-2034.jpg');
+    /*background-image: url("../images/map-img-01.jpg") ;*/
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position:center;
+    background-size:auto 100%;
+    height: 150em;
+    color: white;
+    padding-left:2em;
+    margin-bottom: 1em;
+    margin-top:-1em;
+
+}
+
+#home_sec_la{
+    background: linear-gradient(rgba(200,200,200,.3),rgba(200,200,200,.8)), url('../../images/LA 7.jpg');
+    /*background-image: url("../images/map-img-01.jpg") ;*/
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position:center;
+    background-size:auto 100%;
+    height: 150em;
+    color: white;
+    padding-left:2em;
+    margin-bottom: 1em;
+    margin-top:-1em;
+
+}
+
+#home_sec_ny{
+    background: linear-gradient(rgba(200,200,200,.3),rgba(200,200,200,.8)), url('../../images/new york 3.jpg');
+    /*background-image: url("../images/map-img-01.jpg") ;*/
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position:center;
+    background-size:auto 100%;
+    height: 150em;
+    color: white;
+    padding-left:2em;
+    margin-bottom: 1em;
+    margin-top:-1em;
+
+}
+
+/*.section_head{
+    padding-left: .5em;
+}*/
+
+.rest-curr-item-name{
+    /*text-overflow: ellipsis;*/
+    /*width: 200px;*/
+    font-size: 24px;
+    /*white-space: nowrap;*/
+    /*overflow: hidden;*/
+}
+.rest-curr-item-type-sec{
+    /*text-overflow: ellipsis;*/
+    /*width: 100px;*/
+    /*white-space: nowrap;*/
+    /*overflow: hidden;*/
+    /*float: right;*/
+    /*margin: -7em 16em 5em 011em;*/
+    /*display: none;*/
+    font-size: 18px;
+}
+.rest-curr-item-prc-sec{
+    /*display: inline;*/
+    /*float: right;*/
+    /*margin: -5em 16em 5em 15em;*/
+    font-size: 18px;
+}
+
+.rest-curr-item-detail-btn{
+    margin-top: 1em;
+    /*float: right;*/
+    /*margin: -4em 16em 6em -4em;*/
+}
+
+.vac-curr-item-head{
+    /*text-overflow: ellipsis;*/
+    /*width: 100px;*/
+    font-size: 20px;
+    /*white-space: nowrap;*/
+    /*overflow: hidden;*/
+}
+
+.vac-curr-item-rev-sec{
+    /*display: none;*/
+    font-size: 16px;
+}
+.vac-curr-item-prc-sec{
+    /*text-overflow: ellipsis;*/
+    /*width: 100px;*/
+    font-size: 16px;
+
+    /*white-space: nowrap;*/
+    /*overflow: hidden;*/
+    /*display: none;*/
+}
+
+.rest-curr-head-text{
+    font-size: 2em;
+    margin-left: .5em;
+}
+
+.vac-curr-head-text{
+    font-size: 2em;
+    margin-left: .5em;
+
+
+}
+
+
+.vac-curr-item-price-head{
+    font-weight: normal;
+}
+.vac-curr-item-detail-btn{
+    margin-top: 1em;
+
+}
+
+#home_crime_head{
+    text-overflow: ellipsis;
+    width: 200px;
+
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/*
+Footer
+ */
