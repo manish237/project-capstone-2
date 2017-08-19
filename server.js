@@ -17,7 +17,7 @@ app.use(morgan('common'));
 
 
 app.get("/", (request, response) => {
-  response.sendFile(__dirname + '/public/index.html');
+  response.sendFile(__dirname + '/public/index-1.html');
 });
 
 app.use('/auth', authRouters);
