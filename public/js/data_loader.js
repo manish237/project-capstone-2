@@ -642,20 +642,53 @@ function processCrimeData(data,mapData,forPage="") {
 function loadRestaurants(data,mapData,forPage="") {
     console.log("loading restaurants for "+ forPage)
     // console.log(data)
-    $.ajax({
-        type: "GET",
-        url: restSearchRequestURL,
-        data: data,
-        success: function(data, textStatus, xhr) {
-            console.log("load restaurants success for "+forPage)
-            // console.log(xhr)
-            processRestData(xhr.responseJSON,mapData,forPage)
-        },
-        error: function(xhr, textStatus) {
-            console.log("load restaurants failure for "+forPage)
-            //console.log(xhr)
-        }
-    });
+    $
+        /*.ajaxStart(function () {
+            console.log("loader show")
+            $("#loader").show();
+        })*/
+        .ajax({
+            type: "GET",
+            url: restSearchRequestURL,
+            data: data,
+            beforeSend: function() {
+                console.log("loader show")
+                $(".loader-rest").show();
+            },
+            success: function(data, textStatus, xhr) {
+                console.log("load restaurants success for "+forPage)
+                // console.log(xhr)
+                processRestData(xhr.responseJSON,mapData,forPage)
+            },
+            error: function(xhr, textStatus) {
+                console.log("load restaurants failure for "+forPage)
+                /*if(forPage=="home-curr") {
+                    $("#myModal-curr").modal('show');
+                    $("#myModal-la").modal('hide');
+                    $("#myModal-ny").modal('hide');
+                }
+                else if(forPage=="home-la"){
+                    $("#myModal-curr").modal('hide');
+                    $("#myModal-la").modal('show');
+                    $("#myModal-ny").modal('hide');
+                }
+                else if(forPage=="home-ny"){
+                    $("#myModal-curr").modal('hide');
+                    $("#myModal-la").modal('hide');
+                    $("#myModal-ny").modal('show');
+                }*/
+                //console.log(xhr)
+            },
+            complete:function(){
+                //   alert("stop");
+                console.log("loader hide")
+                $(".loader-rest").hide();
+            }
+        });
+/*        .ajaxComplete(function () {
+            console.log("loader hide")
+
+        });*/
 }
 /*
 Load vacation rental data
@@ -667,6 +700,10 @@ function loadRentals(data,mapData,forPage="") {
         type: "GET",
         url: vacSearchRequestURL,
         data: data,
+        beforeSend: function() {
+            console.log("loader show")
+            $(".loader-vac").show();
+        },
         success: function(data, textStatus, xhr) {
             console.log("load rentals success for "+forPage)
             // console.log(xhr)
@@ -675,6 +712,11 @@ function loadRentals(data,mapData,forPage="") {
         error: function(xhr, textStatus) {
             console.log("load rentals failure for "+forPage)
             //console.log(xhr)
+        },
+        complete:function(){
+            //   alert("stop");
+            console.log("loader hide")
+            $(".loader-vac").hide();
         }
     });
 }

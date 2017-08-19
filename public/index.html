@@ -18,6 +18,8 @@
     <![endif]-->
         <link href="stylesheets/index-style.css" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Lobster|Sedgwick+Ave" rel="stylesheet">
+        <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css'>
+
     </head>
     <body>
         <div id="invalid-login" class="modal fade">
@@ -26,6 +28,57 @@
                     <div class="modal-body">
                         <p>Invalid Username or Password</p>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="myModal-curr" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel-curr">Internal Error</h4>
+                    </div>
+                    <div class="modal-body" id="myModal-text-curr">
+                        Error loading data for restaurants
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="myModal-la" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel-la">Internal Error</h4>
+                    </div>
+                    <div class="modal-body" id="myModal-text-la">
+                        Error loading data for restaurants
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="myModal-ny" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel-ny">Internal Error</h4>
+                    </div>
+                    <div class="modal-body" id="myModal-text-ny">
+                        Error loading data for restaurants
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <!--<button type="button" class="btn btn-primary">Save changes</button>-->
                     </div>
                 </div>
             </div>
@@ -83,11 +136,13 @@
             <div class="row" id="home_sec_curr">
                 <div class='col-md-6 home_col'>
                     <div class="row" id="home_rest_sec_curr">
+                        <div class="loader loader-rest"></div>
                         <!--<h2 class="section_head">Top Restaurants Near By</h2>-->
                     </div>
                 </div>
                 <div class='col-md-6 vac_col' >
                     <div class="row" id="home_vac_sec_curr">
+                        <div class="loader loader-vac"></div>
                         <!--<h2 class="section_head">Top Vacation Rentals Near By</h2>-->
                     </div>
                 </div>
@@ -98,12 +153,15 @@
             </div>
             <div class="row" id="home_sec_la">
                 <div class='col-md-6 home_col'>
+
                     <div class="row" id="home_rest_sec_la">
+                        <div class="loader loader-rest"></div>
                         <!--<h2 class="section_head">Top Restaurants Near By</h2>-->
                     </div>
                 </div>
                 <div class='col-md-6  vac_col'>
                     <div class="row" id="home_vac_sec_la">
+                        <div class="loader loader-vac"></div>
                         <!--<h2 class="section_head">Top Vacation Rentals Near By</h2>-->
                     </div>
                 </div>
@@ -115,11 +173,13 @@
             <div class="row" id="home_sec_ny">
                 <div class='col-md-6 home_col'>
                     <div class="row" id="home_rest_sec_ny">
+                        <div class="loader loader-rest"></div>
                         <!--<h2 class="section_head">Top Restaurants Near By</h2>-->
                     </div>
                 </div>
                 <div class='col-md-6 vac_col'>
                     <div class="row" id="home_vac_sec_ny">
+                        <div class="loader loader-vac"></div>
                         <!--<h2 class="section_head">Top Vacation Rentals Near By</h2>-->
                     </div>
                 </div>

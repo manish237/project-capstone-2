@@ -227,7 +227,9 @@ $(document).ready(function() {
 
     //clear the localStorage everytime we visit home page
     localStorage.clear();
-
+    $("#myModal-curr").modal('hide');
+    $("#myModal-la").modal('hide');
+    $("#myModal-ny").modal('hide');
     //hide the sections to be displayed if the data is loaded successfully
     $('#home_sec_curr').hide()
     $('#home_rest_sec_curr').hide()
@@ -265,4 +267,20 @@ $(document).ready(function() {
     // initData(36.1700301,-115.137898,"home-vg");
     // initData(21.3040369,-157.8695565,"home-ho");
 });
+
+/*
+function testAnim(x) {
+    $('.modal .modal-dialog').attr('class', 'modal-dialog  slideInRight   animated');
+};
+$('#myModal').on('show.bs.modal', function (e) {
+    console.log("on show")
+    var anim = $('#entrance').val();
+    testAnim(anim);
+})
+$('#myModal').on('hide.bs.modal', function (e) {
+    console.log("on hide")
+    var anim = $('#exit').val();
+    testAnim(anim);
+})
+*/
 

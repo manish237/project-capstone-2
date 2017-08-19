@@ -56,7 +56,7 @@
                 <div class="col-md-2 sidenav" id="filter-section">
                     <h3 id="filter-head-text">Filters</h3>
                     <form class="form-inline" id="form-filter">
-                        <span id="filter-rest-head-text">Restaurant Filters</span>
+                        <span id="filter-rest-head-text">Restaurant <span id="filter-rest-head-sub-text">Filters</span></span>
                         <label class="control-label" for="filter-rest-sort-by" id="filter-rest-sort-by-text">Sort By:</label>
                         <select class="form-control" id="filter-rest-sort-by">
                             <option value="">--</option>
@@ -66,16 +66,17 @@
                             <option value="distance">Distance</option>
                         </select>
                         <input class="form-control" type="radio" name="rest_open" id="filter-rest-open-now" value="open_now">
-                        <label for="filter-rest-open-now">Open Now</label>
+                        <label for="filter-rest-open-now" id="filter-rest-open-now-text">Open Now</label>
                         <input class="form-control" type="radio" name="rest_open" id="filter-rest-open-at" value="open_at">
-                        <label for="filter-rest-open-now">Open At</label>
+                        <label for="filter-rest-open-at" id="filter-rest-open-at-text">Open At</label>
                         <div class="input-group date" id="filter-rest-open-at-date-time">
                             <input type="text" class="form-control" id="filter-rest-open-at-date-time-inp" />
                             <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
                         </div>
                         <hr>
-                        <span id="filter-vac-head-text">Vacation Rental Filters</span>
-                        <label class="control-label col-sm-12" id="filter-vac-sort-by-text">Sort By:</label>
+                        <span id="filter-vac-head-text">Vacation Rental <span id="filter-vac-head-sub-text">Filters</span></span>
+                        <label class="control-label col-sm-12" for="filter-vac-sort-by"
+                               id="filter-vac-sort-by-text">Sort By:</label>
                         <select class="form-control" id="filter-vac-sort-by">
                             <option value="">--</option>
                             <option value="averageRating:desc">Ratings-High to Low</option>
@@ -104,15 +105,15 @@
                         <!--<input id="filter-vac-price-range" type="text" class="span2" value="" data-slider-min="0" data-slider-max="1000" data-slider-step="10" data-slider-value="[0,500]" />-->
                         <!--<span>$1000</span>-->
                         <!--</div>-->
-                        <hr>
+                        <!--<hr>
                         <span id="filter-crime-head-text">Crime Data Filters</span>
                         <div class="form-group" id="filter-crm-dist-range-sec">
                             <label class="control-label col-sm-12" id="filter-crm-dist-range-text">Distance Range(mi):</label>
-                            <!--<div class="col-sm-12">
+                            &lt;!&ndash;<div class="col-sm-12">
                                 <input id="filter-crm-dist-range" data-slider-id="ex1Slider" type="text" data-slider-min="0" data-slider-max="150" data-slider-step="5" data-slider-value="10" />
-                            </div>-->
+                            </div>&ndash;&gt;
                             <select class="form-control" id="filter-crm-dist-range">
-                                <option value="">--</option>
+                                <option value="">&#45;&#45;</option>
                                 <option value="10">Within 10 mi</option>
                                 <option value="20">Within 20 mi</option>
                                 <option value="30">Within 30 mi</option>
@@ -124,7 +125,7 @@
                                 <option value="90">Within 90 mi</option>
                                 <option value="100">Within 100 mi</option>
                             </select>
-                        </div>
+                        </div>-->
                         <button type="submit" class="btn btn-default" id="btn-filter">Apply</button>
                     </form>
                 </div>
@@ -154,8 +155,10 @@
                     </div>
                     <hr>
                     <div class="row" id="user-rest-sec">
+                        <div class="loader loader-rest"></div>
 </div>
                     <div class="row" id="user-vac-sec">
+                        <div class="loader loader-vac"></div>
 </div>
                     <div class="row" id="user-crime-sec">
 </div>

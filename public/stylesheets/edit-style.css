@@ -1,5 +1,5 @@
 body{
-    background: /*linear-gradient(rgba(200,200,200,.3),rgba(200,200,200,.8)),*/ url('../images/reg-01.jpg');
+    background: linear-gradient(rgba(200,200,200,.3),rgba(200,200,200,.8)), url('../images/14164633854_147c2ce2b1_b.jpg');
     /*background-image: url("../images/map-img-01.jpg") ;*/
     /*background-repeat: no-repeat;*/
     background-size:cover;
@@ -13,16 +13,18 @@ body{
 
 #edit-sec{
     margin-top: 10em;
-    text-align: center;
-
     margin-right: 10em;
+    margin-left: 20em;
+    width: 40em;
 
-    margin-left: 10em;
+    text-align: center;
+    background:#7f7f7f;
+    background:rgba(255,255,255,0.5);
 }
 
 .row{
-    background: /*linear-gradient(rgba(200,200,200,.3),rgba(200,200,200,.8)),*/ url('../images/reg-02.jpg');
-    color: white;
+    /*background: !*linear-gradient(rgba(200,200,200,.3),rgba(200,200,200,.8)),*! url('../images/reg-02.jpg');*/
+    /*color: white;*/
 
     /*margin-left: 10%;*/
     /*margin-right: 10%;*/

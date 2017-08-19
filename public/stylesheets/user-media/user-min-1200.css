@@ -1,0 +1,308 @@
+/*
+Loader
+ */
+.loader {
+    /*position: absolute;*/
+    /*left: 50%;*/
+    /*top: 1000px;*/
+    /*z-index: 1;*/
+    top: 50em;
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    /*margin: -75px 0 0 -75px;*/
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    /*width: 120px;*/
+    /*height: 120px;*/
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+body{
+    /*background-color: darkslategray;*/
+    /*color: black;*/
+    /*background:  url('../../images/beaches-caribean-listen-sand-water-relax-beach-wallpaper-border.jpg');*/
+    /*background-image: url("../images/map-img-01.jpg") ;*/
+    background-image: url('../../images/beaches-caribean-listen-sand-water-relax-beach-wallpaper-border.jpg') ;
+    background-position: center center;
+    background-repeat:  no-repeat;
+    background-attachment: fixed;
+    background-size:  cover;
+}
+
+/*
+Navigation Bar
+ */
+
+.glyphicon.glyphicon-menu-hamburger {
+    font-size: 25px;
+}
+
+/*
+Filter section
+ */
+#filter-section {
+    top: 17em;
+    margin-top: 1em;
+    margin-left: 1em;
+    height:100%;
+    background:#7f7f7f;
+    background:rgba(255,255,255,0.5);
+    padding-bottom: 1em;
+
+}
+#filter-head-text {
+    text-align: center;
+}
+#filter-rest-head-text{
+    margin-top: 5em;
+    font-size: 1.2em;
+
+}
+
+#filter-rest-sort-by-text{
+    margin-top: 1em;
+
+    display: block;
+}
+
+#filter-rest-sort-by{
+    margin-top: 1em;
+    display: block;
+    margin-bottom: 1em;
+
+    width: 15em;
+
+}
+
+#filter-rest-open-now{
+    margin-top: .3em;
+
+}
+#filter-rest-open-now-text{
+    margin-top: 4em;
+
+}
+#filter-rest-open-at{
+    margin-top: .3em;
+
+}
+#filter-rest-open-at-text{
+    margin-top: 4em;
+}
+
+#filter-rest-open-at-date-time{
+    margin-top: 1em;
+}
+
+#filter-rest-open-at-date-time-inp{
+
+    display: block;
+}
+
+
+#filter-vac-head-text{
+    margin-top: 5em;
+    font-size: 1.2em;
+
+}
+
+#filter-vac-sort-by-text{
+    margin-top: 1em;
+
+    display: block;
+
+    margin-left: -1em;
+    margin-bottom: 1em;
+
+}
+
+#filter-vac-sort-by{
+    margin-top: 1em;
+    display: block;
+
+    width: 15em;
+
+}
+
+#filter-vac-date-range-text{
+    margin-top: 1em;
+
+    display: block;
+
+    margin-left: -1em;
+    margin-bottom: 1em;
+
+}
+
+#filter-vac-date-range{
+    margin-top: 1em;
+    display: block;
+
+    width: 15em;
+}
+
+#filter-vac-price-range-text{
+    margin-top: 1em;
+    display: block;
+
+    margin-left: -1em;
+    margin-bottom: 1em;
+
+
+}
+
+
+#filter-vac-price-range{
+    margin-top: 1em;
+    display: block;
+
+
+    width: 15em;
+}
+
+
+#filter-crime-head-text{
+    margin-top: 5em;
+    font-size: 1.2em;
+
+}
+
+#filter-crm-dist-range-text{
+    margin-top: 1em;
+    display: block;
+
+    margin-left: -1em;
+    margin-bottom: 1em;
+
+
+}
+
+
+#filter-crm-dist-range{
+    margin-top: 1em;
+    display: block;
+
+
+    width: 15em;
+}
+
+#btn-filter{
+    margin-top: 1em;
+    display: block;
+}
+
+/*
+Main Section
+ */
+#main-section {
+    top: 4em;
+    margin-top: 1em;
+    left:1em;
+    right:18em;
+    width:75%;
+
+}
+
+#main-section-search-sec{
+    margin: auto;
+    background:#7f7f7f;
+    background:rgba(255,255,255,0.5);
+    padding-bottom: 1em;
+}
+
+/*
+Search bar
+ */
+#main-section-search-sec{
+    padding-left: 1em;
+}
+
+#checkbox-line{
+    margin-top: 1em;
+    display: block;
+}
+
+#cb-rest{
+    margin-top: -.4em;
+    display: inline;
+}
+#cb-vac{
+    margin-top: -.4em;
+    display: inline;
+}
+#cb-crime{
+    margin-top: -.4em;
+    display: inline;
+}
+#autocomplete{
+
+}
+
+/*
+Data section
+ */
+#user-rest-sec{
+    margin: auto;
+   /*margin-left: 0.1em;*/
+   padding-left: 2em;
+
+
+    background: linear-gradient(rgba(200,200,200,.3),rgba(200,200,200,.8)), url('../../images/food-01.jpg');
+    /*background-image: url("../images/map-img-01.jpg") ;*/
+    background-position: center center;
+    background-repeat:  no-repeat;
+    /*background-attachment: fixed;*/
+    background-size:  cover;
+    color: black;
+}
+
+#user-vac-sec{
+    margin: auto;
+    padding-left: 2em;
+    background: linear-gradient(rgba(200,200,200,.3),rgba(200,200,200,.8)), url('../../images/vac-01.jpg');
+    /*background-image: url("../images/map-img-01.jpg") ;*/
+
+    background-position: center center;
+    background-repeat:  no-repeat;
+    /*background-attachment: fixed;*/
+    background-size:  cover;
+
+    margin-top: 1em;
+}
+
+#user-crime-sec{
+    padding-left: 1em;
+}
+
+
+
+#user-map-section{
+    margin: auto;
+    height: 50em;
+    margin-top: 1em;
+    /*margin-left: -1em;*/
+    /*margin-right: -2em;*/
+}
+
+#rest-head-text{
+    /*color: #0da0e1;*/
+}
+
+
+.at_address{
+    display: block;
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+}

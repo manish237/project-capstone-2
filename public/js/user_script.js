@@ -32,8 +32,10 @@ function refresh() {
     //hide everything for load
     $('#user-rest-sec').hide()
     $('#user-rest-sec').empty()
+    $('#user-rest-sec').append("<div class=\"loader loader-rest\"></div>")
     $('#user-vac-sec').hide()
     $('#user-vac-sec').empty()
+    $('#user-vac-sec').append("<div class=\"loader loader-vac\"></div>")
     $('#user-crime-sec').hide();
     $('#user-crime-sec').empty();
     $('#user-map-section').hide();
