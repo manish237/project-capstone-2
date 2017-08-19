@@ -1,0 +1,70 @@
+/*
+Loader
+ */
+.loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 50px;
+    height: 50px;
+    /*margin: -75px 0 0 -75px;*/
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    /*width: 120px;*/
+    /*height: 120px;*/
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+/*
+Head background
+ */
+body{
+    background: linear-gradient(rgba(200,200,200,.3),rgba(200,200,200,.8)), url('../images/ladakh-highway-91.jpg');
+    /*background-image: url("../images/map-img-01.jpg") ;*/
+    /*background-repeat: no-repeat;*/
+    background-size:cover;
+    /*background-position:center;*/
+    /*background-size:100%;*/
+}
+
+.jumbotron{
+    background: linear-gradient(rgba(200,200,200,.3),rgba(100,100,100,.8)), url('../../images/hawaii2.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position:center;
+    background-size:100%;
+    height: 30em;
+    color: white;
+}
+
+/*
+Title/Description
+ */
+
+#splash-det-sec{
+    margin-top: 10em;
+    margin-right: 10em;
+    margin-left: 20em;
+    width: 40em;
+
+    text-align: center;
+    background:#7f7f7f;
+    background:rgba(255,255,255,0.5);
+}
+
+
+/*
+Footer
+ */
