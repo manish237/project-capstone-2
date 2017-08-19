@@ -10,7 +10,7 @@ Handle Register Button press
 $('#btn-splash').click(function (e) {
     e.preventDefault();
     console.log("sign up button clicked")
-    window.location.href = '/index-1.html'
+    window.location.href = '/home.html'
 })
 
 

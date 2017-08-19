@@ -417,7 +417,7 @@ $("#ln-edit-details").click(function (e) {
 $("#ln-log-out").click(function (e) {
     e.preventDefault()
     localStorage.clear();
-    window.location.href = '/index-1.html'
+    window.location.href = '/home.html'
     console.log("logging out")
 
 })

@@ -76,5 +76,5 @@ $('#form-reset').submit(function (e) {
 $('#btn-cancel').click(function (e) {
     e.preventDefault();
     console.log("cancel button clicked")
-    window.location.href = '/index-1.html'
+    window.location.href = '/home.html'
 })
