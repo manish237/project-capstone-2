@@ -14,6 +14,32 @@ let crm_dist;
 
 
 /*
+Address History Recording
+
+ */
+
+function storeAddressHistory(data)
+{
+    console.log("storing")
+    // console.log(data)
+    // console.log(JSON.parse(data))
+    $.ajax({
+        type: "POST",
+        url: "/user/addrHist",
+        data: data,
+        success: function(data, textStatus, xhr) {
+            console.log("Address History record success")
+        },
+        error: function(xhr, textStatus) {
+            console.log("Address History record error")
+            console.log(xhr)
+            console.log(xhr.status);
+            // alert(xhr);
+        }
+    });
+}
+
+/*
     Data load function
     1. read the lon/lat from localstorage
     2. read the cbs from localstorage -- default is true if undefined
@@ -298,7 +324,7 @@ function initUI() {
         }
     });*/
 
-console.log("initui")
+    console.log("initui")
     console.log(localStorage.getItem("crm_dist"))
     if(localStorage.getItem("crm_dist")==="")
     {
@@ -310,7 +336,8 @@ console.log("initui")
         $('#filter-crm-dist-range').val(localStorage.getItem("crm_dist"));
     }
 
-
+    $("#label-crm").hide();
+    $("#cb-crime").hide();
 }
 
 
@@ -382,7 +409,22 @@ $('#form-user-addr-search').submit(function (e) {
     localStorage.setItem("cb-vac", $("#cb-vac").is(':checked'))
     localStorage.setItem("cb-crime", $("#cb-crime").is(':checked'))
 
+    console.log(localStorage.getItem("username"))
+    let data_hist = {
+        "username": localStorage.getItem("username"),
+        "address_min": {
+            "address_string":  localStorage.getItem("curr_map_addr"),
+            "latitude":  localStorage.getItem("curr_map_lat"),
+            "longitude":  localStorage.getItem("curr_map_lon")
+        }
+    }
+
     refresh()
+
+
+    // console.log(reqData)
+    // console.log(JSON.stringify(reqData))
+    storeAddressHistory(data_hist)
 })
 
 
@@ -422,6 +464,17 @@ $("#ln-log-out").click(function (e) {
 
 })
 
+/*
+    Handle logout link
+
+ */
+$("#ln-search-history").click(function (e) {
+    e.preventDefault()
+    // localStorage.clear();
+    window.location.href = '/history.html'
+    // console.log("logging out")
+
+})
 
 
 /********************************************************************

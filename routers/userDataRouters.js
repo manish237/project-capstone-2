@@ -10,7 +10,9 @@ const queryParser = bodyParser.urlencoded({ extended: true });
 const mongoose = require('mongoose');
 const {RegisterData,PreferenceData,AddressHistData} = require('../models/models');
 
-
+router.use(bodyParser.urlencoded({
+    extended: true
+}));
 
 router.put('/data/:uname', jsonParser, (req, res) => {
     if (!(req.params.uname && req.body.username && req.params.uname === req.body.username)) {
@@ -302,8 +304,11 @@ router.get('/prefData/:uname', (req, res) => {
 });
 
 
-router.post('/addrHist', jsonParser,(req, res) => {
-    //console.log("add hist data 01")
+router.post('/addrHist', jsonParser, (req, res) => {
+    console.log("add hist data 01")
+    console.log(req.body)
+    // console.log(req)
+
     const requiredFields = ['username'];
     for (let i=0; i<requiredFields.length; i++) {
         const field = requiredFields[i];
@@ -321,7 +326,7 @@ router.post('/addrHist', jsonParser,(req, res) => {
         .count()
         .exec()
         .then(count => {
-            //console.log("add hist data 02")
+            console.log("add hist data 02")
             if (count === 0) {
                 //console.log("add hist data 03")
                 return Promise.reject({
@@ -336,15 +341,10 @@ router.post('/addrHist', jsonParser,(req, res) => {
             return AddressHistData
                 .create({
                     username: req.body.username,
-                    address: {
-                        address1: req.body.address.address1,
-                        address2: req.body.address.address2,
-                        city: req.body.address.city,
-                        state: req.body.address.state,
-                        zip: req.body.address.zip,
-                        country: req.body.address.country,
-                        longitude: req.body.address.longitude,
-                        latitude: req.body.address.latitude
+                    address_min: {
+                        address_string: req.body.address_min.address_string,
+                        longitude: req.body.address_min.longitude,
+                        latitude: req.body.address_min.latitude
                     }
                 })
         })
@@ -405,5 +405,98 @@ router.get('/addrHist/:uname',  (req, res) => {
 
 });
 
+
+router.delete('/addrHist/:uname/:id', (req, res) => {
+    //console.log("delete with id 01")
+    return RegisterData
+        .find({username: req.params.uname})
+        .count()
+        .exec()
+        .then(count => {
+            //console.log("add hist data 02")
+            //console.log("delete with id 02")
+
+            if (count === 0) {
+                //console.log("delete with id 03")
+
+                return Promise.reject({
+                    name: 'InvalidUserError',
+                    message: 'username not found'
+                });
+            }
+        })
+        .then(()=> {
+            //console.log("add hist data 03")
+            //console.log("delete with id 04")
+
+            return AddressHistData
+                .findByIdAndRemove(req.params.id)
+                .exec()
+        })
+        .then(() => {
+            //console.log("add hist data 04")
+            //console.log(addressHistData)
+            //console.log("delete with id 05")
+
+            res.status(204).end();
+        })
+        .catch(err => {
+                // console.log("add hist data 05")
+                //console.error(err);
+            //console.log("delete with id 06")
+
+            if (err.name === 'InvalidUserError') {
+                    return res.status(422).json({message: err.message});
+                }
+                res.status(500).json({message: 'Internal server error'});
+        });
+});
+
+router.delete('/addrHist/:uname', (req, res) => {
+    //console.log("delete without id 01")
+
+    return RegisterData
+        .find({username: req.params.uname})
+        .count()
+        .exec()
+        .then(count => {
+            //console.log("add hist data 02")
+            //console.log("delete without id 02")
+
+            if (count === 0) {
+                //console.log("delete without id 03")
+
+                return Promise.reject({
+                    name: 'InvalidUserError',
+                    message: 'username not found'
+                });
+            }
+        })
+        .then(()=> {
+            //console.log("add hist data 03")
+            //console.log("delete without id 04")
+
+            return AddressHistData
+                .deleteMany({username:req.params.uname})
+                .exec()
+        })
+        .then(() => {
+            //console.log("add hist data 04")
+            //console.log(addressHistData)
+            //console.log("delete without id 05")
+
+            res.status(204).end();
+        })
+        .catch(err => {
+            // console.log("add hist data 05")
+            //console.error(err);
+            //console.log("delete without id 06")
+
+            if (err.name === 'InvalidUserError') {
+                return res.status(422).json({message: err.message});
+            }
+            res.status(500).json({message: 'Internal server error'});
+        });
+});
 
 module.exports = router;

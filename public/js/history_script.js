@@ -4,20 +4,19 @@ let host = window.location.hostname;
 /*
     Call auth api to register the user
  */
-function registerUser(data) {
-    console.log("inside registerUser")
-    console.log(data)
+function loadHistData(username) {
+    console.log("inside loadHistData")
+    console.log(username)
     $.ajax({
-        type: "POST",
-        url: "/auth/register",
-        data: data,
+        type: "GET",
+        url: "/user/addrHist/"+username,
         success: function(data, textStatus, xhr) {
-            console.log("registration success")
+            console.log("loadHistData success")
             //
             console.log(xhr)
             // console.log(xhr.status);
 
-            //set local storage
+/*            //set local storage
             localStorage.setItem("username",xhr.responseJSON.username)
             localStorage.setItem("userdata",JSON.stringify(xhr.responseJSON))
             localStorage.setItem("longitude", xhr.responseJSON.address.longitude)
@@ -31,10 +30,10 @@ function registerUser(data) {
             localStorage.setItem("cb-crime","true")
 
 
-            window.location.href = '/user.html'
+            window.location.href = '/user.html'*/
         },
         error: function(xhr, textStatus) {
-            console.log("registration error")
+            console.log("loadHistData error")
             // console.log(xhr)
             // console.log(xhr.status);
             alert(xhr.responseJSON.message);
@@ -95,4 +94,11 @@ $('#btn-cancel').click(function (e) {
     window.location.href = '/home.html'
 });
 
-$("#reg-addr-sec-hidden").hide()
+$(document).ready(function() {
+
+   $("#hist-no-result").hide();
+   $("#hist-sec").hide();
+   loadHistData(localStorage.getItem("username"))
+
+    // refresh()
+});

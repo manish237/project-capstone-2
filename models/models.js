@@ -12,6 +12,12 @@ var addressSchema = mongoose.Schema({
     latitude: {type: Number, required: true}
 });
 
+var addressMinSchema = mongoose.Schema({
+    address_string: {type: String},
+    longitude: {type: Number, required: true},
+    latitude: {type: Number, required: true}
+});
+
 var vehicleSchema = mongoose.Schema({
     year: {type: Number},
     make: {type: String},
@@ -60,7 +66,8 @@ const preferenceDataSchema = mongoose.Schema({
 
 const addressHistorySchema = mongoose.Schema({
     username: {type: String, required: true},
-    address: {type: addressSchema, required: true}
+    address_min: {type: addressMinSchema}//,
+    //address: {type: addressSchema}
 });
 
 function StorageException(message) {
@@ -145,9 +152,9 @@ addressHistorySchema.methods.apiRepr = function () {
      return {
         id: this._id,
         username: this.username,
-        address: this.historyAddressString,
-        longitude: this.longitude,
-        latitude:this.latitude
+        address: this.address_min.address_string,
+        longitude: this.address_min.longitude,
+        latitude:this.address_min.latitude
     };
 }
 

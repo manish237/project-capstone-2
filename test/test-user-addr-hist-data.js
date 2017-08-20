@@ -48,17 +48,19 @@ function generateAddrHistData() {
 
     return {
         username: uName,
-        address:{
-            address1: faker.address.streetAddress(),
-            address2: "",
+        address_min:{
+            address_string: faker.address.streetAddress() + " " + faker.address.city() +
+                            " " + faker.address.state() + " " + faker.address.state() +
+                            " " + faker.address.zipCode() + " " + faker.address.country(),
+/*            address2: "",
             city: faker.address.city(),
             state: faker.address.state(),
             zip:faker.address.zipCode(),
-            country: faker.address.country(),
+            country: faker.address.country(),*/
             longitude: faker.address.longitude(),
             latitude: faker.address.latitude(),
         },
-        vehicle:{},
+        // vehicle:{},
         created: currTime//faker.date.recent()
     }
 }
@@ -167,6 +169,92 @@ describe('User Address Hist Data API resource', function() {
                     //console.log("err")
                     err.should.have.status(422)
                 });
+        });
+    });
+    describe('Address data DELETE with ID endpoint', function() {
+        it('get existing user', function () {
+            // console.log("for " + loginUser)
+            return chai.request(app)
+                .get(`/user/addrHist/${loginUser}`)
+                .then(function (res) {
+                    // console.log(res.body)
+                    res.should.have.status(200);
+                    res.should.be.json;
+                    res.body.should.be.a('object');
+                    //res.body.should.include.keys('id', 'username', 'created',"restPref","crimePref","vacRentPref");
+                    return res.body;
+                })
+                .then((body)=>{
+                    // console.log("second then");
+                    //console.log(body.addressHistData[0])
+                    return chai.request(app)
+                        .delete(`/user/addrHist/${body.addressHistData[0].username}/${body.addressHistData[0].id}`)
+
+                })
+                .then((res)=>{
+                    //console.log(res.status)
+                    res.should.have.status(204)
+                })
+
+
+        });
+        it('get invalid user', function () {
+            // console.log("for " + loginUser)
+            return chai.request(app)
+                .delete(`/user/addrHist/${faker.internet.email()}/${faker.internet.email()}`)
+
+                .then((res)=>{
+                    // console.log(res.status)
+                    res.should.have.status(204)
+                })
+                .catch(err=>{
+                    //console.log("err")
+                    err.should.have.status(422)
+                });
+
+        });
+    });
+    describe('Address data DELETE without ID endpoint', function() {
+        it('get existing user', function () {
+            // console.log("for " + loginUser)
+            return chai.request(app)
+                .get(`/user/addrHist/${loginUser}`)
+                .then(function (res) {
+                    // console.log(res.body)
+                    res.should.have.status(200);
+                    res.should.be.json;
+                    res.body.should.be.a('object');
+                    //res.body.should.include.keys('id', 'username', 'created',"restPref","crimePref","vacRentPref");
+                    return res.body;
+                })
+                .then((body)=>{
+                    // console.log("second then");
+                    //console.log(body.addressHistData[0])
+                    return chai.request(app)
+                        .delete(`/user/addrHist/${body.addressHistData[0].username}`)
+
+                })
+                .then((res)=>{
+                    //console.log(res.status)
+                    res.should.have.status(204)
+                })
+
+
+        });
+        it('get invalid user', function () {
+            // console.log("for " + loginUser)
+            return chai.request(app)
+                .delete(`/user/addrHist/${faker.internet.email()}`)
+
+                .then((res)=>{
+                    // console.log(res.status)
+                    res.should.have.status(204)
+                })
+                .catch(err=>{
+                    //console.log("err")
+                    err.should.have.status(422)
+                });
+
         });
     });
 });
