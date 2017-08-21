@@ -1,0 +1,27 @@
+@import url("./home-media/home-min-1330.css") only screen
+and (min-width:1330px );
+
+@import url("./home-media/home-min-992.css") only screen
+and (min-width:992px ) and (max-width:1329px );
+
+@import url("./home-media/home-min-350.css") only screen
+and (min-width:350px ) and (max-width:991px );
+
+@import url("./home-media/home-min-350.css") only screen
+and (max-width:349px );
+
+.modal.fade{
+    opacity:1;
+}
+
+.modal.in .modal-dialog {
+    position:fixed;
+    bottom:0px;
+    right:0px;
+    margin:0px;
+}
+.modal.fade .modal-dialog {
+    -webkit-transform: translate(0);
+    -moz-transform: translate(0);
+    transform: translate(0);
+}

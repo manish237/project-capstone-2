@@ -1,6 +1,40 @@
 let host = window.location.hostname;
 
 
+function renderHistData(data)
+{
+    console.log(data)
+    // console.log(data.length)
+    if(data.length!==0)
+    {
+        for(let i=0;i<data.length;i++)
+        {
+            // console.log(i)
+            elem=`<div class="row hist-item">
+                            <div class="col-sm-7 hist-item-val">
+                                <label class="addr">${data[i].address}</label>
+                            </div>
+                            <div class="col-sm-1 hist-item-img-div">
+                                <a href="#" data-id="${data[i].id}" class="ln-hist-item-del" onclick="deleteItem(this)"><img class="hist-item-img" src="images/warning-delete-cross-stop-close-exit-cancel-icon.png" width="30px" height="30px"/></a>
+                            </div>
+                        </div>`
+
+            $("#hist-data-sec").append(elem)
+        }
+        elem = "</div>\n"
+        $("#hist-data-sec").append(elem)
+        $("#hist-sec").show();
+        $("#hist-no-result").hide()
+
+
+    }
+    else
+    {
+        $("#hist-sec").hide();
+        $("#hist-no-result").show()
+    }
+}
+
 /*
     Call auth api to register the user
  */
@@ -14,23 +48,7 @@ function loadHistData(username) {
             console.log("loadHistData success")
             //
             console.log(xhr)
-            // console.log(xhr.status);
-
-/*            //set local storage
-            localStorage.setItem("username",xhr.responseJSON.username)
-            localStorage.setItem("userdata",JSON.stringify(xhr.responseJSON))
-            localStorage.setItem("longitude", xhr.responseJSON.address.longitude)
-            localStorage.setItem("latitude", xhr.responseJSON.address.latitude)
-            localStorage.setItem("curr_addr",xhr.responseJSON.address_string)
-
-            //------Future -- Pref Data create and set in localstorage
-            //defaults
-            localStorage.setItem("cb-rest","true")
-            localStorage.setItem("cb-vac","true")
-            localStorage.setItem("cb-crime","true")
-
-
-            window.location.href = '/user.html'*/
+            renderHistData(xhr.responseJSON.addressHistData)
         },
         error: function(xhr, textStatus) {
             console.log("loadHistData error")
@@ -41,64 +59,92 @@ function loadHistData(username) {
     });
 }
 
+function refresh() {
+    $("#hist-data-sec").empty();
+    $("#hist-no-result").hide();
+    $("#hist-sec").hide();
+    loadHistData(localStorage.getItem("username"))
+}
 
 /*
-* Handle register button event
+* Handle delete all button event
  */
 
-$('#form-register').submit(function (e) {
+$('.btn-hist-delete-all').click(function (e) {
 
-    console.log("register button clicked");
+    console.log("delete all button clicked");
     e.preventDefault();
 
-    //validate passwords
-    pass1 = $("#pwd").val();
-    pass2 = $("#cpwd").val();
+    $.ajax({
+        type: "DELETE",
+        url: "/user/addrHist/"+localStorage.getItem("username"),
+        success: function(data, textStatus, xhr) {
+            console.log("delete all success")
+            //
+            console.log(xhr)
+            // console.log(xhr.status);
+            refresh();
 
-    if(pass1!==pass2)
-        alert("Passwords do not match.");
-    else{
-        let data = {
-                "username": $("#email").val(),
-                "password": $("#pwd").val(),
-                "firstName": $("#fname").val(),
-                "lastName": $("#lname").val(),
-
-                "address" : {
-                    "address1": $("#street_number").val(),
-                    "address2": $("#route").val(),
-                    "city": $("#locality").val(),
-                    "state": $("#administrative_area_level_1").val(),
-                    "zip": $("#postal_code").val(),
-                    "country": $("#country").val(),
-                    "longitude": $("#longitude").val(),
-                    "latitude": $("#latitude").val()
-                },
-                "vehicle": {
-                    "year": "",
-                    "make": "",
-                    "model": "",
-                    "mpg": ""
-                }
+        },
+        error: function(xhr, textStatus) {
+            console.log("delete all error")
+            // console.log(xhr)
+            // console.log(xhr.status);
+            alert(xhr.responseJSON.message);
         }
-        registerUser(data)
-    }
+    });
 });
 
 /*
     Handle cancel button event
  */
-$('#btn-cancel').click(function (e) {
+$('.btn-hist-cancel').click(function (e) {
     e.preventDefault();
     console.log("cancel button clicked")
-    window.location.href = '/home.html'
+    window.location.href = '/user.html'
 });
+
+$('.btn-hist-back').click(function (e) {
+    e.preventDefault();
+    console.log("back button clicked")
+    window.location.href = '/user.html'
+});
+
+/*$('.ln-hist-item-del').on("click",function (e) {
+    e.preventDefault();
+    console.log($('.ln-hist-item-del'))//.getAttribute("data-id"))
+    console.log($('.ln-hist-item-del'))//.getAttribute("data-id"))
+    // window.location.href = '/user.html'
+});*/
+
+function deleteItem(item) {
+    console.log("del button clicked")
+
+    console.log(item.getAttribute("data-id"))
+    $.ajax({
+        type: "DELETE",
+        url: "/user/addrHist/"+localStorage.getItem("username")+"/"+item.getAttribute("data-id"),
+        success: function(data, textStatus, xhr) {
+            console.log("delete success")
+            //
+            console.log(xhr)
+            // console.log(xhr.status);
+            refresh();
+
+        },
+        error: function(xhr, textStatus) {
+            console.log("delete all error")
+            // console.log(xhr)
+            // console.log(xhr.status);
+            alert(xhr.responseJSON.message);
+        }
+    });
+
+}
 
 $(document).ready(function() {
 
-   $("#hist-no-result").hide();
-   $("#hist-sec").hide();
-   loadHistData(localStorage.getItem("username"))
 
-    // refresh()
+    refresh();
+
 });

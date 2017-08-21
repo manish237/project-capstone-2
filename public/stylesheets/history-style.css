@@ -1,40 +1,6 @@
-body{
-    background: linear-gradient(rgba(200,200,200,.3),rgba(200,200,200,.8)), url('../images/history-ppt-background-0.jpg');
-    background-position: center center;
-    background-repeat:  no-repeat;
-    background-attachment: fixed;
-    background-size:  cover;
-}
+@import url("./history-media/history-min-768.css") only screen
+and (min-width:768px );
 
-#hist-head-sec{
-    margin-bottom: 1em;
-}
+@import url("./history-media/history-min-350.css") only screen
+and (max-width:767px );
 
-#hist-sec{
-    margin-top: 10em;
-    margin-right: 10em;
-    margin-left: 20em;
-    width: 40em;
-
-    text-align: center;
-    background:#7f7f7f;
-    background:rgba(255,255,255,0.5);
-}
-
-.hist-item-val{
-    /*padding-top: .1em;*/
-    font-size: 2em;
-    font-weight: normal;
-}
-
-#hist-btn-sec{
-    margin-top: 1em;
-}
-
-.row{
-    /*background: !*linear-gradient(rgba(200,200,200,.3),rgba(200,200,200,.8)),*! url('../images/reg-02.jpg');*/
-    /*color: white;*/
-
-    /*margin-left: 10%;*/
-    /*margin-right: 10%;*/
-}
