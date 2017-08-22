@@ -17,40 +17,176 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
         <link href="stylesheets/index-style.css" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Lobster|Sedgwick+Ave" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lobster|Sedgwick+Ave|Encode+Sans+Condensed" rel="stylesheet">
 
     </head>
     <body>
 
         <!-- Main jumbotron for a primary marketing message or call to action -->
-        <div class="jumbotron text-center">
+        <div class="head-title text-center">
             <h1 id="home_page_title">Destinalysis Splash Page</h1>
             <p id="home_page_description">One stop for planning your next trip.</p>
         </div>
         <div class="container">
             <div id="splash-det-sec">
-                <div class="row">
-                        <div class="col-md-12 text-center">
+                <div class="row" id="row_1">
+                    <div class="col-sm-1"></div>
+                    <label class="col-sm-4" id="row_1_1">Description:</label>
+                    <div class="col-sm-6" id="row_1_2">
+                        <p>Simple application where a user can research their favorite destination and get details like popular eating places and popular vacation rentals</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="row" id="row_2">
+                    <div class="col-sm-1"></div>
+                    <label class="col-sm-4" id="row_2_1">Test Credentials:</label>
+                    <div class="col-sm-6" id="row_2_2">
+                        <p>User Name = test@capstone.com
+                            Password = testuser</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="row" id="row_4">
+                    <label class="col-sm-1" id="row_4_1"></label>
+                    <div class="col-sm-4" id="row_4_2">
+                        Page - Home Page
+                    </div>
+                    <div class="col-sm-6" id="row_4_3">
+                        Home Page has following functionality built in
+                        <ol id="ol_1" type="1">
+                            <li>User Registration - Can be used for new User registration.</li>
+                            <li>User Login - Can be used to login to User account. Refer to test credentials provided above</li>
+                            <li>Forgot Password - Link to reset password for an existing account.</li>
+                            <li>Top 3 Popular Restaurants and Vacation Rentals near User's current location</li>
+                            <li>Top 3 Popular Restaurants and Vacation Rentals near New York City Downtown</li>
+                            <li>Top 3 Popular Restaurants and Vacation Rentals near Los Angeles Downtown</li>
+                        </ol>
+                    </div>
+                </div>
+                <hr>
+                <div class="row" id="row_5">
+                    <label class="col-sm-1" id="row_5_1"></label>
+                    <div class="col-sm-4" id="row_5_2">
+                        Page - Login
+                    </div>
+                    <div class="col-sm-6" id="row_5_3">
+                        User can login with valid credentials on Home page. Both fields are required.
+                        Invalid login results in a message being popped.
+                    </div>
+                </div>
+                <hr>
+                <div class="row" id="row_6">
+                    <label class="col-sm-1" id="row_6_1"></label>
+                    <div class="col-sm-4" id="row_6_2">
+                        Page - Registration Page
+                    </div>
+                    <div class="col-sm-6" id="row_6_3">
+                        <p>
+                            Accessed via "Register" Button on Home Page.
+                            User needs to enter following fields which are all required to register with the website.
+                            <ol id="ol_2" type="1">
+                                <li>Email - A valid email address. Wrong format of email input will throw error.</li>
+                                <li>Password - Any password as entered by user. (No restrictions on the password yet)</li>
+                                <li>Confirm Password - Same password is required to be entered as "Password" field above. Mismatch will throw error.</li>
+                                <li>First Name -  User provides First Name</li>
+                                <li>Last Name -  User provides Last Name</li>
+                                <li>Address - User provides his/her address. As the user starts typing, the field will provide address suggestions to be selected from.</li>
+                            </ol>
 
-                            <label class="col-sm-2">Description:</label>
-                            <div class="col-sm-8">
-                                <p>Application Description</p>
-                            </div>
+                            If the Username entered is already in system, error will be thrown.
+                        </p>
+                    </div>
+                </div>
+                <hr>
+                <div class="row" id="row_7">
+                    <label class="col-sm-1" id="row_7_1"></label>
+                    <div class="col-sm-4" id="row_7_2">
+                        Page - User Home Page
+                    </div>
+                    <div class="col-sm-6" id="row_7_3">
+                        <p>
+                            Landing page after user successfully logs in.Following sections are available in User Page.
+                            <ol id="ol_3" type="1">
+                                <li>Destination Search text box - Use this to enter destination address to be researched. As the user starts typing, the field will provide address suggestions to be selected from.</li>
+                                <li>Checkboxes to optionally load either Restaurant data or Vacation Rental data or both.</li>
+                                <li>Filter Section - List of filters to be applied on data matching the destination entered.
+                                    Following filters are available
+                                     <ol id="ol_4" type="a">
+                                         <li>
+                                             <ol id="ol_5" type="i">Restaurants Filters
+                                                 <li>Sort By - User can sort the restaurant result by "Best Match", "Ratings", "Reviews" or "Distance"</li>
+                                                 <li>Open Now (Radio) - To filter restaurants which are open at current time.</li>
+                                                 <li>Open At (Radio) - To filter restaurants which are open at specified date-time.</li>
+                                             </ol>
+                                         </li>
+                                         <li>
+                                             <ol id="ol_6">Vacation Rental Filters
+                                                 <li>Sort By - User can sort the vacation rental result by "Ratings High to Low", "Prices High to Low", "Prices Low to High"</li>
+                                                 <li>Target booking date range</li>
+                                                 <li>Target price range</li>
+                                             </ol>
+                                         </li>
+                                     </ol>
+                                </li>
+                                <li>Data Section - Following data loaded based on the destination provided
+                                    <ol id="ol_7" type="a">
+                                        <li>Top 3 Popular Restaurants near target destination</li>
+                                        <li>Top 3 Popular Vacation Rentals near target destination</li>
+                                    </ol>
+                                    Each data item has link to more details on the data item.
+                                </li>
+                                <li>Menu - Following menu items are available on User Page.
+                                    <ol id="ol_8" type="a">
+                                        <li>Home - Link to User page</li>
+                                        <li>Edit Personal Info - Link to a page to edit personal information</li>
+                                        <li>Your Search History - Link to a page to see User's search history.</li>
+                                        <li>LogOut - Link to log user out and redirect to Home Page</li>
+                                    </ol>
+                                </li>
+                            </ol>
 
-                            <label class="col-sm-4">Test Credentials:</label>
-                            <div class="col-sm-6">
-                                <p>User Name = test@capstone.com
-                                    Password = testuser</p>
-                            </div>
-                            <label class="col-sm-4">Flows to Test</label>
+                        </p>
+                    </div>
+                </div>
+                <hr>
+                <div class="row" id="row_8">
+                    <label class="col-sm-1" id="row_8_1"></label>
+                    <div class="col-sm-4" id="row_8_2">
+                        Page - Edit Personal Info Page
+                    </div>
+                    <div class="col-sm-6" id="row_8_3">
+                        <p>
+                            Accessed via "Edit Personal Info" link under menu on User Page.User can update following field.
+                            <ol id="ol_9" type="1">
+                                <li>First Name -  User provides First Name</li>
+                                <li>Last Name -  User provides Last Name</li>
+                                <li>Address - User provides his/her address. As the user starts typing, the field will provide address suggestions to be selected from.</li>
+                            </ol>
 
-                            <div class="col-sm-6">
-                                <p>Use cases</p>
-                            </div>
-                            <div class="col-sm-offset-1">
-                                <button type="submit" class="btn btn-default" id="btn-splash">Get Started</button>
-                            </div>
-                        </div>
+                            After the update user is required to User page.
+                        </p>
+                    </div>
+                </div>
+                <hr>
+                <div class="row" id="row_9">
+                    <label class="col-sm-1" id="row_9_1"></label>
+                    <div class="col-sm-4" id="row_9_2">
+                        Page - View Search History Page
+                    </div>
+                    <div class="col-sm-6" id="row_9_3">
+                        <p>
+                            Accessed via "Your Search History" link under menu on User Page.
+                            The lists all the destination address user has searched on.User has following options on the page.
+                            <ol id="ol_10" type="1">
+                                <li>Delete single destination -  By clicking the icon against a destination</li>
+                                <li>Clear search History -  By clicking "Clear All" button under the list.</li>
+                            </ol>
+                        </p>
+                    </div>
+                </div>
+                <hr>
+                <div class="row text-center" id="row_10">
+                    <button type="submit" class="btn btn-default" id="btn-splash">Get Started</button>
                 </div>
             </div>
         </div>
