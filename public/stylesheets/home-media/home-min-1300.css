@@ -27,7 +27,6 @@ Loader
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
-
 /*
 Head background
  */
@@ -42,11 +41,11 @@ body{
 
 h2{
     font-family:  'PT Sans', Sans-Serif;
-    font-size: 18px;
+    font-size: 25px;
 }
 h4{
     font-family:  'PT Sans', Sans-Serif;
-    font-size: 12px;
+    font-size: 16px;
 }
 small{
     font-family:  'Bitter', Serif;
@@ -152,33 +151,70 @@ Title/Description
     padding-top: 5px;
     font-family: 'Lobster', cursive;
 }
-/*#home_page_form{
 
-    top: 4em;
-
-    position: relative;
-
-}*/
 
 /*
 Data
  */
 
 
-.rest-curr-item-img-sec .rest-curr-item-img{
-    width: 100px;
-    height: 80px;
+.home_col{
+    margin-left: -2em;
+    padding-right: 1em;
 }
-
-.vac-curr-item-img-sec .vac-curr-item-img{
-    width: 100px;
-    height: 80px;
-}
-
 .vac_col{
     padding-left: 1em;
     padding-right: 1em;
 }
+.rest-curr-item-img{
+    width: 150px;
+    height: 100px;
+}
+
+.vac-curr-item-img{
+    width: 150px;
+    height: 100px;
+}
+
+/*.rest-curr-item-name{
+    text-overflow: ellipsis;
+    !*width: 140px;*!
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+}*/
+/*.rest-curr-item-type-sec{
+    text-overflow: ellipsis;
+    width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    display: none;
+}
+.rest-curr-item-prc-sec{
+    display: none;
+}*/
+
+/*.vac-curr-item-head{
+    text-overflow: ellipsis;
+    !*width: 140px;*!
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+}*/
+
+/*.vac-curr-item-rev-sec{
+    display: none;
+}
+.vac-curr-item-prc-sec{
+    text-overflow: ellipsis;
+    width: 100px;
+
+    !*white-space: nowrap;*!
+    overflow: hidden;
+    display: none;
+}*/
+
+
 
 #home_sec_curr{
 /*    background: linear-gradient(rgba(200,200,200,.3),rgba(200,200,200,.8)), url('../../images/hide-obara-2034.jpg');
@@ -216,6 +252,7 @@ Data
     width: 80%;
     margin:auto;
 
+
 }
 
 #home_sec_ny{
@@ -243,71 +280,50 @@ Data
 
 .rest-curr-item-name{
     text-overflow: ellipsis;
-    width: 100px;
-    font-size: 14px;
+    width: 150px;
     white-space: nowrap;
     overflow: hidden;
 }
 .rest-curr-item-type-sec{
     text-overflow: ellipsis;
-    width: 100px;
+    width: 150px;
     white-space: nowrap;
     overflow: hidden;
-    display: none;
+    font-size: 10px;
 }
-.rest-curr-item-prc-sec{
-    display: none;
-}
+
 
 .vac-curr-item-head{
     text-overflow: ellipsis;
-    width: 100px;
-    font-size: 14px;
+    width: 150px;
+
     white-space: nowrap;
     overflow: hidden;
 }
-
-.vac-curr-item-rev-sec{
-    display: none;
-}
-.vac-curr-item-prc-sec{
-    text-overflow: ellipsis;
-    width: 100px;
-
-    /*white-space: nowrap;*/
-    overflow: hidden;
-    display: none;
-}
-
-.rest-curr-head-text{
-    /*font-size: 2em;*/
-    margin-left: .5em;
-}
-
-.vac-curr-head-text{
-    /*font-size: 2em;*/
-    margin-left: .5em;
-
-
-}
-
-.rest-curr-item-detail-btn{
-    margin-top: 1em;
-}
-.vac-curr-item-price-head{
-    font-weight: normal;
-}
-.vac-curr-item-detail-btn{
-    margin-top: 1em;
-
-}
-
+/*
+.rest-curr-item-prc-sec{
+    font-size: 10px;
+}*/
 #home_crime_head{
     text-overflow: ellipsis;
     width: 200px;
 
     white-space: nowrap;
     overflow: hidden;
+}
+
+
+.rest-curr-head-text{
+    /*font-size: 2em;*/
+    margin-left: .5em;
+}
+
+
+.vac-curr-head-text{
+    /*font-size: 2em;*/
+    margin-left: .5em;
+
+
 }
 
 /*

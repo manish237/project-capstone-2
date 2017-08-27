@@ -1,14 +1,17 @@
-@import url("./home-media/home-min-1330.css") only screen
-and (min-width:1330px );
+@import url("./home-media/home-min-1600.css") only screen
+and (min-width:1600px );
+
+@import url("./home-media/home-min-1300.css") only screen
+and (min-width:1300px ) and (max-width:1599px );
 
 @import url("./home-media/home-min-992.css") only screen
-and (min-width:992px ) and (max-width:1329px );
+and (min-width:992px ) and (max-width:1299px );
 
 @import url("./home-media/home-min-350.css") only screen
 and (min-width:350px ) and (max-width:991px );
 
-@import url("./home-media/home-min-350.css") only screen
-and (max-width:349px );
+/*@import url("./home-media/home-min-350.css") only screen
+and (max-width:349px );*/
 
 .modal.fade{
     opacity:1;

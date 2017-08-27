@@ -34,7 +34,7 @@ body{
     /*color: black;*/
     /*background:  url('../../images/beaches-caribean-listen-sand-water-relax-beach-wallpaper-border.jpg');*/
     /*background-image: url("../images/map-img-01.jpg") ;*/
-    background-image: url('../../images/beaches-caribean-listen-sand-water-relax-beach-wallpaper-border.jpg') ;
+    background-image: url('../../images/banner.jpg') ;
     background-position: center center;
     background-repeat:  no-repeat;
     background-attachment: fixed;
@@ -58,7 +58,7 @@ Filter section
     margin-left: 1em;
     height:100%;
     background:#7f7f7f;
-    background:rgba(255,255,255,0.5);
+    background:rgba(255,255,255,0.8);
     padding-bottom: 1em;
 
 }
@@ -82,7 +82,7 @@ Filter section
     display: block;
     margin-bottom: 1em;
 
-    width: 15em;
+    /*width: 15em;*/
 
 }
 
@@ -132,7 +132,7 @@ Filter section
     margin-top: 1em;
     display: block;
 
-    width: 15em;
+    /*width: 15em;*/
 
 }
 
@@ -150,7 +150,7 @@ Filter section
     margin-top: 1em;
     display: block;
 
-    width: 15em;
+    /*width: 15em;*/
 }
 
 #filter-vac-price-range-text{
@@ -169,7 +169,7 @@ Filter section
     display: block;
 
 
-    width: 15em;
+    /*width: 15em;*/
 }
 
 
@@ -218,7 +218,7 @@ Main Section
 #main-section-search-sec{
     margin: auto;
     background:#7f7f7f;
-    background:rgba(255,255,255,0.5);
+    background:rgba(255,255,255,0.8);
     padding-bottom: 1em;
 }
 
@@ -250,6 +250,22 @@ Search bar
 
 }
 
+h2{
+    font-family:  'PT Sans', Sans-Serif;
+    font-size: 46px;
+}
+h4{
+    font-family:  'PT Sans', Sans-Serif;
+    font-size: 20px;
+}
+h5{
+    font-family:  'PT Sans', Sans-Serif;
+    font-size: 18px;
+}
+small{
+    font-family:  'Bitter', Serif;
+    font-size: 14px;
+}
 /*
 Data section
  */
@@ -258,28 +274,29 @@ Data section
    /*margin-left: 0.1em;*/
    padding-left: 2em;
 
-
-    background: linear-gradient(rgba(200,200,200,.3),rgba(200,200,200,.8)), url('../../images/food-01.jpg');
-    /*background-image: url("../images/map-img-01.jpg") ;*/
+    background:rgba(255,255,255,0.8);
+/*    background: linear-gradient(rgba(200,200,200,.3),rgba(200,200,200,.8)), url('../../images/food-01.jpg');
+    !*background-image: url("../images/map-img-01.jpg") ;*!
     background-position: center center;
     background-repeat:  no-repeat;
-    /*background-attachment: fixed;*/
-    background-size:  cover;
+    !*background-attachment: fixed;*!
+    background-size:  cover;*/
     color: black;
 }
 
 #user-vac-sec{
     margin: auto;
     padding-left: 2em;
-    background: linear-gradient(rgba(200,200,200,.3),rgba(200,200,200,.8)), url('../../images/vac-01.jpg');
-    /*background-image: url("../images/map-img-01.jpg") ;*/
+    background:rgba(255,255,255,0.8);
+/*    background: linear-gradient(rgba(200,200,200,.3),rgba(200,200,200,.8)), url('../../images/vac-01.jpg');
+    !*background-image: url("../images/map-img-01.jpg") ;*!
 
     background-position: center center;
     background-repeat:  no-repeat;
-    /*background-attachment: fixed;*/
-    background-size:  cover;
+    !*background-attachment: fixed;*!
+    background-size:  cover;*/
 
-    margin-top: 1em;
+    margin-top: .5em;
 }
 
 #user-crime-sec{
@@ -291,7 +308,7 @@ Data section
 #user-map-section{
     margin: auto;
     height: 50em;
-    margin-top: 1em;
+    margin-top: .5em;
     /*margin-left: -1em;*/
     /*margin-right: -2em;*/
 }

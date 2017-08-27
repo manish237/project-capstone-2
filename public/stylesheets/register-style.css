@@ -1,32 +1,8 @@
-body{
-    background: linear-gradient(rgba(200,200,200,.3),rgba(200,200,200,.8)), url('../images/ladakh-highway-91.jpg');
-    /*background-image: url("../images/map-img-01.jpg") ;*/
-    /*background-repeat: no-repeat;*/
-    background-size:cover;
-    /*background-position:center;*/
-    /*background-size:100%;*/
-}
+@import url("./register-media/register-min-768.css") only screen
+and (min-width:768px );
+
+@import url("./register-media/register-min-350.css") only screen
+and (max-width:767px );
 
 
-#reg-head-sec{
-    margin-bottom: 1em;
-}
 
-#reg-sec{
-    margin-top: 10em;
-    margin-right: 10em;
-    margin-left: 20em;
-    width: 40em;
-
-    text-align: center;
-    background:#7f7f7f;
-    background:rgba(255,255,255,0.5);
-}
-
-.row{
-    /*background: !*linear-gradient(rgba(200,200,200,.3),rgba(200,200,200,.8)),*! url('../images/reg-02.jpg');*/
-    /*color: white;*/
-
-    /*margin-left: 10%;*/
-    /*margin-right: 10%;*/
-}

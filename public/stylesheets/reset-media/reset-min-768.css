@@ -1,0 +1,41 @@
+body{
+    background: linear-gradient(rgba(200,200,200,.3),rgba(200,200,200,.8)), url('../../images/hd-pics-photos-travel-beautiful-places-best-world-tour-desktop-background-wallpaper.jpg');
+    background-position: center center;
+    background-repeat:  no-repeat;
+    background-attachment: fixed;
+    background-size:  cover;
+}
+
+#res-head-sec{
+    margin-bottom: 1em;
+}
+h2{
+    font-family:  'PT Sans', Sans-Serif;
+    font-size: 46px;
+}
+h4{
+    font-family:  'PT Sans', Sans-Serif;
+    font-size: 20px;
+}
+
+label{
+    font-family:  'Bitter', Serif;
+    font-size: 14px;
+}
+.row{
+    /*background: !*linear-gradient(rgba(200,200,200,.3),rgba(200,200,200,.8)),*! url('../images/reg-02.jpg');*/
+    /*color: white;*/
+
+    /*margin-left: 10%;*/
+    /*margin-right: 10%;*/
+}
+#reset-sec{
+    top:10em;
+    /*margin-top: 20em;*/
+    margin:auto;
+    width: 40em;
+
+    text-align: center;
+    background:#7f7f7f;
+    background:rgba(255,255,255,0.8);
+}

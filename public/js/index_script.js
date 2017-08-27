@@ -7,10 +7,15 @@ let HOME_PAGE_DATA_LIMIT = 5;
 /*
 Handle Register Button press
  */
-$('#btn-splash').click(function (e) {
+$('#btn-sign-in').click(function (e) {
     e.preventDefault();
     console.log("sign up button clicked")
     window.location.href = '/home.html'
 })
 
 
+$('#btn-sign-up').click(function (e) {
+    e.preventDefault();
+    console.log("sign up button clicked")
+    window.location.href = '/register.html'
+})

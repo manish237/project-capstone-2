@@ -1,11 +1,12 @@
-@import url("./user-media/user-min-1200.css") only screen
-and (min-width:1200px );
+@import url("./user-media/user-min-1190.css") only screen
+and (min-width:1190px );
+
 
 @import url("./user-media/user-min-992.css") only screen
-and (min-width:992px ) and (max-width:1199px );
+and (min-width:992px ) and (max-width:1189px );
 
 @import url("./user-media/user-min-350.css") only screen
 and (min-width:351px ) and (max-width:991px );
 
-@import url("./user-media/user-min-350.css") only screen
-and (max-width:350px );
+/*@import url("./user-media/user-min-350.css") only screen
+and (max-width:350px );*/

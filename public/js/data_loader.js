@@ -141,7 +141,7 @@ function renderRestData(dataUI,forPage="") {
     else if(forPage=="user"){
         //console.log("----"+ localStorage.getItem("curr_addr"))
         //console.log("----"+ localStorage.getItem("curr_addr"))
-        let elem = "<h3 id='rest-head-text'>Restaurants</h3>" +
+        let elem = "<h2 id='rest-head-text'>Restaurants</h2>" +
             "<strong><span class='at_address'> (Near:" + localStorage.getItem("curr_addr") + ")</span></strong>"
         $('#user-rest-sec').append(elem);
         for(let i =0;i<dataUI.length;i++){
@@ -154,12 +154,12 @@ function renderRestData(dataUI,forPage="") {
                     "<img src='" +  dataUI[i].image_url + "' width='100' height='100' class='rest-row-item-img'/>" +
                     "</div>" +
                     "<div class='col-md-4 rest-row-item-name-sec'>" +
-                    "<h5 class='rest-row-item-name-lb'>Restaurant Name</h5>" +
-                    "<small class='rest-row-item-name-text'>" + dataUI[i].name + "</small>" +
-                    "<h5 class='rest-row-item-address-lb'>Address</h5>" +
-                    "<small class='rest-row-item-address-text'>" + dataUI[i].address +"</small>" +
-                    "<small class='rest-row-item-phone-lb'><b>Phone: </b></small>" +
-                    "<small class='rest-row-item-phone-text'>" + dataUI[i].phone + "</small>" +
+                    "<h4 class='rest-row-item-name-lb'>"+dataUI[i].name+"</h4>" +
+                    // "<small class='rest-row-item-name-text'>" + dataUI[i].name + "</small>" +
+                    "<h5 class='rest-row-item-address-lb'>"+ dataUI[i].address +"</h5>" +
+                    // "<small class='rest-row-item-address-text'>" + dataUI[i].address +"</small>" +
+                    "<small class='rest-row-item-phone-lb'>"+ dataUI[i].phone +"</small>" +
+                    // "<small class='rest-row-item-phone-text'>" + dataUI[i].phone + "</small>" +
                     "</div>" +
                     "<div class='col-md-4' class='rest-row-item-review-sec'>" +
                     "<small><b>Type: </b></small>" +
@@ -293,7 +293,7 @@ function renderVacData(dataUI,forPage="") {
     else if(forPage==="user")
     {
         //console.log("----"+ localStorage.getItem("curr_addr"))
-        let elem = "<h3 id='rest-head-text'>Vacation Rentals</h3>" +
+        let elem = "<h2 id='rest-head-text'>Vacation Rentals</h2>" +
             "<strong><span class='at_address'> (Near:" + localStorage.getItem("curr_addr") + ")</span></strong>"
         $('#user-vac-sec').append(elem);
 
@@ -307,7 +307,7 @@ function renderVacData(dataUI,forPage="") {
                     "<img src='" + dataUI[i].image_url + "' width='100' height='100' class='vac-row-item-img' />" +
                     "</div>" +
                     "<div class='col-md-4 vac-row-item-head-sec'>" +
-                    "<h5 class='vac-row-item-head-lb'>" + dataUI[i].headline + "</h5>" +
+                    "<h4 class='vac-row-item-head-lb'>" + dataUI[i].headline + "</h4>" +
                     "</div>" +
                     "<div class='col-md-4 vac-row-item-detail-sec'>" +
                     "<small><b>Avg Nightly Price: </b></small>" +

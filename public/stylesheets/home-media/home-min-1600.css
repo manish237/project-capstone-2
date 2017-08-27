@@ -31,17 +31,46 @@ Loader
 Head background
  */
 body{
-    background-color: darkslategray;
+    /*background-color: white;*/
+    background-image: linear-gradient(rgba(200,200,200,.5),rgba(100,100,100,.5)), url('../../images/bg34.jpg');
+    background-position: center center;
+    background-repeat:  no-repeat;
+    background-attachment: fixed;
+    background-size:  cover;
 }
 
-.jumbotron{
-    background: linear-gradient(rgba(200,200,200,.3),rgba(100,100,100,.8)), url('../../images/hawaii2.jpg');
+h2{
+    font-family:  'PT Sans', Sans-Serif;
+    font-size: 46px;
+}
+h4{
+    font-family:  'PT Sans', Sans-Serif;
+    font-size: 18px;
+}
+small{
+    font-family:  'Bitter', Serif;
+    font-size: 12px;
+}
+
+#home_page_form{
+    background: linear-gradient(rgba(200,200,200,.3),rgba(100,100,100,.3)), url('../../images/traveling-tradie-1.jpg');
     background-repeat: no-repeat;
     background-size:cover;
     background-position:center;
     background-size:100%;
     height: 40em;
-    color: white;
+    color: black;
+    margin: auto;
+    margin-bottom: .5em;
+    width: 80%;
+
+}
+
+
+#home_page_form_main{
+    top: 4em;
+
+    position: relative;
 }
 
 /*
@@ -122,65 +151,77 @@ Title/Description
     padding-top: 5px;
     font-family: 'Lobster', cursive;
 }
-#home_page_form{
 
-    top: 4em;
-
-    position: relative;
-
-}
 
 /*
 Data
  */
 
 
-
+.home_col{
+    margin-left: -2em;
+    padding-right: 1em;
+}
 .vac_col{
     padding-left: 1em;
     padding-right: 1em;
 }
 
 #home_sec_curr{
-    background: linear-gradient(rgba(200,200,200,.3),rgba(200,200,200,.8)), url('../../images/hide-obara-2034.jpg');
-    /*background-image: url("../images/map-img-01.jpg") ;*/
+/*    background: linear-gradient(rgba(200,200,200,.3),rgba(200,200,200,.8)), url('../../images/hide-obara-2034.jpg');
+    !*background-image: url("../images/map-img-01.jpg") ;*!
     background-repeat: no-repeat;
     background-size:cover;
     background-position:center;
-    background-size:100%;
+    background-size:100%;*/
+    background:#7f7f7f;
+    background:rgba(255, 255, 255,0.9);
     height: 30em;
-    color: white;
+    color: black;
     padding-left:2em;
-    margin-bottom: 1em;
-    margin-top:-1em;
+    margin-bottom: 5em;
+    /*margin-top:.5em;*/
+    width: 80%;
+    margin:auto;
 
 }
 
 #home_sec_la{
-    background: linear-gradient(rgba(200,200,200,.3),rgba(200,200,200,.8)), url('../../images/LA 7.jpg');
-    /*background-image: url("../images/map-img-01.jpg") ;*/
+/*    background: linear-gradient(rgba(200,200,200,.3),rgba(200,200,200,.8)), url('../../images/LA 7.jpg');
+    !*background-image: url("../images/map-img-01.jpg") ;*!
     background-repeat: no-repeat;
     background-size:cover;
     background-position:center;
-    background-size:100%;
+    background-size:100%;*/
+    background:#7f7f7f;
+    background:rgba(255, 255, 255,0.9);
     height: 30em;
-    color: white;
+    color: black;
     padding-left:2em;
-    margin-bottom: 1em;
+    /*margin-bottom: 1em;*/
+    margin-top:10em;
+    width: 80%;
+    margin:auto;
+
 
 }
 
 #home_sec_ny{
-    background: linear-gradient(rgba(200,200,200,.3),rgba(200,200,200,.8)), url('../../images/new york 3.jpg');
-    /*background-image: url("../images/map-img-01.jpg") ;*/
+/*    background: linear-gradient(rgba(200,200,200,.3),rgba(200,200,200,.8)), url('../../images/new york 3.jpg');
+    !*background-image: url("../images/map-img-01.jpg") ;*!
     background-repeat: no-repeat;
     background-size:cover;
     background-position:center;
-    background-size:100%;
+    background-size:100%;*/
+    background:#7f7f7f;
+    background:rgba(255, 255, 255,0.9);
     height: 30em;
-    color: white;
+    color: black;;
     padding-left:2em;
-    margin-bottom: 1em;
+    margin-bottom: .5em;
+    width: 80%;
+    margin:auto;
+
 
 }
 
