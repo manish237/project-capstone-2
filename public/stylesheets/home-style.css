@@ -1,14 +1,26 @@
-@import url("./home-media/home-min-1600.css") only screen
-and (min-width:1600px );
+/*350-700
+700-800
+800-992
+992-1190
+1190-up*/
 
-@import url("./home-media/home-min-1300.css") only screen
-and (min-width:1300px ) and (max-width:1599px );
+@import url("./home-media/home-min-1790.css") only screen
+and (min-width:1790px );
+
+@import url("./home-media/home-min-1340.css") only screen
+and (min-width:1340px ) and (max-width:1789px );
 
 @import url("./home-media/home-min-992.css") only screen
-and (min-width:992px ) and (max-width:1299px );
+and (min-width:992px ) and (max-width:1339px );
 
-@import url("./home-media/home-min-350.css") only screen
-and (min-width:350px ) and (max-width:991px );
+@import url("./home-media/home-min-768.css") only screen
+and (min-width:768px ) and (max-width:991px );
+
+@import url("./home-media/home-min-360.css") only screen
+and (min-width:360px ) and (max-width:767px );
+
+@import url("./home-media/home-min-1500.css") only screen
+and (max-width:359px );
 
 /*@import url("./home-media/home-min-350.css") only screen
 and (max-width:349px );*/

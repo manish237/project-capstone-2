@@ -1,0 +1,295 @@
+/*
+Loader
+ */
+.loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 50px;
+    height: 50px;
+    /*margin: -75px 0 0 -75px;*/
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    /*width: 120px;*/
+    /*height: 120px;*/
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+/*
+Head background
+ */
+body{
+    /*background-color: white;*/
+    background-image: linear-gradient(rgba(200,200,200,.5),rgba(100,100,100,.5)), url('../../images/bg34.jpg');
+    background-position: center center;
+    background-repeat:  no-repeat;
+    background-attachment: fixed;
+    background-size:  cover;
+}
+a:visited {
+    color: black;
+}
+a:link { color: #000000; text-decoration: none}
+h2{
+    font-family:  'PT Sans', Sans-Serif;
+    font-size: 46px;
+}
+h4{
+    font-family:  'PT Sans', Sans-Serif;
+    font-size: 18px;
+}
+small{
+    font-family:  'Bitter', Serif;
+    font-size: 12px;
+}
+
+#home_page_header{
+    /*    background: linear-gradient(rgba(200,200,200,.8),rgba(100,100,100,.8)), url('../../images/A_001_656-travel-Tourism-vacation.jpg');
+        background-repeat: no-repeat;
+        background-size:cover;
+        background-position:center;
+        background-size:100%;*/
+    background-color: white;
+    height: 30em;
+    color: black;
+    margin: auto;
+    margin-bottom: .5em;
+    width: 80%;
+
+}
+
+
+/*
+Title/Description
+ */
+
+
+#home_page_title{
+
+
+    font-size: 3em;
+
+    font-family: 'Love Ya Like A Sister', 'sans-serif';
+    text-shadow: 7px 7px lightgrey;
+
+}
+
+#home_page_description{
+    font-family: 'Love Ya Like A Sister', 'sans-serif';
+
+    font-size: 1em;
+    margin-top: -.5em;
+}
+/*
+    Form
+ */
+
+#home_form_row{
+    margin:auto;
+    margin-top: 2em;
+}
+
+
+/*#form-sign-in{
+    margin-top: -2em;
+}*/
+
+
+#signin-text{
+    font-family: 'Julius Sans One', 'sans-serif';
+    font-size: 2em;
+}
+
+#signin-username{
+    height: 3em;
+    width: 15em;
+    margin: auto;
+
+    /*margin-left: 1em;*/
+}
+
+#signin-password{
+    width: 15em;
+    height: 3em;
+    /*margin-left: 1em;*/
+    margin: auto;
+
+
+}
+
+#btn-sign-in{
+    height: 3em;
+    width: 7em;
+    margin-left: 1em;
+    margin-top:.1em;
+}
+
+#btn-sign-up{
+    width: 7em;
+    height: 3em;
+    margin-left: .5em;
+    margin-top:.1em;
+}
+
+#home_form_under_row{
+    margin: auto;
+    margin-top: .5em;
+    /*padding-top: .5em;*/
+    /*height: 5em;*/
+}
+.forgot-link-font
+{
+    font-family: 'Julius Sans One', 'sans-serif';
+}
+#form-line-test{
+    margin-left: 1em;
+    font-size: 0.7em;
+}
+
+#form-line-link{
+
+    margin-left: -1em;
+}
+
+
+
+
+/*
+Data
+ */
+
+
+
+#home_sec_curr{
+    background:#7f7f7f;
+    background:rgba(255, 255, 255,0.9);
+    height: 180em;
+    color: black;
+    padding-left:2em;
+    padding-top: 1em;
+    padding-right: 2em;
+    width: 80%;
+    margin:auto;
+
+}
+
+#home_sec_la{
+    background:#7f7f7f;
+    background:rgba(255, 255, 255,0.9);
+    height: 180em;
+    color: black;
+    padding-left:2em;
+    padding-right: 2em;
+    width: 80%;
+    margin:auto;
+    margin-top: .2em;
+
+
+}
+
+#home_sec_ny{
+
+    background:#7f7f7f;
+    background:rgba(255, 255, 255,0.9);
+    height: 180em;
+    color: black;;
+    padding-left:2em;
+    padding-right: 2em;
+    width: 80%;
+    margin:auto;
+    margin-top: .2em;
+}
+
+/*
+Rest items
+ */
+
+.rest-curr-head-text{
+    font-size: 2em;
+    text-align: center;
+}
+
+.rest-curr-item-img-sec{
+    text-align: center;
+}
+.rest-curr-item-name{
+    font-size: 1.5em;
+    padding-top: 1em;
+
+}
+.rest-curr-item-img{
+    width: 200px;
+    height: 150px;
+}
+.rest-curr-item-type-sec{
+    text-align: center;
+    padding-top:1em;
+}
+.rest-curr-item-prc-sec{
+    text-align: center;
+}
+.rest-curr-item-rev-sec{
+     text-align: center;
+}
+.rest-curr-item-btn-sec{
+    text-align: center;
+}
+.rest-curr-item-detail-btn{
+    margin-top: 1em;
+}
+
+
+/*
+Rest items
+ */
+.vac-curr-head-text{
+    font-size: 2em;
+    text-align: center;
+}
+.vac-curr-item-head{
+    padding-top: 1em;
+
+    font-size: 1.5em;
+}
+.vac-curr-item-img-sec{
+    text-align: center;
+}
+
+
+.vac-curr-item-prc-sec{
+    padding-top:1em;
+    text-align: center;
+}
+.vac-curr-item-rate-sec{
+    text-align: center;
+}
+.vac-curr-item-rev-sec{
+    text-align: center;
+}
+.vac-curr-item-btn-sec{
+    text-align: center;
+}
+.vac-curr-item-detail-btn{
+    margin-top: 1em;
+}
+.vac-curr-item-img{
+    width: 200px;
+    height: 150px;
+}
+
+
+/*
+Footer
+ */

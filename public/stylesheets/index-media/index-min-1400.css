@@ -12,14 +12,14 @@ body{
     background-size:cover;
     background-position:center;
     background-size:100%;
-    height: 50em;
+    height: 10em;
     color: darkslategray;
     /*background:#7f7f7f;*/
     /*background:rgba(255,255,255,0.5);*/
     margin: auto;
-    margin-bottom: 1em;
+    margin-bottom: .4em;
     color: white;;
-    width:75%;
+    width:100%;
 }
 
 /*
@@ -30,7 +30,7 @@ Title/Description
 #idx_page_title{
 
 
-    font-size: 15em;
+    font-size: 3em;
 
     font-family: 'Lobster', cursive;
 
@@ -39,12 +39,12 @@ Title/Description
 #idx_page_description{
     font-family: 'Lobster', cursive;
 
-    font-size: 5em;
+    font-size: 1em;
 }
 
 
 #splash-button-sec{
-    height: 15em;
+    height: 10em;
     /*width:100%;*/
     color: darkslategray;
     background:#7f7f7f;
@@ -52,7 +52,7 @@ Title/Description
     background-color: white;
     margin: auto;
     margin-bottom: .1em;
-    width:75%;
+    width:100%;
 }
 
 .button {
@@ -62,11 +62,11 @@ Title/Description
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 30px;
+    font-size: 15px;
     margin: 4px 2px;
     cursor: pointer;
-    width: 10em;
-    height: 3em;
+    width: 8em;
+    height: 2em;
     box-shadow: 0 1em 2em 0 rgba(0,0,0,0.2), 0 1em 3em 0 rgba(0,0,0,0.19);
     border-radius: 1em;
     font-family: 'Lobster', cursive;
@@ -93,17 +93,102 @@ Title/Description
 
 }
 
-#splash-about-sec, #splash-travel-sec, #splash-eat-sec, #splash-stay-sec{
-    height: 40em;
-    width:75%;
+#splash-about-sec
+{
+    height: 30em;
+    width:100%;
     color: darkslategray;
-    /*    background:#7f7f7f;
-        background:rgba(255,255,255,0.5);*/
     background-color: white;
-
     margin: auto;
-    margin-bottom: 0.1em;
+    margin-top: .2em;
 }
+#splash-about-head-text{
+    font-size: 1.5em;
+    padding-top: 1em;
+}
+#splash-about-img-col{
+    text-align: center;
+}
+#splash-about-img{
+    height: 200px;
+    width: 200px;
+    /*margin-top:-2em;*/
+}
+#splash-about-text-col{
+    text-align: left;
+    padding-top: 1em;
+    font-size: 1em;
+    font-family:'Quicksand', sans-serif;
+    margin-left: 12px;
+}
+
+
+
+#splash-travel-sec
+{
+    height: 30em;
+    width:100%;
+    color: darkslategray;
+    background-color: white;
+    margin: auto;
+    margin-top: .2em;
+}
+#splash-travel-head-text{
+    font-size: 1.5em;
+    padding-top: 1em;
+}
+#splash-travel-img-col{
+    text-align: center;
+}
+#splash-travel-img{
+    height: 200px;
+    width: 200px;
+    /*margin-top:-3em;*/
+}
+#splash-travel-text-col{
+    text-align: left;
+    padding-top: 1em;
+    font-size: 1em;
+    font-family:'Quicksand', sans-serif;
+    margin-left: 12px;
+
+}
+
+
+
+
+#splash-eat-sec
+{
+    height: 30em;
+    width:100%;
+    color: darkslategray;
+    background-color: white;
+    margin: auto;
+    margin-top: .2em;
+}
+#splash-eat-head-text{
+    font-size: 1.5em;
+    padding-top: 1em;
+}
+#splash-eat-img-col{
+    text-align: center;
+}
+#splash-eat-img{
+    height: 200px;
+    width: 200px;
+    /*margin-top:3em;*/
+}
+#splash-eat-text-col{
+    text-align: left;
+    padding-top: 1em;
+    font-size: 1em;
+    font-family:'Quicksand', sans-serif;
+    margin-left: 12px;
+
+}
+
+
+
 h3{
     font-family: 'Lato', Sans-Serif;
     font-size: 3em;
@@ -115,6 +200,7 @@ h6{
 }
 
 
+/*
 
 .limit-1{
     width: 100%;
@@ -137,6 +223,7 @@ h6{
     max-width: 100%;
     max-height: 100%;
 }
+*/
 
 
 li{

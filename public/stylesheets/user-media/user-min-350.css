@@ -30,10 +30,6 @@ Loader
     100% { transform: rotate(360deg); }
 }
 body{
-    /*background-color: darkslategray;*/
-    /*color: black;*/
-    /*background:  url('../../images/beaches-caribean-listen-sand-water-relax-beach-wallpaper-border.jpg');*/
-    /*background-image: url("../images/map-img-01.jpg") ;*/
     background-image: url('../../images/banner.jpg') ;
     background-position: center center;
     background-repeat:  no-repeat;
@@ -61,188 +57,6 @@ Filter section
     display: none;
 
 }
-#filter-head-text {
-    text-align: center;
-}
-#filter-rest-head-text{
-    margin-top: 5em;
-    font-size: 1em;
-
-}
-
-#filter-rest-head-sub-text{
-    display: none;
-}
-
-#filter-rest-sort-by-text{
-    margin-top: 1em;
-
-    /*display: block;*/
-    font-size: 1em;
-
-}
-
-#filter-rest-sort-by{
-    margin-top: 1em;
-    width: 10em;
-    font-size: .8em;
-
-}
-
-#filter-rest-open-now{
-    /*margin-top: .2em;*/
-    width: auto;
-    display: none;
-}
-#filter-rest-open-now-text{
-    font-size: .8em;
-    display: none;
-
-}
-#filter-rest-open-at{
-    /*margin-top: .3em;*/
-    width: auto;
-    display: none;
-
-}
-#filter-rest-open-at-text{
-    /*margin-top: 4em;*/
-    font-size: .8em;
-    display: none;
-
-}
-
-
-#filter-rest-open-at-date-time{
-    /*margin-top: 1em;*/
-    /*display: inline-block;*/
-    width: 8em;
-    /*margin-right: -2em;*/
-    display: none;
-}
-
-#filter-rest-open-at-date-time-inp{
-}
-
-
-#filter-vac-head-text{
-    margin-top: 5em;
-    font-size: 1em;
-}
-
-#filter-vac-head-sub-text{
-    display: none;
-}
-
-#filter-vac-sort-by-text{
-    margin-top: 1em;
-
-    /*display: block;*/
-
-    margin-left: -1em;
-    margin-bottom: 1em;
-    font-size: 1em;
-
-}
-
-
-#filter-vac-sort-by{
-
-    margin-top: 1em;
-    display: block;
-    margin-bottom: 1em;
-
-    display: block;
-
-    /*width: 15em;*/
-    width: 10em;
-    font-size: .8em;
-
-
-}
-
-
-
-#filter-vac-date-range-text{
-    /*margin-top: 1em;*/
-
-    display: block;
-
-    margin-left: -1em;
-    margin-bottom: 1em;
-    font-size: .8em;
-    display: none;
-
-
-}
-
-#filter-vac-date-range{
-    margin-top: 1em;
-    display: block;
-
-    width: 10em;
-    font-size: .8em;
-    display: none;
-}
-
-#filter-vac-price-range-text{
-    margin-top: 1em;
-    display: block;
-
-    margin-left: -1em;
-    margin-bottom: 1em;
-    font-size: .8em;
-    display: none;
-
-
-
-}
-
-
-#filter-vac-price-range{
-    margin-top: 1em;
-    display: block;
-
-
-    width: 10em;
-    font-size: .8em;
-    display: none;
-}
-
-
-#filter-crime-head-text{
-    margin-top: 5em;
-    font-size: 1.2em;
-
-}
-
-#filter-crm-dist-range-text{
-    margin-top: 1em;
-    display: block;
-
-    margin-left: -1em;
-    margin-bottom: 1em;
-
-
-}
-
-
-#filter-crm-dist-range{
-    margin-top: 1em;
-    display: block;
-
-
-    width: 15em;
-}
-
-#btn-filter{
-    margin-top: 1em;
-    display: block;
-}
-
-#btn-filter{
-    font-size: .8em;
-}
 
 /*
 Main Section
@@ -250,20 +64,29 @@ Main Section
 #main-section {
     top: 15em;
     margin-top: 1em;
-    left:1em;
-    right:18em;
-    width:75%;
+
+    width:80%;
+    margin: auto;
+    text-align: center;
 
 }
 
 #main-section-search-sec{
     background:#7f7f7f;
     background:rgba(255,255,255,0.5);
-    margin: auto;
-    padding-left: 1em;
-    padding-bottom: 1em;
+    margin:auto;
 }
+#autocomplete{
+    width: 12em;
+    margin:auto;
+    margin-bottom: 1em;
 
+}
+#btn-main-search {
+
+    margin:auto;
+    display: block;
+}
 /*
 Search bar
  */
@@ -271,8 +94,6 @@ Search bar
     font-size: 2em;
 
 }
-
-
 
 #checkbox-line{
     margin-top: 1em;
@@ -290,38 +111,25 @@ Search bar
     width: 1.2em;
 
 }
-#cb-crime{
-    margin-top: -.4em;
-    display: none;
 
-}
-#srch-cb-crm-text{
-    display: none;
-}
-#autocomplete{
-    width: 15em;
-}
-#btn-main-search{
-    margin-top: 1em;
-    display: block;
-    margin-left: 10em;
-}
+
+
 
 h2{
     font-family:  'PT Sans', Sans-Serif;
-    font-size: 46px;
+    font-size: 32px;
 }
 h4{
     font-family:  'PT Sans', Sans-Serif;
-    font-size: 20px;
+    font-size: 16px;
 }
 h5{
     font-family:  'PT Sans', Sans-Serif;
-    font-size: 18px;
+    font-size: 16px;
 }
 small{
     font-family:  'Bitter', Serif;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 /*
@@ -329,22 +137,18 @@ Data section
  */
 #user-rest-sec{
     margin: auto;
-    /*margin-left: 0.1em;*/
     padding-left: 2em;
+    text-align: center;
 
     background:rgba(255,255,255,0.8);
-/*    background: linear-gradient(rgba(200,200,200,.3),rgba(200,200,200,.8)), url('../../images/food-01.jpg');
-    !*background-image: url("../images/map-img-01.jpg") ;*!
-    background-position: center center;
-    background-repeat:  no-repeat;
-    !*background-attachment: fixed;*!
-    background-size:  cover;*/
     color: black;
 }
 
 #user-vac-sec{
     margin: auto;
     padding-left: 2em;
+    text-align: center;
+
     background:rgba(255,255,255,0.8);
 /*    background: linear-gradient(rgba(200,200,200,.3),rgba(200,200,200,.8)), url('../../images/vac-01.jpg');
     !*background-image: url("../images/map-img-01.jpg") ;*!
@@ -379,5 +183,17 @@ Data section
 .at_address{
     display: block;
     margin-bottom: 1em;
+    padding-bottom: 1em;
+}
+
+.rest-row-item-detail-btn{
+    margin-top:.5em;
+}
+
+.vac-row-item-detail-btn{
+    margin-top:.5em;
+}
+
+#form-user-addr-search{
     padding-bottom: 1em;
 }

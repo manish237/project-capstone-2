@@ -193,16 +193,18 @@ function initUI() {
     // console.log(localStorage.getItem("rest_open_now"))
     if(localStorage.getItem("rest_open_now")==="")
     {
-        $("#filter-rest-open-now").attr('checked',true)
-        $("#filter-rest-open-at").attr('checked',false)
+        $("#filter-rest-open").val("open_now");
+        // $("#filter-rest-open-now").attr('checked',true)
+        // $("#filter-rest-open-at").attr('checked',false)
         $('#filter-rest-open-at-date-time').hide()
     }
     else
     {
         if(localStorage.getItem("rest_open_now")==="true" || localStorage.getItem("rest_open_now")===true)
         {
-            $("#filter-rest-open-now").attr('checked',true)
-            $("#filter-rest-open-at").attr('checked',false)
+            $("#filter-rest-open").val("open_now");
+            // $("#filter-rest-open-now").attr('checked',true)
+            // $("#filter-rest-open-at").attr('checked',false)
             $('#filter-rest-open-at-date-time').hide()
         }
     }
@@ -211,16 +213,18 @@ function initUI() {
     // console.log(localStorage.getItem("rest_open_at"))
     if(localStorage.getItem("rest_open_at")==="")
     {
-        $("#filter-rest-open-now").attr('checked',true)
-        $("#filter-rest-open-at").attr('checked',false)
+        $("#filter-rest-open").val("open_now");
+        // $("#filter-rest-open-now").attr('checked',true)
+        // $("#filter-rest-open-at").attr('checked',false)
         $('#filter-rest-open-at-date-time').hide()
     }
     else
     {
         if(localStorage.getItem("rest_open_at")==="true")
         {
-            $("#filter-rest-open-now").attr('checked',false)
-            $("#filter-rest-open-at").attr('checked',true)
+            $("#filter-rest-open").val("open_at");
+            // $("#filter-rest-open-now").attr('checked',false)
+            // $("#filter-rest-open-at").attr('checked',true)
             $('#filter-rest-open-at-date-time').show()
         }
     }
@@ -490,6 +494,26 @@ $("#filter-rest-sort-by").change(function (e) {
     rest_sort_by = $('#filter-rest-sort-by').val();
     if(rest_sort_by==="--"){
         rest_sort_by="best_match";
+    }
+})
+
+/**
+ * Handle Restaurant Open Filter dropdown change
+ */
+$("#filter-rest-open").change(function (e) {
+    e.preventDefault()
+//    console.log($('#filter-rest-sort-by-option').val())
+    rest_open = $('#filter-rest-open').val();
+    if(rest_open==="--" || rest_open==="open_now"){
+        rest_open_now=true;
+        rest_open_at = false;
+        $("#filter-rest-open-at-date-time").hide()
+    }
+
+    else if(rest_open==="open_at"){
+        rest_open_at = true;
+        rest_open_now = false;
+        $("#filter-rest-open-at-date-time").show()
     }
 })
 

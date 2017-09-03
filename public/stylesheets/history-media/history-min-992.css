@@ -1,0 +1,91 @@
+body{
+    background: linear-gradient(rgba(200,200,200,.3),rgba(200,200,200,.8)), url('../../images/All_Gizah_Pyramids.jpg');
+    background-position: center center;
+    background-repeat:  no-repeat;
+    background-attachment: fixed;
+    background-size:  cover;
+}
+
+#hist-head-sec{
+    margin-bottom: 1em;
+}
+
+/*#hist-sec{*/
+/*margin-top: 10em;*/
+/*margin-right: 10em;*/
+/*margin-left: 20em;*/
+/*width: 40em;*/
+/**/
+/*!*text-align: center;*!*/
+/*!*background:#7f7f7f;*!*/
+/*!*background:rgba(255,255,255,0.5);*!*/
+/*}*/
+
+
+#hist-sec{
+    background:#7f7f7f;
+    background:rgba(255,255,255,0.8);
+    margin-top: 15em ;
+    width: 100%;
+    color: black;
+}
+#hist-sec-head{
+    font-size: 2em;
+    /*font-weight: lighter;*/
+    font-family: 'Julius Sans One', 'sans-serif';
+}
+
+#hist-data-sec{
+
+    /*margin: auto;*/
+    /*text-align: center;*/
+
+}
+
+.hist-item-val{
+    /*padding-top: .1em;*/
+    font-size: 1em;
+    /*font-weight: lighter;*/
+    font-family: 'Julius Sans One', 'sans-serif';
+    text-align: right;
+}
+
+.hist-item{
+    padding-top: 1em;
+    /*width: 70em;*/
+    /*margin: auto;*/
+
+}
+
+.hist-item-img-div{
+    /*padding-top:.2em;*/
+    margin-top: -.5em;
+    text-align: left;
+}
+
+#hist-no-result{
+    margin-top: 10em;
+    margin-right: 10em;
+    margin-left: 20em;
+    width: 40em;
+
+    text-align: center;
+    background:#7f7f7f;
+    background:rgba(255,255,255,0.5);
+}
+
+
+
+
+#hist-btn-sec{
+    margin-top: 1em;
+    padding-bottom: 1em;
+}
+
+.row{
+    /*background: !*linear-gradient(rgba(200,200,200,.3),rgba(200,200,200,.8)),*! url('../images/reg-02.jpg');*/
+    /*color: white;*/
+
+    /*margin-left: 10%;*/
+    /*margin-right: 10%;*/
+}

@@ -11,13 +11,15 @@ function renderHistData(data)
         {
             // console.log(i)
             elem=`<div class="row hist-item">
-                            <div class="col-sm-7 hist-item-val">
-                                <label class="addr">${data[i].address}</label>
-                            </div>
-                            <div class="col-sm-1 hist-item-img-div">
-                                <a href="#" data-id="${data[i].id}" class="ln-hist-item-del" onclick="deleteItem(this)"><img class="hist-item-img" src="images/warning-delete-cross-stop-close-exit-cancel-icon.png" width="30px" height="30px"/></a>
-                            </div>
-                        </div>`
+                    <div class="col-md-1"></div>
+                    <div class="col-md-5 hist-item-val">
+                        <label class="addr">${data[i].address}</label>
+                    </div>
+                    <div class="col-md-5 hist-item-img-div">
+                        <a href="#" data-id="${data[i].id}" class="ln-hist-item-del" onclick="deleteItem(this)"><img class="hist-item-img" src="images/warning-delete-cross-stop-close-exit-cancel-icon.png" width="30px" height="30px"/></a>
+                    </div>
+                    <div class="col-md-1"></div>
+                  </div>`
 
             $("#hist-data-sec").append(elem)
         }

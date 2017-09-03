@@ -5,8 +5,11 @@ and (min-width:1190px );
 @import url("./user-media/user-min-992.css") only screen
 and (min-width:992px ) and (max-width:1189px );
 
+@import url("./user-media/user-min-768.css") only screen
+and (min-width:768px ) and (max-width:991px );
+
 @import url("./user-media/user-min-350.css") only screen
-and (min-width:351px ) and (max-width:991px );
+and (max-width:767px );
 
 /*@import url("./user-media/user-min-350.css") only screen
 and (max-width:350px );*/

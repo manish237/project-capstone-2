@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="">
-        <title>Blank Template for Bootstrap</title>
+        <title>Destinalysis - User Home</title>
         <!-- Bootstrap core CSS -->
         <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
         <link href="bootstrap/css/bootstrap-slider.css" rel="stylesheet">
@@ -63,10 +63,16 @@
                             <option value="review_count">Reviews</option>
                             <option value="distance">Distance</option>
                         </select>
-                        <input class="form-control" type="radio" name="rest_open" id="filter-rest-open-now" value="open_now">
+                        <label class="control-label" for="filter-rest-open" id="filter-rest-open-text">Open:</label>
+                        <select class="form-control" id="filter-rest-open">
+                            <option value="">--</option>
+                            <option value="open_now">Open Now</option>
+                            <option value="open_at">Open At</option>
+                        </select>
+                        <!--<input class="form-control" type="radio" name="rest_open" id="filter-rest-open-now" value="open_now">
                         <label for="filter-rest-open-now" id="filter-rest-open-now-text">Open Now</label>
                         <input class="form-control" type="radio" name="rest_open" id="filter-rest-open-at" value="open_at">
-                        <label for="filter-rest-open-at" id="filter-rest-open-at-text">Open At</label>
+                        <label for="filter-rest-open-at" id="filter-rest-open-at-text">Open At</label>-->
                         <div class="input-group date" id="filter-rest-open-at-date-time">
                             <input type="text" class="form-control" id="filter-rest-open-at-date-time-inp" />
                             <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
@@ -127,29 +133,24 @@
                         <button type="submit" class="btn btn-default" id="btn-filter">Apply</button>
                     </form>
                 </div>
-                <div class="col-md-10 text-left" id="main-section">
+                <div class="col-md-10" id="main-section">
                     <div class="row" id="main-section-search-sec">
-                        <div class="row">
-                            <div class="col-sm-12" id="main-search-head">
-                                <h2 id="main-search-head-text">Search your destination</h2>
-                                <form class="form-inline" id="form-user-addr-search">
-                                        <input type="text" class="form-control" id="autocomplete" placeholder="Start Typing your address" size="80" required>
-                                        <button type="submit" class="btn btn-default" id="btn-main-search">Submit</button>
-                                        <div  id="checkbox-line">
-                                        <label class="checkbox-inline">
-                                            <input class="form-control" type="checkbox" value="restaurants" id="cb-rest" checked><span id="srch-cb-rest-text">Restaurants</span>
-
-                                        </label>
-                                        <label class="checkbox-inline">
-                                            <input class="form-control" type="checkbox" value="vacrent" id="cb-vac" checked><span id="srch-cb-vac-text">Vacation Rentals</span>
-                                        </label>
-                                        <label class="checkbox-inline" id="label-crm">
-                                            <input class="form-control" type="checkbox" value="crime" id="cb-crime" checked><span id="srch-cb-crm-text">Crime Reports</span>
-                                        </label>
-                                        </div>
-                                </form>
+                        <h2 id="main-search-head-text">Search your destination</h2>
+                        <form class="form-inline" id="form-user-addr-search">
+                            <input type="text" class="form-control" id="autocomplete" placeholder="Start Typing your address" size="80" required>
+                            <button type="submit" class="btn btn-default" id="btn-main-search">Submit</button>
+                            <div  id="checkbox-line">
+                                <label class="checkbox-inline">
+                                    <input class="form-control" type="checkbox" value="restaurants" id="cb-rest" checked><span id="srch-cb-rest-text">Restaurants</span>
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input class="form-control" type="checkbox" value="vacrent" id="cb-vac" checked><span id="srch-cb-vac-text">Vacation Rentals</span>
+                                </label>
+                                <label class="checkbox-inline" id="label-crm">
+                                    <input class="form-control" type="checkbox" value="crime" id="cb-crime" checked><span id="srch-cb-crm-text">Crime Reports</span>
+                                </label>
                             </div>
-                        </div>
+                        </form>
                     </div>
                     <hr>
                     <div class="row" id="user-rest-sec">

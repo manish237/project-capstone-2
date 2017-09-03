@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="">
         <meta name="author" content="">
-        <title>Jumbotron Template for Bootstrap</title>
+        <title>Destinalysis - Home</title>
         <!-- Bootstrap core CSS -->
         <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
         <!-- Custom styles for this template -->
@@ -17,7 +17,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
         <link href="stylesheets/home-style.css" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Lobster|Sedgwick+Ave|Noto+Serif|Oxygen:300|Bitter|PT+Sans:400i" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lobster|Sedgwick+Ave|Noto+Serif|Oxygen:300|Bitter|PT+Sans:400i|Julius+Sans+One|Love+Ya+Like+A+Sister" rel="stylesheet">
         <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css'>
 
     </head>
@@ -114,22 +114,33 @@
         <!-- Main jumbotron for a primary marketing message or call to action -->
         <div class="container-fluid" id="top-container">
 
-            <div class="row text-center" id="home_page_form">
-                <h1 id="home_page_title">Destinalysis</h1>
+            <div class="row text-center" id="home_page_header">
+                <a href="index.html"> <h1 id="home_page_title">Destinalysis</h1></a>
                 <p id="home_page_description">One stop for planning your next trip.</p>
-                <div class="col-md-12" id="home_page_form_main">
-                    <form class="form-inline" id="form-sign-in">
-                        <div class="form-group">
-                            <label id="signin-text">Login</label>
-                            <input type="email" placeholder="Email" class="form-control" id="signin-username" required="">
-                        </div>
-                        <div class="form-group">
-                            <input type="password" placeholder="Password" class="form-control" id="signin-password" required="">
-                        </div>
-                        <button type="submit" id="btn-sign-in" class="btn btn-primary">Sign in</button>
-                        <button type="submit" id="btn-sign-up" class="btn btn-primary">Register</button>
-                        <a class="forgot-link-font" id="ln-reset-pwd" href="reset.html">forgot password</a>
-                    </form>
+                <div class="row" id="home_form_row">
+                    <div class="col-md-12" id="home_page_form_main">
+                        <form class="form-inline" id="form-sign-in">
+                            <div class="form-group">
+                                <label id="signin-text">Login</label>
+                                <input type="email" placeholder="Email" class="form-control" id="signin-username" required="">
+                                <input type="password" placeholder="Password" class="form-control" id="signin-password" required="">
+                            </div>
+                            <button type="submit" id="btn-sign-in" class="btn btn-primary">Sign in</button>
+                            <button type="submit" id="btn-sign-up" class="btn btn-primary">Register</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="row" id="home_form_under_row">
+                    <div class="col-md-1" id="form-line-1"></div>
+                    <div class="col-md-5" id="form-line-test">
+                        <span id="test-username">(Test User: test@capstone.com)</span>
+                        <span id="test-password">(Test Password: testuser)</span>
+                    </div>
+                    <div class="col-md-5" id="form-line-link">
+                        <span id="forgotlinkspan"><a class="forgot-link-font" id="ln-reset-pwd" href="reset.html">forgot password</a></span>
+                    </div>
+                    <div class="col-md-1" id="form-line-3"></div>
+
                 </div>
             </div>
 <!--        </div>

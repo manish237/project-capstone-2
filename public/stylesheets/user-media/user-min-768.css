@@ -1,0 +1,197 @@
+/*
+Loader
+ */
+.loader {
+    /*position: absolute;*/
+    /*left: 50%;*/
+    /*top: 1000px;*/
+    /*z-index: 1;*/
+    top: 50em;
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    /*margin: -75px 0 0 -75px;*/
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    /*width: 120px;*/
+    /*height: 120px;*/
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+body{
+    background-image: url('../../images/banner.jpg') ;
+    background-position: center center;
+    background-repeat:  no-repeat;
+    background-attachment: fixed;
+    background-size:  cover;
+}
+
+/*
+Navigation Bar
+ */
+
+.glyphicon.glyphicon-menu-hamburger {
+    font-size: 20px;
+}
+
+/*
+Filter section
+ */
+#filter-section {
+    top: 20em;
+    margin-top: 1em;
+    margin-left: 3em;
+    height:100%;
+    width: 20em;
+    display: none;
+
+}
+
+/*
+Main Section
+ */
+#main-section {
+    top: 15em;
+    margin-top: 1em;
+
+    width:80%;
+    margin: auto;
+    text-align: center;
+
+}
+
+#main-section-search-sec{
+    background:#7f7f7f;
+    background:rgba(255,255,255,0.5);
+    margin:auto;
+}
+#autocomplete{
+    width: 20em;
+}
+/*#btn-main-search{
+    margin-top: 1em;
+    display: block;
+    !*margin-left: 10em;*!
+    text-align: center;
+}*/
+/*
+Search bar
+ */
+#main-search-head-text{
+    font-size: 3em;
+
+}
+
+#checkbox-line{
+    margin-top: 1em;
+    display: block;
+}
+
+#cb-rest{
+    margin-top: -.7em;
+    display: inline;
+    width: 1.2em;
+}
+#cb-vac{
+    margin-top: -.7em;
+    display: inline;
+    width: 1.2em;
+
+}
+
+
+
+
+h2{
+    font-family:  'PT Sans', Sans-Serif;
+    font-size: 40px;
+}
+h4{
+    font-family:  'PT Sans', Sans-Serif;
+    font-size: 20px;
+}
+h5{
+    font-family:  'PT Sans', Sans-Serif;
+    font-size: 18px;
+}
+small{
+    font-family:  'Bitter', Serif;
+    font-size: 14px;
+}
+
+/*
+Data section
+ */
+#user-rest-sec{
+    margin: auto;
+    padding-left: 2em;
+    text-align: center;
+
+    background:rgba(255,255,255,0.8);
+    color: black;
+}
+
+#user-vac-sec{
+    margin: auto;
+    padding-left: 2em;
+    text-align: center;
+
+    background:rgba(255,255,255,0.8);
+/*    background: linear-gradient(rgba(200,200,200,.3),rgba(200,200,200,.8)), url('../../images/vac-01.jpg');
+    !*background-image: url("../images/map-img-01.jpg") ;*!
+
+    background-position: center center;
+    background-repeat:  no-repeat;
+    !*background-attachment: fixed;*!
+    background-size:  cover;*/
+
+    margin-top: 1em;
+}
+
+#user-crime-sec{
+    padding-left: 1em;
+}
+
+
+
+#user-map-section{
+    margin: auto;
+    height: 50em;
+    margin-top: 1em;
+    /*margin-left: -1em;*/
+    /*margin-right: -2em;*/
+}
+
+#rest-head-text{
+    /*color: #0da0e1;*/
+}
+
+
+.at_address{
+    display: block;
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+}
+
+.rest-row-item-detail-btn{
+    margin-top:.5em;
+}
+
+.vac-row-item-detail-btn{
+    margin-top:.5em;
+}
+
+#form-user-addr-search{
+    padding-bottom: 1em;
+}

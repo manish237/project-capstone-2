@@ -1,7 +1,11 @@
-@import url("./index-media/index-min-1400.css") only screen
-and (min-width:1400px );
+@import url("./index-media/index-min-1300.css") only screen
+and (min-width:1300px );
 
 @import url("./index-media/index-min-992.css") only screen
-and (min-width:992px ) and (max-width:1399px );
-@import url("./index-media/index-min-350.css") only screen
-and (min-width:350px ) and (max-width:899px );
+and (min-width:992px ) and (max-width:1299px );
+@import url("./index-media/index-min-700.css") only screen
+and (min-width:700px ) and (max-width:991px );
+@import url("./index-media/index-min-385.css") only screen
+and (min-width:385px ) and (max-width:699px );
+@import url("./index-media/index-min-1400.css") only screen
+and (min-width:250px ) and (max-width:384px );

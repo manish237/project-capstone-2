@@ -41,10 +41,12 @@ function renderRestData(dataUI,forPage="") {
                     "</div>" +*/
                     "<div class='rest-curr-item-prc-sec'>" +
                     "<small class='rest-curr-item-rate-head'><b>Ratings: </b></small>" +
-                    "<small class='rest-curr-item-rate' >" + dataUI[i].rating + "</small>" +
-                    "(" +
-                    "<small class='rest-curr-item-rev'>" + dataUI[i].review_count + "Reviews</small>)" +
+                    "<small class='rest-curr-item-rate' >" + dataUI[i].rating + "/5</small>" +
                     "</div>" +
+                    "<div class='rest-curr-item-rev-sec'>" +
+                    "<small class='rest-curr-item-rev'>" + dataUI[i].review_count + " Reviews</small>" +
+                    "</div>" +
+                    "<div class='rest-curr-item-btn-sec'>" +
                     "<p><a class='btn btn-default rest-curr-item-detail-btn' target='_blank' href='" + dataUI[i].url + "' role='button'>View details</a></p>" +
                     "</div>"
                 //console.log(elem)
@@ -82,10 +84,12 @@ function renderRestData(dataUI,forPage="") {
                     "</div>" +*/
                     "<div class='rest-curr-item-prc-sec'>" +
                     "<small class='rest-curr-item-rate-head'><b>Ratings: </b></small>" +
-                    "<small class='rest-curr-item-rate' >" + dataUI[i].rating + "</small>" +
-                    "(" +
-                    "<small class='rest-curr-item-rev'>" + dataUI[i].review_count + "Reviews</small>)" +
+                    "<small class='rest-curr-item-rate' >" + dataUI[i].rating + "/5</small>" +
                     "</div>" +
+                    "<div class='rest-curr-item-rev-sec'>" +
+                    "<small class='rest-curr-item-rev'>" + dataUI[i].review_count + " Reviews</small>" +
+                    "</div>" +
+                    "<div class='rest-curr-item-btn-sec'>" +
                     "<p><a class='btn btn-default rest-curr-item-detail-btn' target='_blank' href='" + dataUI[i].url + "' role='button'>View details</a></p>" +
                     "</div>"
                 //console.log(elem)
@@ -124,10 +128,12 @@ function renderRestData(dataUI,forPage="") {
                     "</div>" +*/
                     "<div class='rest-curr-item-prc-sec'>" +
                     "<small class='rest-curr-item-rate-head'><b>Ratings: </b></small>" +
-                    "<small class='rest-curr-item-rate' >" + dataUI[i].rating + "</small>" +
-                    "(" +
-                    "<small class='rest-curr-item-rev'>" + dataUI[i].review_count + "Reviews</small>)" +
+                    "<small class='rest-curr-item-rate' >" + dataUI[i].rating + "/5</small>" +
                     "</div>" +
+                    "<div class='rest-curr-item-rev-sec'>" +
+                    "<small class='rest-curr-item-rev'>" + dataUI[i].review_count + " Reviews</small>" +
+                    "</div>" +
+                    "<div class='rest-curr-item-btn-sec'>" +
                     "<p><a class='btn btn-default rest-curr-item-detail-btn' target='_blank' href='" + dataUI[i].url + "' role='button'>View details</a></p>" +
                     "</div>"
                 //console.log(elem)
@@ -141,8 +147,12 @@ function renderRestData(dataUI,forPage="") {
     else if(forPage=="user"){
         //console.log("----"+ localStorage.getItem("curr_addr"))
         //console.log("----"+ localStorage.getItem("curr_addr"))
-        let elem = "<h2 id='rest-head-text'>Restaurants</h2>" +
-            "<strong><span class='at_address'> (Near:" + localStorage.getItem("curr_addr") + ")</span></strong>"
+        let elem = "<h2 id='rest-head-text'>Restaurants</h2>";
+        if(dataUI.length!==0)
+           elem = elem+"<strong><span class='at_address'> (Near:" + localStorage.getItem("curr_addr") + ")</span></strong>";
+        else {
+            elem = elem+"<strong><span class='at_address'>No data available</span></strong>"
+        }
         $('#user-rest-sec').append(elem);
         for(let i =0;i<dataUI.length;i++){
             if(i>2)
@@ -150,28 +160,27 @@ function renderRestData(dataUI,forPage="") {
             else{
                 elem =
                     "<div class='row rest-row-item'>" +
-                    "<div class='col-md-2 rest-row-item-img-sec'>" +
-                    "<img src='" +  dataUI[i].image_url + "' width='100' height='100' class='rest-row-item-img'/>" +
-                    "</div>" +
-                    "<div class='col-md-4 rest-row-item-name-sec'>" +
-                    "<h4 class='rest-row-item-name-lb'>"+dataUI[i].name+"</h4>" +
-                    // "<small class='rest-row-item-name-text'>" + dataUI[i].name + "</small>" +
-                    "<h5 class='rest-row-item-address-lb'>"+ dataUI[i].address +"</h5>" +
-                    // "<small class='rest-row-item-address-text'>" + dataUI[i].address +"</small>" +
-                    "<small class='rest-row-item-phone-lb'>"+ dataUI[i].phone +"</small>" +
-                    // "<small class='rest-row-item-phone-text'>" + dataUI[i].phone + "</small>" +
-                    "</div>" +
-                    "<div class='col-md-4' class='rest-row-item-review-sec'>" +
-                    "<small><b>Type: </b></small>" +
-                    "<small class='rest-row-item-review-cat'>" + dataUI[i].categories + "</small>" +
-                    "<br>" +
-                    "<small><b>Ratings: </b></small>" +
-                    "<small class='rest-row-item-review-rate'>" + dataUI[i].rating + "</small>" +
-                    "(" +
-                    "<small class='rest-row-item-review-cnt'>" + dataUI[i].review_count + "</small>)" +
-                    "<br>" +
-                    "<a class='btn btn-default rest-row-item-detail-btn' target='_blank' href='" +  dataUI[i].url + "' role='button'>View details</a>" +
-                    "</div>" +
+                        "<div class='col-md-2 rest-row-item-img-sec'>" +
+                            "<img src='" +  dataUI[i].image_url + "' width='100' height='100' class='rest-row-item-img'/>" +
+                        "</div>" +
+                        "<div class='col-md-4 rest-row-item-name-sec'>" +
+                            "<h4 class='rest-row-item-name-lb'>"+dataUI[i].name+"</h4>" +
+                            // "<small class='rest-row-item-name-text'>" + dataUI[i].name + "</small>" +
+                            "<h5 class='rest-row-item-address-lb'>"+ dataUI[i].address +"</h5>" +
+                            // "<small class='rest-row-item-address-text'>" + dataUI[i].address +"</small>" +
+                            "<small class='rest-row-item-phone-lb'>"+ dataUI[i].phone +"</small>" +
+                            // "<small class='rest-row-item-phone-text'>" + dataUI[i].phone + "</small>" +
+                        "</div>" +
+                        "<div class='col-md-4' class='rest-row-item-review-sec'>" +
+                            "<small><b>Type: </b></small>" +
+                            "<small class='rest-row-item-review-cat'>" + dataUI[i].categories + "</small>" +
+                            "<br>" +
+                            "<small><b>Ratings: </b></small>" +
+                            "<small class='rest-row-item-review-rate'>" + dataUI[i].rating + "</small>" +
+                            "(" +
+                            "<small class='rest-row-item-review-cnt'>" + dataUI[i].review_count + "</small>)<br>" +
+                            "<a class='btn btn-default rest-row-item-detail-btn' target='_blank' href='" +  dataUI[i].url + "' role='button'>View details</a>" +
+                        "</div>" +
                     "</div>"
                 //console.log(elem)
                 $('#user-rest-sec').append(elem)
@@ -202,15 +211,18 @@ function renderVacData(dataUI,forPage="") {
                     "<img class='vac-curr-item-img' src='" + dataUI[i].image_url + "' width='200' height='150'/>" +
                     "</div>" +
                     "<div class='vac-curr-item-prc-sec'>" +
-                    "<small class='vac-curr-item-price-head'><b>Avg Nightly Price: </b></small>" +
+                    "<small class='vac-curr-item-price-head'><b>Nightly Price: </b></small>" +
                     "<small class='vac-curr-item-price'>" + dataUI[i].price + "</small>" +
                     "(<small class='vac-curr-item-price-curr'>" + dataUI[i].priceCurr + "</small>)" +
                     "</div>" +
-                    "<div class='vac-curr-item-rev-sec'>" +
+                    "<div class='vac-curr-item-rate-sec'>" +
                     "<small class='vac-curr-item-rate-head'><b>Ratings: </b></small>" +
-                    "<small class='vac-curr-item-rate''>" + dataUI[i].reviewAverage + "</small>" +
-                    "(<small class='vac-curr-item-cnt'>" + dataUI[i].reviewCount + "</small>)" +
+                    "<small class='vac-curr-item-rate''>" + dataUI[i].reviewAverage + "/5</small>" +
                     "</div>" +
+                    "<div class='vac-curr-item-rev-sec'>" +
+                    "<small class='vac-curr-item-cnt'>" + dataUI[i].reviewCount + " Reviews</small>" +
+                    "</div>" +
+                    "<div class='vac-curr-item-btn-sec'>" +
                     "<p><a class='btn btn-default vac-curr-item-detail-btn' target='_blank' href='" + dataUI[i].url + "' role='button'>View details</a></p>" +
                     "</div>"
                 //console.log(elem)
@@ -236,15 +248,18 @@ function renderVacData(dataUI,forPage="") {
                     "<img class='vac-curr-item-img' src='" + dataUI[i].image_url + "' width='200' height='150'/>" +
                     "</div>" +
                     "<div class='vac-curr-item-prc-sec'>" +
-                    "<small class='vac-curr-item-price-head'><b>Avg Nightly Price: </b></small>" +
+                    "<small class='vac-curr-item-price-head'><b>Nightly Price: </b></small>" +
                     "<small class='vac-curr-item-price'>" + dataUI[i].price + "</small>" +
                     "(<small class='vac-curr-item-price-curr'>" + dataUI[i].priceCurr + "</small>)" +
                     "</div>" +
-                    "<div class='vac-curr-item-rev-sec'>" +
+                    "<div class='vac-curr-item-rate-sec'>" +
                     "<small class='vac-curr-item-rate-head'><b>Ratings: </b></small>" +
-                    "<small class='vac-curr-item-rate''>" + dataUI[i].reviewAverage + "</small>" +
-                    "(<small class='vac-curr-item-cnt'>" + dataUI[i].reviewCount + "</small>)" +
+                    "<small class='vac-curr-item-rate''>" + dataUI[i].reviewAverage + "/5</small>" +
                     "</div>" +
+                    "<div class='vac-curr-item-rev-sec'>" +
+                    "<small class='vac-curr-item-cnt'>" + dataUI[i].reviewCount + " Reviews</small>" +
+                    "</div>" +
+                    "<div class='vac-curr-item-btn-sec'>" +
                     "<p><a class='btn btn-default vac-curr-item-detail-btn' target='_blank' href='" + dataUI[i].url + "' role='button'>View details</a></p>" +
                     "</div>"
                 //console.log(elem)
@@ -265,22 +280,25 @@ function renderVacData(dataUI,forPage="") {
             else {
                 let elem =
                     "<div class='col-md-4'>" +
-                    "<div class='vac-curr-item-img-sec'>" +
-                    "<h4 class='vac-curr-item-head'>" + dataUI[i].headline + "</h4>" +
-                    "<img class='vac-curr-item-img' src='" + dataUI[i].image_url + "' width='200' height='150'/>" +
-                    "</div>" +
-                    "<div class='vac-curr-item-prc-sec'>" +
-                    "<small class='vac-curr-item-price-head'><b>Avg Nightly Price: </b></small>" +
-                    "<small class='vac-curr-item-price'>" + dataUI[i].price + "</small>" +
-                    "(<small class='vac-curr-item-price-curr'>" + dataUI[i].priceCurr + "</small>)" +
-                    "</div>" +
-                    "<div class='vac-curr-item-rev-sec'>" +
-                    "<small class='vac-curr-item-rate-head'><b>Ratings: </b></small>" +
-                    "<small class='vac-curr-item-rate''>" + dataUI[i].reviewAverage + "</small>" +
-                    "(<small class='vac-curr-item-cnt'>" + dataUI[i].reviewCount + "</small>)" +
-                    "</div>" +
-                    "<p><a class='btn btn-default vac-curr-item-detail-btn' target='_blank' href='" + dataUI[i].url + "' role='button'>View details</a></p>" +
-                    "</div>"
+                        "<div class='vac-curr-item-img-sec'>" +
+                            "<h4 class='vac-curr-item-head'>" + dataUI[i].headline + "</h4>" +
+                            "<img class='vac-curr-item-img' src='" + dataUI[i].image_url + "' width='200' height='150'/>" +
+                        "</div>" +
+                        "<div class='vac-curr-item-prc-sec'>" +
+                            "<small class='vac-curr-item-price-head'><b>Nightly Price: </b></small>" +
+                            "<small class='vac-curr-item-price'>" + dataUI[i].price + "</small>" +
+                            "(<small class='vac-curr-item-price-curr'>" + dataUI[i].priceCurr + "</small>)" +
+                        "</div>" +
+                        "<div class='vac-curr-item-rate-sec'>" +
+                            "<small class='vac-curr-item-rate-head'><b>Ratings: </b></small>" +
+                            "<small class='vac-curr-item-rate''>" + dataUI[i].reviewAverage + "/5</small>" +
+                        "</div>" +
+                        "<div class='vac-curr-item-rev-sec'>" +
+                            "<small class='vac-curr-item-cnt'>" + dataUI[i].reviewCount + " Reviews</small>" +
+                        "</div>" +
+                        "<div class='vac-curr-item-btn-sec'>" +
+                            "<p><a class='btn btn-default vac-curr-item-detail-btn' target='_blank' href='" + dataUI[i].url + "' role='button'>View details</a></p>" +
+                        "</div>"
                 //console.log(elem)
                 $('#home_vac_sec_ny').append(elem)
 
@@ -303,25 +321,24 @@ function renderVacData(dataUI,forPage="") {
             else{
                 elem =
                     "<div class='row vac-row-item'>" +
-                    "<div class='col-md-2 vac-row-item-img-sec'>" +
-                    "<img src='" + dataUI[i].image_url + "' width='100' height='100' class='vac-row-item-img' />" +
-                    "</div>" +
-                    "<div class='col-md-4 vac-row-item-head-sec'>" +
-                    "<h4 class='vac-row-item-head-lb'>" + dataUI[i].headline + "</h4>" +
-                    "</div>" +
-                    "<div class='col-md-4 vac-row-item-detail-sec'>" +
-                    "<small><b>Avg Nightly Price: </b></small>" +
-                    "<small class='vac-row-item-detail-price'>" + dataUI[i].price + "</small>" +
-                    "(" +
-                    "<small class='vac-row-item-detail-curr'>" + dataUI[i].priceCurr + "</small>)" +
-                    "<br>" +
-                    "<small><b>Ratings: </b></small>" +
-                    "<small class='vac-row-item-detail-rate'>" + dataUI[i].reviewAverage + "</small>" +
-                    "(" +
-                    "<small class='vac-row-item-detail-cnt'>" + dataUI[i].reviewCount + "</small>)" +
-                    "<br>" +
-                    "<a class='btn btn-default' target='_blank' class='vac-row-item-detail-btn' href='" + dataUI[i].url + "' role='button'>View details</a>" +
-                    "</div>" +
+                        "<div class='col-md-2 vac-row-item-img-sec'>" +
+                            "<img src='" + dataUI[i].image_url + "' width='100' height='100' class='vac-row-item-img' />" +
+                        "</div>" +
+                        "<div class='col-md-4 vac-row-item-head-sec'>" +
+                            "<h4 class='vac-row-item-head-lb'>" + dataUI[i].headline + "</h4>" +
+                        "</div>" +
+                        "<div class='col-md-4 vac-row-item-detail-sec'>" +
+                            "<small><b>Nightly Price: </b></small>" +
+                            "<small class='vac-row-item-detail-price'>" + dataUI[i].price + "</small>" +
+                            "(" +
+                            "<small class='vac-row-item-detail-curr'>" + dataUI[i].priceCurr + "</small>)" +
+                            "<br>" +
+                            "<small><b>Ratings: </b></small>" +
+                            "<small class='vac-row-item-detail-rate'>" + dataUI[i].reviewAverage + "</small>" +
+                            "(" +
+                            "<small class='vac-row-item-detail-cnt'>" + dataUI[i].reviewCount + "</small>)<br>" +
+                            "<a class='btn btn-default vac-row-item-detail-btn' target='_blank' href='" + dataUI[i].url + "' role='button'>View details</a>" +
+                        "</div>" +
                     "</div>"
                 //console.log(elem)
                 $('#user-vac-sec').append(elem)
