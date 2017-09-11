@@ -63,7 +63,7 @@ Title/Description
 
 
 #splash-button-sec{
-    height: 10em;
+    height: 8em;
     /*width:100%;*/
     /*color: darkslategray;*/
     background:#7f7f7f;
@@ -80,11 +80,11 @@ Title/Description
     color: white;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
-    font-size: 15px;
+    /*display: inline-block;*/
+    font-size: 10px;
     /*margin: 4px 2px;*/
     cursor: pointer;
-    width: 8em;
+    width: 10em;
     height: 2em;
     /*box-shadow: 0 1em 2em 0 rgba(0,0,0,0.2), 0 1em 3em 0 rgba(0,0,0,0.19);*/
     border-radius: 1em;
