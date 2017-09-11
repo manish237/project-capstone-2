@@ -24,19 +24,20 @@ body{
 }
 
 #splash-head-sec{
-    background: linear-gradient(rgba(100,100,100,.3),rgba(100,100,100,.3)), url('../../images/tibet-namtso-holy-lake.JPG');
+    background: linear-gradient(rgba(100,100,100,.3),rgba(100,100,100,.3)), url('../../images/Tibets-Yamdroktso-Lake-Listed-in-National-Pilot-Project.jpg');
     background-repeat: no-repeat;
     background-size:cover;
     background-position:center;
     background-size:100%;
-    height: 20em;
-    color: darkslategray;
-    /*background:#7f7f7f;*/
+    height: 15em;
+    color: white;
+    /*background:white;*/
     /*background:rgba(255,255,255,0.5);*/
     margin: auto;
-    margin-bottom: .4em;
-    color: white;;
-    width:100%;
+    margin-bottom: .1em;
+    /*color: white;;*/
+    /*width:100%;*/
+    padding-top: 2em;
 }
 
 /*
@@ -47,14 +48,15 @@ Title/Description
 #idx_page_title{
 
 
-    font-size: 5em;
+    font-size: 4em;
 
-    font-family: 'Lobster', cursive;
+    font-family: 'Love Ya Like A Sister', 'sans-serif';
+    text-shadow: 4px 4px lightgrey;
 
 }
 
 #idx_page_description{
-    font-family: 'Lobster', cursive;
+    font-family: 'Love Ya Like A Sister', 'sans-serif';
 
     font-size: 2em;
 }
@@ -63,12 +65,12 @@ Title/Description
 #splash-button-sec{
     height: 10em;
     /*width:100%;*/
-    color: darkslategray;
+    /*color: darkslategray;*/
     background:#7f7f7f;
     background:rgba(255,255,255,0.5);
     background-color: white;
     margin: auto;
-    margin-bottom: .1em;
+    /*margin-bottom: .1em;*/
     width:100%;
 }
 
@@ -80,13 +82,14 @@ Title/Description
     text-decoration: none;
     display: inline-block;
     font-size: 20px;
-    margin: 4px 2px;
+    /*margin: 4px 2px;*/
     cursor: pointer;
     width: 8em;
     height: 2em;
-    box-shadow: 0 1em 2em 0 rgba(0,0,0,0.2), 0 1em 3em 0 rgba(0,0,0,0.19);
+    /*box-shadow: 0 1em 2em 0 rgba(0,0,0,0.2), 0 1em 3em 0 rgba(0,0,0,0.19);*/
     border-radius: 1em;
-    font-family: 'Lobster', cursive;
+    font-family: 'Quicksand', sans-serif;;
+    /*vertical-align: middle;*/
 }
 
 #btn-sign-in{
@@ -98,7 +101,7 @@ Title/Description
 
 #btn-sign-up{
     margin-right: 1em;
-    margin-bottom: 1em;
+    /*margin-bottom: 1em;*/
 
 }
 
@@ -117,7 +120,7 @@ Title/Description
     color: darkslategray;
     background-color: white;
     margin: auto;
-    margin-top: .2em;
+    margin-top: .1em;
 }
 #splash-about-head-text{
     font-size: 2em;
@@ -137,6 +140,7 @@ Title/Description
     font-size: 1.5em;
     font-family:'Quicksand', sans-serif;
     margin-left: 12px;
+    padding-left: 2em;
 }
 
 
@@ -148,7 +152,7 @@ Title/Description
     color: darkslategray;
     background-color: white;
     margin: auto;
-    margin-top: .2em;
+    margin-top: .1em;
 }
 #splash-travel-head-text{
     font-size: 2em;
@@ -168,6 +172,7 @@ Title/Description
     font-size: 1.5em;
     font-family:'Quicksand', sans-serif;
     margin-left: 12px;
+    padding-left: 2em;
 
 }
 
@@ -181,7 +186,7 @@ Title/Description
     color: darkslategray;
     background-color: white;
     margin: auto;
-    margin-top: .2em;
+    margin-top: .1em;
 }
 #splash-eat-head-text{
     font-size: 2em;
@@ -200,7 +205,7 @@ Title/Description
     padding-top: 1em;
     font-size: 1.5em;
     font-family:'Quicksand', sans-serif;
-    margin-left: 12px;
+    padding-left: 2em;
 
 }
 

@@ -1,3 +1,6 @@
+#nav-text{
+    font-family: 'Love Ya Like A Sister', 'sans-serif';
+}
 /*
 Loader
  */
@@ -45,6 +48,9 @@ Navigation Bar
     font-size: 20px;
 }
 
+#nav-menu-div{
+    display: inline;
+}
 /*
 Filter section
  */
@@ -62,7 +68,7 @@ Filter section
 Main Section
  */
 #main-section {
-    top: 15em;
+    top: 10em;
     margin-top: 1em;
 
     width:80%;
@@ -80,11 +86,14 @@ Main Section
     width: 12em;
     margin:auto;
     margin-bottom: 1em;
+    margin-top: -.5em;
+
 
 }
 #btn-main-search {
 
     margin:auto;
+    margin-top: -.5em;
     display: block;
 }
 /*

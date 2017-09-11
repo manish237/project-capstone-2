@@ -92,7 +92,7 @@ $('#form-register').submit(function (e) {
 $('#btn-cancel').click(function (e) {
     e.preventDefault();
     console.log("cancel button clicked")
-    window.location.href = '/home.html'
+    window.location.href = '/index.html'
 });
 
 $("#reg-addr-sec-hidden").hide()

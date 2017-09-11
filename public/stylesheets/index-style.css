@@ -1,6 +1,5 @@
 @import url("./index-media/index-min-1300.css") only screen
 and (min-width:1300px );
-
 @import url("./index-media/index-min-992.css") only screen
 and (min-width:992px ) and (max-width:1299px );
 @import url("./index-media/index-min-700.css") only screen
