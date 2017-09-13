@@ -1,5 +1,6 @@
 #nav-text{
     font-family: 'Love Ya Like A Sister', 'sans-serif';
+    padding-top: 1em;
 }
 #nav-dropdown{
     margin-right: 1em;
@@ -71,7 +72,7 @@ Filter section
 Main Section
  */
 #main-section {
-    top: 10em;
+    top: 6em;
     margin-top: 1em;
 
     width:80%;
