@@ -1,6 +1,9 @@
 #nav-text{
     font-family: 'Love Ya Like A Sister', 'sans-serif';
 }
+#nav-dropdown{
+    margin-right: 1em;
+}
 /*
 Loader
  */
