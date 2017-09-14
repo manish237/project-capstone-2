@@ -1,3 +1,21 @@
+#nav-text{
+    font-family: 'Love Ya Like A Sister', 'sans-serif';
+    padding-top: 1em;
+}
+#nav-dropdown{
+    margin-right: 1em;
+    /*margin-left: 21em;*/
+    margin-left: 50%;
+    width: 50%;
+
+}
+
+#nav-menu-items{
+    /*width: 5em;*/
+    text-align: right;
+    /*padding-left: 11em;*/
+
+}
 body{
     background: linear-gradient(rgba(200,200,200,.3),rgba(200,200,200,.8)), url('../../images/All_Gizah_Pyramids.jpg');
     background-position: center center;

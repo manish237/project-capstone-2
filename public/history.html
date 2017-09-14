@@ -20,15 +20,13 @@
         <link href="https://fonts.googleapis.com/css?family=Lobster|Sedgwick+Ave|Noto+Serif|Oxygen:300|Bitter|PT+Sans:400i|Julius+Sans+One|Love+Ya+Like+A+Sister" rel="stylesheet">
     </head>
     <body>
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <div class="container-fluid"> 
-                <div class="navbar-header"> 
-                    <a class="navbar-brand" href="home.html">Destinalysis</a>
-                </div>
-                <ul class="nav navbar-nav navbar-right">
+        <div class="container-fluid" id="nav-container">
+            <nav class="navbar-inverse navbar-fixed-top" role="navigation">
+                <a class="navbar-brand" href="home.html" id="nav-text">Destinalysis</a>
+                <ul class="nav navbar-nav navbar-right" id="nav-dropdown">
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <span class="glyphicon glyphicon-menu-hamburger pull-right"></span></a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu" id="nav-menu-items">
                             <li>
                                 <a href="user.html">Home</a>
                             </li>
@@ -45,8 +43,8 @@
                         </ul>
                     </li>
                 </ul>
-            </div>
-        </nav>
+            </nav>
+        </div>
         <div class="container text-center">
             <!-- Example row of columns -->
             <div id="hist-sec">

@@ -4,7 +4,20 @@
 }
 #nav-dropdown{
     margin-right: 1em;
+    /*margin-left: 21em;*/
+    margin-left: 50%;
+    width: 50%;
+
 }
+
+#nav-menu-items{
+    /*width: 5em;*/
+    text-align: right;
+    /*padding-left: 11em;*/
+
+}
+
+
 /*
 Loader
  */
@@ -52,9 +65,9 @@ Navigation Bar
     font-size: 20px;
 }
 
-#nav-menu-div{
+/*#nav-menu-div{
     display: inline;
-}
+}*/
 /*
 Filter section
  */
