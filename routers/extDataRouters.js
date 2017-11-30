@@ -77,7 +77,7 @@ router.get('/vr', (req, res) => {
         method: 'GET',
         uri: 'https://ws.homeaway.com/public/search',
         headers: {
-            'Authorization': 'Bearer YTE5MWFhMmUtMzc5Mi00ZTNkLTlkMTYtOWVjNmExMjgwOTcw'
+            'Authorization': 'Bearer ZDY4ZjIzZTktZjczNS00ZmVmLWJiNmItYjVmNzM5ZjJmZmEy'
         },
         qs: {
             centerPointLatitude: req.query.centerPointLatitude !== undefined ? req.query.centerPointLatitude : 40.8445867,

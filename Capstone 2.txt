@@ -1,0 +1,249 @@
+User Registration
+	Supply email address
+	password
+	confirm password
+
+User Login
+	email address
+	password 
+	
+User preferences Save/Edit
+	First Name
+	Last Name
+	Address
+	Vehicle MPG (Optional)
+	
+Destination preferences - Save/Edit
+	Search Restaurants
+		By		
+			distance
+			most reviewed
+			highest rated
+	Search Hotels
+	Search Vacation Rentals
+	Crime reports
+
+Review Route	
+	Rating 	
+	Reviews
+
+Research Destination
+	Enter Address/city
+	enter source (add to the preference)
+	date of travel
+	Options (if not in preferences -- save it if new)
+		Search Restaurants
+			By		
+				distance
+				most reviewed
+				highest rated
+		Search Hotels
+		Search Vacation Rentals
+		Crime reports
+		
+On Submit
+	Show ratings/recommendations from members
+	Show top 10 Yelp hits for restaurants
+	Show top 10 available hotels (Probably with booking link)
+	Show top 10 available vacation rentals (Probably with booking link)
+	Show # of crimes reported
+	Show route from source to destination
+	
+Group chat feature 
+	ask questions to members
+
+------------------------------------------------------------------	
+	
+****Home page load
+	****Get the current location
+	****Load Restaurants
+	****Load Vacation Rentals
+	****Load Crime Data
+
+==================================================
+Home -> Register -> User Page
+Register
+	****input
+		****email
+		****password
+		****confirm password
+		****first name
+		****last name
+		****address (autocomplete)
+		****address components
+	On submit
+		****Checks and insert
+		****Create localstorage - userdata / longitude/ latitude / address_string 
+		****redirect to user page 
+			****Get the location from localstorage
+			****Load Restaurants
+			****Load Vacation Rentals
+			****Load Crime Data
+===================================================		
+Home -> Forgot Password -> Reset -> User Page
+	****input
+		****email
+		****password
+		****confirm password
+	****On submit
+		****Checks and update
+		****Create localstorage - userdata / longitude/ latitude / address_string 
+		****redirect to user page 
+			****Get the location from localstorage
+			****Load Restaurants
+			****Load Vacation Rentals
+			****Load Crime Data
+
+===================================================		
+Home -> login -> User Page
+	****input
+		****email
+		****password
+	****On submit
+		****Checks
+		****Create localstorage - userdata / longitude/ latitude / address_string 
+		****redirect to user page 
+			****Get the location from localstorage
+			****Load Restaurants
+			****Load Vacation Rentals
+			****Load Crime Data
+	
+====================================================
+User Page -> Edit Profile 	-> User Page
+	****input
+		****first name
+		****last name
+		****address (autocomplete)
+		****address components
+	****On submit
+		****Checks and update
+		****Update localstorage - userdata / longitude/ latitude / address_string 
+		****redirect to user page 
+			****Get the location from localstorage
+			****Load Restaurants
+			****Load Vacation Rentals
+			****Load Crime Data
+
+========================================================
+User Page -> Search Address -> User Page
+	****input
+		****address (autocomplete)
+		****cb - restaurants
+		****cb - vacation rentals
+		****cb - crimes
+	****On submit
+		****Update localstorage - userdata / longitude/ latitude / address_string 
+		****Get the location from localstorage
+		****Load Restaurants (if cb - restaurants)
+		****Load Vacation Rentals (if cb - vacation rentals)
+		****Load Crime Data (if cb - crimes)
+
+
+========================================================
+User Page -> Search Address -> User Page
+	input
+		address (autocomplete)
+		cb - restaurants
+		cb - vacation rentals
+		cb - crimes
+	On submit
+		Update localstorage - userdata / longitude/ latitude / address_string 
+		Get the location from localstorage
+		Load Restaurants (if cb - restaurants)
+		Load Vacation Rentals (if cb - vacation rentals)
+		Load Crime Data (if cb - crimes)		
+========================================================
+User Page -> Filter changes
+	input
+		any of the filter change is triggered
+		catch the event
+			check all the filter values and set defaults if no changes
+		Get the location from localstorage
+		Load Restaurants (if cb - restaurants)
+		Load Vacation Rentals (if cb - vacation rentals)
+		Load Crime Data (if cb - crimes)
+
+===========================================================		
+
+TBD
+
+Logging
+UI Images
+Error display in case of data load failure/empty
+Travis/Heroku
+
+LA
+34.0432071,-118.2849729
+
+Florida
+27.9482934,-82.4612052
+
+NYC
+40.7215106,-74.0042446
+
+Vegas
+36.1700301,-115.137898
+
+Honolulu Hawaii
+21.3040369,-157.8695565
+
+
+general 1340
+min-width = 1340
+
+handle only user errors
+add dashboard to show delete.
+double burger in
+
+Test for delete ops
+
+==================================================
+Review Comments
+==================================================
+
+Manish, very nice project so far.
+The project's functionality works as intended from my tests.
+The ability to sort the search results gives the project a nice added functionality touch.
+Most of my critique is around refining the look and feel of the app.
+
+Landing Page
+
+1. The landing page I think would look more modern full width, removing the outside padding on top, left, and right sides.
+2. This would also help things not looking so tight on mobile.
+3. The landing page with the 4 sections and photos for each could be condensed more. Right now there is a lot of white space.
+4. The green bullet doesn't look great
+5. and the bullet points could use further line-height so they aren't right on top of each other.
+6. Every section doesn't need a "small description" sub header either.
+7. I would provide a demo account as inline text on the returning users page so a hiring manager can quickly see the project.
+
+The geo-location functionality is a nice touch. I also like that the app stills works without it. The header graphic on the landing page works better than the login page.
+
+Home Page
+8. The login page header is very busy and a bit distracting visually, the text doesn't pop on it.
+9. The two rows of results don't need so much spacing in between them on desktop.
+10. The login area on this page also breaks on tablet sized devices, the buttons and lost password text start breaking oddly.
+11. When the results go one column on mobile I would add extra spacing above "Trending Restaurants..." header.
+
+User Page
+12. The sort area could use a little refinement. Less spacing below the sort select.
+13. The radio buttons are also breaking to the next line oddly below 1000px.
+14. To the right the "View Details" button could use a little more top spacing.
+
+History Page
+15. The search history page visually feels removed from the rest of the app, try to make it look more similar.
+16. The text is also aligning to the left oddly on desktop for the search history results.
+17. The navigation also disappears on this page.
+
+
+Overall, nice project that with further visual refinement will really stand out. Keep up the great work and let me know however I can help. Cheers, Morgan
+
+
+350-700
+700-800
+800-992
+992-1190
+1190-up
+
+
+1790
+1500
